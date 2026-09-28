@@ -348,23 +348,13 @@
 #pp-passport .pp-trace{display:flex;flex-wrap:wrap;gap:2px 12px;font-size:9.5px;color:#8f897f;margin-top:2px}
 #pp-passport .pp-close{position:absolute;right:14px;top:12px;border:0;background:none;color:#efe9df;font-size:28px;line-height:1;cursor:pointer;padding:4px}
 #pp-passport .pp-scroll{flex:1;min-height:0;overflow:auto;padding:0 24px 28px;overscroll-behavior:contain}
-#pp-passport .pp-sec{padding:24px 0;border-bottom:1px solid #2f2e2a}
-#pp-passport h3{font:400 21px/1.1 Georgia,serif;margin:12px 0 10px;color:#f4efe6}
-#pp-passport .pp-fig{margin:12px 0 0;position:relative;background:#22211e}
-#pp-passport .pp-fig img{display:block;width:100%;height:190px;object-fit:cover}
-#pp-passport .pp-fig.pp-tall img{height:230px}
-#pp-passport .pp-fig.pp-detail img{transform:scale(2.6);transform-origin:45% 55%}
-#pp-passport .pp-fig.pp-detail{overflow:hidden}
-#pp-passport figcaption{position:absolute;left:0;right:0;bottom:0;padding:18px 10px 7px;font-size:9px;letter-spacing:.06em;color:#d8d1c5;background:linear-gradient(transparent,rgba(0,0,0,.65))}
-#pp-passport figcaption a{text-decoration:underline}
-#pp-passport .pp-stock figcaption{font-size:8px;line-height:1.35;padding-top:26px}
-#pp-passport .pp-stock img{filter:grayscale(.35);object-position:38% 78%}
-#pp-passport .pp-fig-empty{height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:1px dashed #3c3a35;background:repeating-linear-gradient(135deg,#1b1a18 0 8px,#181715 8px 16px);color:#8f897f;font:400 15px Georgia,serif}
-#pp-passport .pp-fig-empty.pp-tall{height:180px}
-#pp-passport .pp-fig-empty small{font:9px system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#6f6a62}
-#pp-passport .pp-split{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:start}
-#pp-passport .pp-split .pp-fig{margin:12px 0 0}
-#pp-passport .pp-split .pp-fig img,#pp-passport .pp-split .pp-fig-empty{height:190px}
+#pp-passport .pp-sec{display:grid;grid-template-columns:120px minmax(0,1fr);gap:0 24px;align-items:start;padding:24px 0;border-bottom:1px solid #2f2e2a}
+#pp-passport .pp-body{min-width:0}
+#pp-passport h3{font:400 21px/1.15 Georgia,serif;margin:8px 0 10px;color:#f4efe6}
+#pp-passport .pp-media{margin:0;min-width:0}
+#pp-passport .pp-media img{display:block;width:100%;aspect-ratio:5/6;height:auto;object-fit:cover;background:#22211e}
+#pp-passport .pp-media figcaption{margin-top:7px;font-size:8.5px;line-height:1.4;letter-spacing:.04em;color:#77726a}
+#pp-passport .pp-media figcaption a{text-decoration:underline;color:#8f897f}
 #pp-passport .pp-fields{margin:6px 0 0}
 #pp-passport .pp-row{display:grid;grid-template-columns:minmax(110px,34%) 1fr auto;gap:10px;align-items:baseline;padding:7px 0;border-top:1px solid #262522}
 #pp-passport dt{color:#a39c91;font-size:10.5px}
@@ -393,10 +383,10 @@
 #pp-passport .pp-gap{margin-top:16px;padding:16px;border:1px solid #3a3834}
 #pp-passport .pp-gap p{margin:0 0 10px;color:#bdb6aa;font-size:11.5px}
 #pp-passport .pp-cta{font:500 9.5px system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#e1c58c}
-#pp-passport .pp-foot{padding:18px 0 0;color:#77726a;font-size:10px}
+#pp-passport .pp-foot{padding:18px 0 0 144px;color:#77726a;font-size:10px}
 #pp-passport .pp-foot ul{margin:6px 0 8px;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:4px 14px}
 #pp-passport .pp-foot a{text-decoration:underline;color:#a39c91}
-#pp-passport .pp-foot p{margin:0}
+#pp-passport .pp-foot p{margin:0 0 6px}
 @media (max-width:800px){
   #pp-passport{position:fixed;inset:0;width:100%;height:100%}
   #pp-passport .pp-head{grid-template-columns:48px 1fr;padding:16px 46px 12px 16px}
@@ -404,8 +394,8 @@
   #pp-passport .pp-idrow{grid-template-columns:1fr 1fr;gap:0 16px}
   #pp-passport h2{font-size:21px}
   #pp-passport .pp-scroll{padding:0 16px 24px}
-  #pp-passport .pp-split{grid-template-columns:110px 1fr}
-  #pp-passport .pp-split .pp-fig img,#pp-passport .pp-split .pp-fig-empty{height:140px}
+  #pp-passport .pp-sec{grid-template-columns:84px minmax(0,1fr);gap:0 14px}
+  #pp-passport .pp-foot{padding-left:0}
   #pp-passport .pp-row{grid-template-columns:1fr auto;}
   #pp-passport .pp-row dd:not(.pp-ev){grid-column:1/-1;grid-row:2}
 }</style></head>
@@ -2427,29 +2417,19 @@
     </div>
   </div>
   <button class="pp-close" type="button" aria-label="Close passport">×</button>
-</header><div class="pp-scroll"><section class="pp-sec">
+</header><div class="pp-scroll"><section class="pp-sec"><figure class="pp-media"><img src="assets/stock-fabric.jpg" alt="Close-up of handloom cloth on a loom" loading="lazy"><figcaption>Illustrative image<br>Not this garment</figcaption></figure><div class="pp-body">
   <div class="pp-label">01 · Fabric</div>
-  <figure class="pp-fig pp-tall pp-detail"><img src="assets/hop-products-2-3213e945-fd3c-4f8c-80e9-ca22694a044d-900x-jpg-7aaf237df8.jpg" alt="Detail of Black Spade Blazer" loading="lazy"><figcaption>Detail from product photograph · no fabric close-up published</figcaption></figure>
   <h3>Handwoven satin silk</h3>
   <dl class="pp-fields"><div class="pp-row"><dt>Fabric lot</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Weave</dt><dd>Handwoven</dd><dd class="pp-ev"><a class="pp-chip pp-ev-public" href="https://theloomart.com/products/black-spade-blazer" target="_blank" rel="noopener"><span aria-hidden="true">✓</span> Product page</a></dd></div><div class="pp-row"><dt>Composition</dt><dd><span class="pp-missing">Not stated</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div></dl>
-  <button class="pp-more" type="button" aria-expanded="false" aria-controls="pp-rec-fabric" data-pp-toggle>View record <span aria-hidden="true">→</span></button><div class="pp-record" id="pp-rec-fabric" hidden><div class="pp-label">Fabric record</div><dl class="pp-fields"><div class="pp-row"><dt>Material</dt><dd>Handwoven satin silk</dd><dd class="pp-ev"><a class="pp-chip pp-ev-public" href="https://theloomart.com/products/black-spade-blazer" target="_blank" rel="noopener"><span aria-hidden="true">✓</span> Product page</a></dd></div><div class="pp-row"><dt>Weave</dt><dd>Handwoven</dd><dd class="pp-ev"><a class="pp-chip pp-ev-public" href="https://theloomart.com/products/black-spade-blazer" target="_blank" rel="noopener"><span aria-hidden="true">✓</span> Product page</a></dd></div><div class="pp-row"><dt>Composition</dt><dd><span class="pp-missing">Not stated</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Fabric lot</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Quantity</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Recorded</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div></dl></div>
-</section><section class="pp-sec">
+  <button class="pp-more" type="button" aria-expanded="false" aria-controls="pp-rec-fabric" data-pp-toggle>View record <span aria-hidden="true">→</span></button><div class="pp-record" id="pp-rec-fabric" hidden><div class="pp-label">Fabric record</div><dl class="pp-fields"><div class="pp-row"><dt>Material</dt><dd>Handwoven satin silk</dd><dd class="pp-ev"><a class="pp-chip pp-ev-public" href="https://theloomart.com/products/black-spade-blazer" target="_blank" rel="noopener"><span aria-hidden="true">✓</span> Product page</a></dd></div><div class="pp-row"><dt>Weave</dt><dd>Handwoven</dd><dd class="pp-ev"><a class="pp-chip pp-ev-public" href="https://theloomart.com/products/black-spade-blazer" target="_blank" rel="noopener"><span aria-hidden="true">✓</span> Product page</a></dd></div><div class="pp-row"><dt>Composition</dt><dd><span class="pp-missing">Not stated</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Fabric lot</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Quantity</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Recorded</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div></dl></div></div></section><section class="pp-sec"><figure class="pp-media"><img src="assets/stock-loom.jpg" alt="Warp threads and reed of a handloom" loading="lazy"><figcaption>Illustrative image<br>Not this garment</figcaption></figure><div class="pp-body">
   <div class="pp-label">02 · Weaving</div>
-  <div class="pp-fig pp-fig-empty pp-tall"><span>Weaving</span><small>No public image linked</small></div>
   <h3>The loom</h3>
   <blockquote class="pp-quote">“Her label focuses on reviving old authentic craft techniques, and generating a platform of employment for locals &amp; bringing handloom back in vogue.”<a class="pp-chip pp-ev-public" href="https://theloomart.com/pages/about-us" target="_blank" rel="noopener"><span aria-hidden="true">✓</span> Brand archive</a></blockquote>
-  <dl class="pp-fields"><div class="pp-row"><dt>Weaver</dt><dd><span class="pp-missing">Not linked to this garment</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Location</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Production period</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Fabric lot</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div></dl>
-</section><section class="pp-sec pp-maker">
+  <dl class="pp-fields"><div class="pp-row"><dt>Weaver</dt><dd><span class="pp-missing">Not linked to this garment</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Location</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Production period</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Fabric lot</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div></dl></div></section><section class="pp-sec"><figure class="pp-media"><img src="assets/stock-maker.jpg" alt="A handloom weaver at work" loading="lazy"><figcaption>Illustrative image<br>Not this garment</figcaption></figure><div class="pp-body">
   <div class="pp-label">03 · The maker</div>
-  <div class="pp-split">
-    <figure class="pp-fig pp-stock"><img src="assets/stock-passport-local-weaver-jpg-dd87ee04f1.jpg" alt="A handloom weaver at a loom in Maheshwar, Madhya Pradesh" loading="lazy"><figcaption>Illustrative stock image · not the maker of this garment · <a href="https://commons.wikimedia.org/wiki/File:Handloom_weaver_in_Maheshwar_fort,_Khargone_district,_Madhya_Pradesh.jpg" target="_blank" rel="noopener">Eskay001 / Wikimedia Commons · CC BY-SA 4.0</a></figcaption></figure>
-    <div>
-      <h3>The person behind the work</h3>
-      <dl class="pp-fields"><div class="pp-row"><dt>Story maker</dt><dd>Dilshad Ji</dd><dd class="pp-ev"><a class="pp-chip pp-ev-public" href="https://theloomart.com/blogs/news/meet-our-story-makers" target="_blank" rel="noopener"><span aria-hidden="true">✓</span> Brand archive</a></dd></div><div class="pp-row"><dt>Role</dt><dd>Hand embroidery</dd><dd class="pp-ev"><a class="pp-chip pp-ev-public" href="https://theloomart.com/blogs/news/meet-our-story-makers" target="_blank" rel="noopener"><span aria-hidden="true">✓</span> Brand archive</a></dd></div><div class="pp-row"><dt>Relationship to this garment</dt><dd><span class="pp-missing">Not established</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div></dl>
-    </div>
-  </div>
-  <blockquote class="pp-quote">“(Dilshad Ji Loves This Piece Because He Really Worked Hard On It. He Did A Really Crucial Work On It. Seven To Eight Different Techniques Of Embroidery Has Been Used In This Shirt And It Took A Lot Of Efforts To Complete This One.)”<a class="pp-chip pp-ev-public" href="https://theloomart.com/blogs/news/meet-our-story-makers" target="_blank" rel="noopener"><span aria-hidden="true">✓</span> Brand archive</a></blockquote>
-</section><section class="pp-sec">
+  <h3>The person behind the work</h3>
+  <dl class="pp-fields"><div class="pp-row"><dt>Story maker</dt><dd>Dilshad Ji</dd><dd class="pp-ev"><a class="pp-chip pp-ev-public" href="https://theloomart.com/blogs/news/meet-our-story-makers" target="_blank" rel="noopener"><span aria-hidden="true">✓</span> Brand archive</a></dd></div><div class="pp-row"><dt>Role</dt><dd>Hand embroidery</dd><dd class="pp-ev"><a class="pp-chip pp-ev-public" href="https://theloomart.com/blogs/news/meet-our-story-makers" target="_blank" rel="noopener"><span aria-hidden="true">✓</span> Brand archive</a></dd></div><div class="pp-row"><dt>Relationship to this garment</dt><dd><span class="pp-missing">Not established</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div></dl>
+  <blockquote class="pp-quote">“(Dilshad Ji Loves This Piece Because He Really Worked Hard On It. He Did A Really Crucial Work On It. Seven To Eight Different Techniques Of Embroidery Has Been Used In This Shirt And It Took A Lot Of Efforts To Complete This One.)”<a class="pp-chip pp-ev-public" href="https://theloomart.com/blogs/news/meet-our-story-makers" target="_blank" rel="noopener"><span aria-hidden="true">✓</span> Brand archive</a></blockquote></div></section><section class="pp-sec"><div class="pp-media" aria-hidden="true"></div><div class="pp-body">
   <div class="pp-label">04 · From fabric to garment</div>
   <h3>The production chain</h3>
   <ol class="pp-chain"><li>
@@ -2477,19 +2457,18 @@
       <span class="pp-dot" data-ev="not-linked"></span><span class="pp-node-name">Finishing</span><span class="pp-node-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></span>
     </button>
     <div class="pp-node-body" id="pp-stage-4" hidden><dl class="pp-fields"><div class="pp-row"><dt>Date</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Location</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Person / unit</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Lot / record ID</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div></dl></div>
-  </li></ol>
-</section><section class="pp-sec">
+  </li></ol></div></section><section class="pp-sec"><figure class="pp-media"><img src="assets/hop-products-2-3213e945-fd3c-4f8c-80e9-ca22694a044d-900x-jpg-7aaf237df8.jpg" alt="Black Spade Blazer" loading="lazy"><figcaption><a href="https://theloomart.com/products/black-spade-blazer" target="_blank" rel="noopener">Product photo</a><br>Brand site</figcaption></figure><div class="pp-body">
   <div class="pp-label">05 · Garment record</div>
   <h3>Every record attached to this piece</h3>
   <dl class="pp-fields"><div class="pp-row"><dt>Product</dt><dd>Black Spade Blazer</dd><dd class="pp-ev"><a class="pp-chip pp-ev-public" href="https://theloomart.com/products/black-spade-blazer" target="_blank" rel="noopener"><span aria-hidden="true">✓</span> Product page</a></dd></div><div class="pp-row"><dt>SKU</dt><dd>AR4321</dd><dd class="pp-ev"><a class="pp-chip pp-ev-public" href="https://theloomart.com/products/black-spade-blazer" target="_blank" rel="noopener"><span aria-hidden="true">✓</span> Product page</a></dd></div><div class="pp-row"><dt>Garment ID</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Material</dt><dd>Handwoven satin silk</dd><dd class="pp-ev"><a class="pp-chip pp-ev-public" href="https://theloomart.com/products/black-spade-blazer" target="_blank" rel="noopener"><span aria-hidden="true">✓</span> Product page</a></dd></div><div class="pp-row"><dt>Fabric lot</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Fabric quantity</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Loom</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Weaver</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Location</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Garment unit</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div><div class="pp-row"><dt>Production date</dt><dd><span class="pp-missing">Not linked</span></dd><dd class="pp-ev"><span class="pp-chip pp-ev-none"><span aria-hidden="true">—</span> Not linked</span></dd></div></dl>
   <div class="pp-gap">
     <p>This information may exist outside the public website. Connect the production record to complete this passport.</p>
     <span class="pp-cta">Connect production record <span aria-hidden="true">→</span></span>
-  </div>
-</section><footer class="pp-foot"><div class="pp-label">Sources</div><ul>
+  </div></div></section><footer class="pp-foot"><div class="pp-label">Sources</div><ul>
   <li><a href="https://theloomart.com/products/black-spade-blazer" target="_blank" rel="noopener">Product page</a></li>
   <li><a href="https://theloomart.com/pages/about-us" target="_blank" rel="noopener">About Us – Theloomart</a></li><li><a href="https://theloomart.com/blogs/news" target="_blank" rel="noopener">News – Theloomart</a></li><li><a href="https://theloomart.com/blogs/news/meet-our-story-makers" target="_blank" rel="noopener">Meet Our Story Makers – Theloomart</a></li><li><a href="https://theloomart.com/blogs/news/state-of-mind" target="_blank" rel="noopener">State Of Mind – Theloomart</a></li><li><a href="https://theloomart.com/blogs/news/tumhari-pyaari-nani" target="_blank" rel="noopener">Tumhari Pyaari Nani – Theloomart</a></li>
-  </ul><p>Prototype. Public-web evidence only; nothing on this passport is invented. Fields marked “Not linked” need a production record.</p></footer></div></aside></div>
+  </ul><p>Prototype. Public-web evidence only; nothing on this passport is invented. Fields marked “Not linked” need a production record.</p>
+  <p>Illustrative images: <a href="https://commons.wikimedia.org/wiki/File:Handloom_weaver_in_Maheshwar_fort,_Khargone_district,_Madhya_Pradesh.jpg" target="_blank" rel="noopener">Eskay001 / Wikimedia Commons · CC BY-SA 4.0, cropped</a>.</p></footer></div></aside></div>
           </div><div class="media-wrapper hidden" data-media-id="30211084812457" data-product-media-wrapper="">
             <div class="media" data-media-id="30211084812457" data-media-type="image"><a class="media__image" href="https://theloomart.com/products/black-spade-blazer" data-open="30211084812457">
       

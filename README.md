@@ -34,10 +34,13 @@ Input a brand website or product URL.
 
 ## Images
 
-Each section picks an image by its evidentiary role, from the brand's own site where possible:
-- **Fabric:** a brand image whose own alt text, caption or filename marks it as fabric; otherwise a close crop of the product photo, captioned as such.
-- **Craft:** a brand image of the loom, embroidery, dyeing or workshop; otherwise an empty "No public image linked" tile.
-- **Maker:** a brand photo of an artisan (founder, designer and model photos are excluded). If the brand publishes none, an **illustrative stock image** from `tools/stock/` (Wikimedia Commons, CC BY-SA, credited) is shown, captioned *"Illustrative stock image · not the maker of this garment"*.
+Each section shows a small thumbnail beside its text; the text is the point, the image is context. Images are chosen by evidentiary role:
+- **Fabric:** a brand image whose own alt text, caption or filename marks it as fabric; otherwise the fixed illustrative fabric close-up.
+- **Craft:** a brand image of the loom, embroidery, dyeing or workshop; otherwise the fixed illustrative loom (or embroidery) image.
+- **Maker:** a brand photo of an artisan (founder, designer and model photos are excluded); otherwise the fixed illustrative weaver image.
+- **Garment record:** the product photo from the brand's own product page.
+
+The fixed illustrative images live in `tools/stock/` and are the same for every brand (crops of a Wikimedia Commons photo, CC BY-SA 4.0, credited in the passport's Sources). They are always captioned *"Illustrative image · Not this garment"*; brand images are captioned with a link to their source.
 
 ## Repo
 
@@ -48,7 +51,7 @@ Each section picks an image by its evidentiary role, from the brand's own site w
 - `tools/lib/archive.mjs`: brand-archive crawl and image classification
 - `tools/lib/passport-model.mjs`: evidence model (the "never invent" rules live here)
 - `tools/lib/passport-ui.mjs`: passport markup, scoped CSS and the runtime shipped in the demo
-- `tools/stock/`: fallback artisan images plus attribution (`stock.json`)
+- `tools/lib/stock.mjs`, `tools/stock/`: fixed illustrative section images plus attribution (`stock.json`)
 - `demos/theloomart/`, `demos/iroiro/`: generated demos (HTML, single-file `*.standalone.html`, `assets/`, `snapshot-manifest.json` with the full evidence model, and a preview PNG)
 
 ## Run the generator

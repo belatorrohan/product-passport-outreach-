@@ -311,10 +311,11 @@
     },
     "images": {
       "fabric": {
-        "src": "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260192.jpg?v=1788787978&width=832",
-        "alt": "Detail of Saaya Blazer",
-        "source": "https://iroiro.in/products/men-saaya-blazer-ivory",
-        "kind": "hero-detail"
+        "src": "https://stock.passport.local/fabric.jpg",
+        "alt": "Close-up of handloom cloth on a loom",
+        "source": "https://commons.wikimedia.org/wiki/File:Handloom_weaver_in_Maheshwar_fort,_Khargone_district,_Madhya_Pradesh.jpg",
+        "credit": "Eskay001 / Wikimedia Commons · CC BY-SA 4.0, cropped",
+        "kind": "stock"
       },
       "craft": {
         "src": "https://iroiro.in/cdn/shop/files/iro-2026-13.jpg?v=1788883440&width=600",
@@ -323,11 +324,17 @@
         "kind": "archive"
       },
       "maker": {
-        "src": "https://stock.passport.local/weaver.jpg",
-        "alt": "A handloom weaver at a loom in Maheshwar, Madhya Pradesh",
+        "src": "https://stock.passport.local/maker.jpg",
+        "alt": "A handloom weaver at work",
         "source": "https://commons.wikimedia.org/wiki/File:Handloom_weaver_in_Maheshwar_fort,_Khargone_district,_Madhya_Pradesh.jpg",
-        "credit": "Eskay001 / Wikimedia Commons · CC BY-SA 4.0",
+        "credit": "Eskay001 / Wikimedia Commons · CC BY-SA 4.0, cropped",
         "kind": "stock"
+      },
+      "garment": {
+        "src": "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260192.jpg?v=1788787978&width=832",
+        "alt": "Saaya Blazer",
+        "source": "https://iroiro.in/products/men-saaya-blazer-ivory",
+        "kind": "product"
       }
     },
     "sources": [
@@ -756,6 +763,14 @@
     [
       "https://iroiro.in/cdn/shop/files/iro-2026-13.jpg?v=1788883440&width=600",
       "assets/iroiro-in-cdn-shop-files-iro-2026-13-jpg-826680b7dd.jpg"
+    ],
+    [
+      "https://stock.passport.local/fabric.jpg",
+      "assets/stock-fabric.jpg"
+    ],
+    [
+      "https://stock.passport.local/maker.jpg",
+      "assets/stock-maker.jpg"
     ]
   ]
 }

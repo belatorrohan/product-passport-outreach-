@@ -9,11 +9,11 @@
 //    self-contained copy with localized assets, a manifest and a preview screenshot.
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import {fileURLToPath} from 'node:url';
 import {openBrowser, captureResources, load, findProductPage, primeLazyContent, localize, stripScripts, fetchExtraImages, inlineAssets} from './lib/snapshot.mjs';
 import {extractProduct} from './lib/extract.mjs';
 import {crawlArchive} from './lib/archive.mjs';
 import {buildPassportModel} from './lib/passport-model.mjs';
+import {loadStock, STOCK_DIR, STOCK_ORIGIN} from './lib/stock.mjs';
 import {renderPassport, PASSPORT_CSS, PASSPORT_RUNTIME} from './lib/passport-ui.mjs';
 
 const [input, output = 'generated/passport.html', hint = ''] = process.argv.slice(2);
@@ -23,17 +23,14 @@ if (!input) {
 }
 const dir = path.resolve(path.dirname(output));
 
-// Illustrative stock artisan images (fallback only; see tools/stock/stock.json).
-const stockDir = path.join(path.dirname(fileURLToPath(import.meta.url)), 'stock');
-const stockMeta = JSON.parse(await fs.readFile(path.join(stockDir, 'stock.json'), 'utf8'));
-const stock = Object.fromEntries(Object.entries(stockMeta).filter(([k]) => !k.startsWith('_'))
-  .map(([k, v]) => [k, {...v, src: `https://stock.passport.local/${v.file}`}]));
+// Fixed illustrative section images (see tools/stock/stock.json).
+const stock = await loadStock();
 await fs.mkdir(dir, {recursive: true});
 
 const {browser, context, page} = await openBrowser();
 try {
-  await context.route('https://stock.passport.local/**', route =>
-    route.fulfill({path: path.join(stockDir, new URL(route.request().url()).pathname.slice(1)), contentType: 'image/jpeg'}));
+  await context.route(STOCK_ORIGIN + '**', route =>
+    route.fulfill({path: path.join(STOCK_DIR, new URL(route.request().url()).pathname.slice(1)), contentType: 'image/jpeg'}));
   const resources = captureResources(page);
   await load(page, input);
   const source = await findProductPage(page, hint);
@@ -71,7 +68,7 @@ try {
   const archiveImages = Object.values(model.images).filter(i => i?.kind === 'archive').map(i => i.src);
   const extra = await fetchExtraImages(context, archiveImages);
   for (const s of Object.values(stock)) if (Object.values(model.images).some(i => i?.src === s.src))
-    extra.push({url: s.src, type: 'image', ct: 'image/jpeg', body: await fs.readFile(path.join(stockDir, s.file))});
+    extra.push({url: s.src, type: 'image', ct: 'image/jpeg', body: await fs.readFile(path.join(STOCK_DIR, s.file))});
   let {html, map} = await localize({html: stripScripts(await page.content()), resources, extra, source, dir});
   html = html.replace('</body>', `<script data-pp-runtime>${PASSPORT_RUNTIME}</script></body>`);
   await fs.writeFile(path.resolve(output), '<!doctype html>\n' + html, 'utf8');
