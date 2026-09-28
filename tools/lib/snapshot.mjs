@@ -8,7 +8,8 @@ import {chromium} from 'playwright';
 const PRODUCT_PATH = /\/(products?|item|p)\//i;
 
 export async function openBrowser() {
-  const browser = await chromium.launch({headless: true});
+  // CHROMIUM_PATH: use an existing Chromium build instead of Playwright's download.
+  const browser = await chromium.launch({headless: true, executablePath: process.env.CHROMIUM_PATH || undefined});
   const context = await browser.newContext({viewport: {width: 1440, height: 1100}, deviceScaleFactor: 1});
   const page = await context.newPage();
   return {browser, context, page};

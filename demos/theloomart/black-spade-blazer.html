@@ -387,6 +387,14 @@
 #pp-passport .pp-foot ul{margin:6px 0 8px;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:4px 14px}
 #pp-passport .pp-foot a{text-decoration:underline;color:#a39c91}
 #pp-passport .pp-foot p{margin:0 0 6px}
+/* Narrow panels (small product photos): stack each row's value under its label. */
+#pp-passport .pp-scroll{container-type:inline-size}
+@container (max-width:520px){
+  #pp-passport .pp-sec{grid-template-columns:88px minmax(0,1fr);gap:0 16px}
+  #pp-passport .pp-row{grid-template-columns:1fr auto}
+  #pp-passport .pp-row dd:not(.pp-ev){grid-column:1/-1;grid-row:2}
+  #pp-passport .pp-foot{padding-left:0}
+}
 @media (max-width:800px){
   #pp-passport{position:fixed;inset:0;width:100%;height:100%}
   #pp-passport .pp-head{grid-template-columns:48px 1fr;padding:16px 46px 12px 16px}

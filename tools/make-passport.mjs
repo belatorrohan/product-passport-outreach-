@@ -22,6 +22,8 @@ if (!input) {
   process.exit(1);
 }
 const dir = path.resolve(path.dirname(output));
+// Progress for humans and for the web UI (tools/server.mjs), on stderr; stdout keeps the JSON summary.
+const step = text => console.error(`step: ${text}`);
 
 // Fixed illustrative section images (see tools/stock/stock.json).
 const stock = await loadStock();
@@ -32,12 +34,18 @@ try {
   await context.route(STOCK_ORIGIN + '**', route =>
     route.fulfill({path: path.join(STOCK_DIR, new URL(route.request().url()).pathname.slice(1)), contentType: 'image/jpeg'}));
   const resources = captureResources(page);
+  step('Opening the website');
   await load(page, input);
+  step('Finding a product page');
   const source = await findProductPage(page, hint);
+  step('Loading product images');
   await primeLazyContent(page);
 
+  step('Reading product details');
   const product = await extractProduct(page);
+  step('Reading the brand story');
   const archive = await crawlArchive(context, page, product);
+  step('Building the passport');
   const model = buildPassportModel(product, archive, stock);
   const {pill, panel} = renderPassport(model);
 
@@ -65,6 +73,7 @@ try {
     wrap.insertAdjacentHTML('beforeend', pill + panel);
   }, {pill, panel, css: PASSPORT_CSS});
 
+  step('Saving the page');
   const archiveImages = Object.values(model.images).filter(i => i?.kind === 'archive').map(i => i.src);
   const extra = await fetchExtraImages(context, archiveImages);
   for (const s of Object.values(stock)) if (Object.values(model.images).some(i => i?.src === s.src))
@@ -76,6 +85,7 @@ try {
   await fs.writeFile(path.resolve(output).replace(/\.html?$/i, '') + '.standalone.html', '<!doctype html>\n' + await inlineAssets(html, dir), 'utf8');
 
   // Preview: passport open over the hero.
+  step('Rendering a preview');
   try {
     await page.addScriptTag({content: PASSPORT_RUNTIME});
     await page.locator('.pp-engine-hero').scrollIntoViewIfNeeded();

@@ -135,7 +135,9 @@ export function buildPassportModel(product, archive, stock = null) {
   // Material: only phrases literally on the product page.
   const materialMatch = pageText.match(new RegExp(`\\b((?:(?:${WEAVE})\\s+)?(?:(?:${FIBRE_QUALIFIERS})\\s)?(?:${FIBRES}))\\b`, 'i'));
   const weaveMatch = pageText.match(new RegExp(`\\b(${WEAVE})\\b`, 'i'));
-  const composition = (pageText.match(/\b\d{1,3}\s?%\s?[a-z]+(?:\s?[,/&]\s?\d{1,3}\s?%\s?[a-z]+)*/i) || [])[0];
+  // "100% organic cotton", "70% silk / 30% cotton": a percentage, an optional qualifier, a fibre word.
+  const pct = `\\d{1,3}\\s?%\\s?(?:(?:organic|recycled|${FIBRE_QUALIFIERS})\\s)?[a-z]+`;
+  const composition = (pageText.match(new RegExp(`\\b${pct}(?:\\s?[,/&]\\s?${pct})*`, 'i')) || [])[0];
   const cap = s => s && s[0].toUpperCase() + s.slice(1).toLowerCase();
 
   // Production chain (§10): stages the product page implies, plus universal garment steps.

@@ -1,0 +1,668 @@
+{
+  "sourceUrl": "https://www.ethicus.in/collections/best-sellers/products/multicolour-colourburst-6400-colour-rainbow-organic-cotton-saree",
+  "generatedAt": "2026-09-28T16:26:21.737Z",
+  "brand": "Ethicus",
+  "title": "6400 Colour - Rainbow Organic Cotton Saree",
+  "price": "₹16,800",
+  "hero": "https://www.ethicus.in/cdn/shop/files/FRONT-Photoroom_12e4f07f-86c0-43c5-8745-7ac7875ef30b.jpg?v=1746441775&width=1445",
+  "passport": {
+    "product": {
+      "name": "6400 Colour - Rainbow Organic Cotton Saree",
+      "brand": "Ethicus",
+      "price": "₹16,800",
+      "url": "https://www.ethicus.in/collections/best-sellers/products/multicolour-colourburst-6400-colour-rainbow-organic-cotton-saree",
+      "hero": "https://www.ethicus.in/cdn/shop/files/FRONT-Photoroom_12e4f07f-86c0-43c5-8745-7ac7875ef30b.jpg?v=1746441775&width=1445",
+      "sku": {
+        "value": "CB-SA-1A",
+        "evidence": "product-page",
+        "source": "https://www.ethicus.in/collections/best-sellers/products/multicolour-colourburst-6400-colour-rainbow-organic-cotton-saree"
+      },
+      "garmentId": {
+        "value": null,
+        "evidence": "not-linked"
+      }
+    },
+    "material": {
+      "name": {
+        "value": "Organic cotton",
+        "evidence": "product-page",
+        "source": "https://www.ethicus.in/collections/best-sellers/products/multicolour-colourburst-6400-colour-rainbow-organic-cotton-saree"
+      },
+      "weave": {
+        "value": "Handwoven",
+        "evidence": "product-page",
+        "source": "https://www.ethicus.in/collections/best-sellers/products/multicolour-colourburst-6400-colour-rainbow-organic-cotton-saree"
+      },
+      "composition": {
+        "value": "100% organic cotton",
+        "evidence": "product-page",
+        "source": "https://www.ethicus.in/collections/best-sellers/products/multicolour-colourburst-6400-colour-rainbow-organic-cotton-saree"
+      },
+      "fabricLot": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "quantity": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "statement": {
+        "value": "Embrace the vibrant hues of tradition with our most iconic saree, an exquisite work of art featuring 6,400 meticulously handwoven colors. This masterpiece celebrates the beauty of our cultural heritage and timeless elegance. Made from 100% organic cotton, each saree is handwoven with care and naturally dyed, embodying sustainable fashion at its finest. Let this stunning creation add a touch of unparalleled beauty to your wardrobe.",
+        "evidence": "product-page",
+        "source": "https://www.ethicus.in/collections/best-sellers/products/multicolour-colourburst-6400-colour-rainbow-organic-cotton-saree"
+      }
+    },
+    "craft": {
+      "key": "weaving",
+      "label": "Weaving",
+      "role": "Weaver",
+      "claim": {
+        "value": "The brand operates its own design studio with in-house handlooms, ensuring that each piece is unique and of the highest quality.",
+        "evidence": "brand-archive",
+        "source": "https://www.ethicus.in/pages/about-us"
+      },
+      "person": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "location": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "period": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "workshop": {
+        "value": null,
+        "evidence": "not-linked"
+      }
+    },
+    "maker": {
+      "name": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "role": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "statement": {
+        "value": "By choosing Ethicus, you are not only embracing exquisite craftsmanship, but also joining us in a journey towards a more conscious, beautiful, and equitable world.",
+        "evidence": "brand-archive",
+        "source": "https://www.ethicus.in/pages/about-us"
+      },
+      "linkedToProduct": false
+    },
+    "stages": [
+      {
+        "key": "fibre",
+        "label": "Yarn",
+        "process": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      },
+      {
+        "key": "dyeing",
+        "label": "Dyeing",
+        "process": {
+          "value": "Stated on product page",
+          "evidence": "product-page",
+          "source": "https://www.ethicus.in/collections/best-sellers/products/multicolour-colourburst-6400-colour-rainbow-organic-cotton-saree"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      },
+      {
+        "key": "weaving",
+        "label": "Weaving",
+        "process": {
+          "value": "Stated on product page",
+          "evidence": "product-page",
+          "source": "https://www.ethicus.in/collections/best-sellers/products/multicolour-colourburst-6400-colour-rainbow-organic-cotton-saree"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      },
+      {
+        "key": "cutting",
+        "label": "Cutting",
+        "process": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      },
+      {
+        "key": "stitching",
+        "label": "Stitching",
+        "process": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      },
+      {
+        "key": "finishing",
+        "label": "Finishing",
+        "process": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      }
+    ],
+    "garmentRecord": [
+      [
+        "Product",
+        {
+          "value": "6400 Colour - Rainbow Organic Cotton Saree",
+          "evidence": "product-page",
+          "source": "https://www.ethicus.in/collections/best-sellers/products/multicolour-colourburst-6400-colour-rainbow-organic-cotton-saree"
+        }
+      ],
+      [
+        "SKU",
+        {
+          "value": "CB-SA-1A",
+          "evidence": "product-page",
+          "source": "https://www.ethicus.in/collections/best-sellers/products/multicolour-colourburst-6400-colour-rainbow-organic-cotton-saree"
+        }
+      ],
+      [
+        "Garment ID",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Material",
+        {
+          "value": "Organic cotton",
+          "evidence": "product-page",
+          "source": "https://www.ethicus.in/collections/best-sellers/products/multicolour-colourburst-6400-colour-rainbow-organic-cotton-saree"
+        }
+      ],
+      [
+        "Fabric lot",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Fabric quantity",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Loom",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Weaver",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Location",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Garment unit",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Production date",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ]
+    ],
+    "traceability": {
+      "status": "Partially documented",
+      "publicRecords": 5,
+      "recordLinks": 0,
+      "missing": 8
+    },
+    "images": {
+      "fabric": {
+        "src": "https://stock.passport.local/fabric.jpg",
+        "alt": "Close-up of handloom cloth on a loom",
+        "source": "https://commons.wikimedia.org/wiki/File:Handloom_weaver_in_Maheshwar_fort,_Khargone_district,_Madhya_Pradesh.jpg",
+        "credit": "Eskay001 / Wikimedia Commons · CC BY-SA 4.0, cropped",
+        "kind": "stock"
+      },
+      "craft": {
+        "src": "https://stock.passport.local/loom.jpg",
+        "alt": "Warp threads and reed of a handloom",
+        "source": "https://commons.wikimedia.org/wiki/File:Handloom_weaver_in_Maheshwar_fort,_Khargone_district,_Madhya_Pradesh.jpg",
+        "credit": "Eskay001 / Wikimedia Commons · CC BY-SA 4.0, cropped",
+        "kind": "stock"
+      },
+      "maker": {
+        "src": "https://stock.passport.local/maker.jpg",
+        "alt": "A handloom weaver at work",
+        "source": "https://commons.wikimedia.org/wiki/File:Handloom_weaver_in_Maheshwar_fort,_Khargone_district,_Madhya_Pradesh.jpg",
+        "credit": "Eskay001 / Wikimedia Commons · CC BY-SA 4.0, cropped",
+        "kind": "stock"
+      },
+      "garment": {
+        "src": "https://www.ethicus.in/cdn/shop/files/FRONT-Photoroom_12e4f07f-86c0-43c5-8745-7ac7875ef30b.jpg?v=1746441775&width=1445",
+        "alt": "6400 Colour - Rainbow Organic Cotton Saree",
+        "source": "https://www.ethicus.in/collections/best-sellers/products/multicolour-colourburst-6400-colour-rainbow-organic-cotton-saree",
+        "kind": "product"
+      }
+    },
+    "sources": [
+      {
+        "url": "https://www.ethicus.in/pages/about-us",
+        "title": "Sustainable Fashion Brands in India, Sustainable Clothing Manufacturers India – Ethicus"
+      }
+    ]
+  },
+  "archiveImagesConsidered": [],
+  "assets": [
+    [
+      "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css",
+      "assets/flare-com-ajax-libs-slick-carousel-1-5-9-slick-theme-min-css-88343b8bed.css"
+    ],
+    [
+      "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css",
+      "assets/-cloudflare-com-ajax-libs-slick-carousel-1-5-9-slick-min-css-14ff9583f1.css"
+    ],
+    [
+      "https://cdn.shopify.com/extensions/a9a32278-85fd-435d-a2e4-15afbc801656/nova-multi-currency-converter-1/assets/nova-cur.css",
+      "assets/bc801656-nova-multi-currency-converter-1-assets-nova-cur-css-a1d74503bb.css"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/t/5/assets/swiper-bundle.min.css?v=127370101718424465871728032029",
+      "assets/www-ethicus-in-cdn-shop-t-5-assets-swiper-bundle-min-css-27a0809682.css"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/t/5/assets/photoswipe.min.css?v=165459975419098386681728032029",
+      "assets/www-ethicus-in-cdn-shop-t-5-assets-photoswipe-min-css-fd207e3a9e.css"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/t/5/assets/custom.css?v=165962160048357160651730093921",
+      "assets/www-ethicus-in-cdn-shop-t-5-assets-custom-css-61f56002ba.css"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/t/5/assets/theme.min.css?v=30056384985881706281729193656",
+      "assets/www-ethicus-in-cdn-shop-t-5-assets-theme-min-css-5a5b74e9f6.css"
+    ],
+    [
+      "https://www.ethicus.in/cdn/fonts/montserrat/montserrat_n5.07ef3781d9c78c8b93c98419da7ad4fbeebb6635.woff2",
+      "assets/montserrat-n5-07ef3781d9c78c8b93c98419da7ad4fbeebb6635-woff2-329625ed83.woff2"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/t/5/assets/component-mobile-menu.min.css?v=48334252680363692261728032029",
+      "assets/ethicus-in-cdn-shop-t-5-assets-component-mobile-menu-min-css-492129f546.css"
+    ],
+    [
+      "https://www.ethicus.in/cdn/fonts/montserrat/montserrat_n4.81949fa0ac9fd2021e16436151e8eaa539321637.woff2",
+      "assets/montserrat-n4-81949fa0ac9fd2021e16436151e8eaa539321637-woff2-be9089f5ce.woff2"
+    ],
+    [
+      "https://www.ethicus.in/cdn/fonts/montserrat/montserrat_n7.3c434e22befd5c18a6b4afadb1e3d77c128c7939.woff2",
+      "assets/montserrat-n7-3c434e22befd5c18a6b4afadb1e3d77c128c7939-woff2-a86f541852.woff2"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/LOGO-ETHICUS_1.jpg?v=1728985535&width=559",
+      "assets/www-ethicus-in-cdn-shop-files-LOGO-ETHICUS-1-jpg-62a4cfcdfb.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/t/5/assets/section-slideshow.min.css?v=69950629479773127711728032029",
+      "assets/www-ethicus-in-cdn-shop-t-5-assets-section-slideshow-min-css-8f08643830.css"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/t/5/assets/section-rich-text.min.css?v=55175160537030404051728032028",
+      "assets/www-ethicus-in-cdn-shop-t-5-assets-section-rich-text-min-css-0d41c4258d.css"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/t/5/assets/section-featured-collection.min.css?v=172813434829168742891728032028",
+      "assets/s-in-cdn-shop-t-5-assets-section-featured-collection-min-css-7f807e2c74.css"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/t/5/assets/section-collection-list.min.css?v=309249240025408951728032030",
+      "assets/hicus-in-cdn-shop-t-5-assets-section-collection-list-min-css-5b85bf1cce.css"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/t/5/assets/section-collage-builder.min.css?v=104405845459366176011728032028",
+      "assets/hicus-in-cdn-shop-t-5-assets-section-collage-builder-min-css-1a7ad66f76.css"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/t/5/assets/section-video-hero.min.css?v=4410764781307519761728032028",
+      "assets/ww-ethicus-in-cdn-shop-t-5-assets-section-video-hero-min-css-e89e983a9c.css"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/t/5/assets/section-newsletter.min.css?v=19028998287224702731728032029",
+      "assets/ww-ethicus-in-cdn-shop-t-5-assets-section-newsletter-min-css-d1bfd27e0b.css"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/t/5/assets/section-text-testimonials.min.css?v=141349453078424759811728032029",
+      "assets/cus-in-cdn-shop-t-5-assets-section-text-testimonials-min-css-0de39aa2da.css"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/t/5/assets/animate.min.css?v=68297775102622399721728032029",
+      "assets/www-ethicus-in-cdn-shop-t-5-assets-animate-min-css-c4ef254fc9.css"
+    ],
+    [
+      "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/ajax-loader.gif",
+      "assets/loudflare-com-ajax-libs-slick-carousel-1-5-9-ajax-loader-gif-394d6d3763.gif"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/1E0A7583.jpg?v=1746036864&width=1100",
+      "assets/www-ethicus-in-cdn-shop-files-1E0A7583-jpg-4974c20850.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/1E0A7396.jpg?v=1746036864&width=1100",
+      "assets/www-ethicus-in-cdn-shop-files-1E0A7396-jpg-c99c8f2dc0.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/1E0A7640.jpg?v=1746037145&width=1100",
+      "assets/www-ethicus-in-cdn-shop-files-1E0A7640-jpg-b29e9b111a.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/DSC_0005_22be68b9-b7e6-43c1-9cb5-eaed05ab8137.jpg?v=1729579622&width=2000",
+      "assets/shop-files-DSC-0005-22be68b9-b7e6-43c1-9cb5-eaed05ab8137-jpg-4d41db7179.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/DSC_0009_afb68c1b-cf06-4831-8c72-223698a9da97.jpg?v=1729579623&width=2000",
+      "assets/shop-files-DSC-0009-afb68c1b-cf06-4831-8c72-223698a9da97-jpg-7cdee60c24.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/1E0A7708.jpg?v=1746037144&width=1100",
+      "assets/www-ethicus-in-cdn-shop-files-1E0A7708-jpg-a388fa1952.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/1E0A7536-Photoroom_a7ae743a-e062-47ef-921d-1cf1e10a14f9.jpg?v=1746034193&width=1445",
+      "assets/-1E0A7536-Photoroom-a7ae743a-e062-47ef-921d-1cf1e10a14f9-jpg-bb7dfe63e5.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/DSC_0013_17c99165-bbe3-42d1-9e60-6be6038cd613.jpg?v=1729579623&width=2000",
+      "assets/shop-files-DSC-0013-17c99165-bbe3-42d1-9e60-6be6038cd613-jpg-0a4ca4daa9.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/DSC_0006_b128d59e-27e8-4ef6-ade4-4b5e7b36d5cb.jpg?v=1729579623&width=2000",
+      "assets/shop-files-DSC-0006-b128d59e-27e8-4ef6-ade4-4b5e7b36d5cb-jpg-888cc367ae.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/Banner_Desktop.jpg?v=1746028652&width=1445",
+      "assets/www-ethicus-in-cdn-shop-files-Banner-Desktop-jpg-e04798963c.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/1E0A8738-Photoroom_2.jpg?v=1746034875&width=1445",
+      "assets/www-ethicus-in-cdn-shop-files-1E0A8738-Photoroom-2-jpg-6a928fb2d5.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/fonts/montserrat/montserrat_i4.5a4ea298b4789e064f62a29aafc18d41f09ae59b.woff2",
+      "assets/montserrat-i4-5a4ea298b4789e064f62a29aafc18d41f09ae59b-woff2-416fea61b3.woff2"
+    ],
+    [
+      "https://addons.good-apps.co/css/goodpa-product-accesories.css?v=165",
+      "assets/addons-good-apps-co-css-goodpa-product-accesories-css-f0df54ccb8.css"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/SPH2578_1.jpg?v=1729579271&width=1445",
+      "assets/www-ethicus-in-cdn-shop-files-SPH2578-1-jpg-160a74fdb5.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/4_1027e395-6ce8-436e-b202-b0f0e1d1b07d.jpg?v=1729579271&width=1445",
+      "assets/in-cdn-shop-files-4-1027e395-6ce8-436e-b202-b0f0e1d1b07d-jpg-92f3c1f536.jpg"
+    ],
+    [
+      "https://cdn.shopify.com/s/files/1/0194/1736/6592/t/1/assets/ba-flags.png?=14261939516959647149",
+      "assets/shopify-com-s-files-1-0194-1736-6592-t-1-assets-ba-flags-png-bc298bb642.png"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/FRONT-Photoroom_12e4f07f-86c0-43c5-8745-7ac7875ef30b.jpg?v=1746441775&width=1100",
+      "assets/les-FRONT-Photoroom-12e4f07f-86c0-43c5-8745-7ac7875ef30b-jpg-dbbd118ec0.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/4_4a10548f-a200-45a0-9412-04017be141a4.jpg?v=1785405679&width=1100",
+      "assets/in-cdn-shop-files-4-4a10548f-a200-45a0-9412-04017be141a4-jpg-a8f161fa9a.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/FRONT-Photoroom_7f0d9d9d-de42-4795-9834-da1eeb3283f8.jpg?v=1746531374&width=1100",
+      "assets/les-FRONT-Photoroom-7f0d9d9d-de42-4795-9834-da1eeb3283f8-jpg-4bc4471883.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/RK_2D_CLOSE_UP.jpg?v=1790149206&width=1100",
+      "assets/www-ethicus-in-cdn-shop-files-RK-2D-CLOSE-UP-jpg-110b49ee26.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/FRONT-Photoroom_e0d2e95e-8aa2-4e01-a5f3-4fde55b1f5c0.jpg?v=1746516951&width=1100",
+      "assets/les-FRONT-Photoroom-e0d2e95e-8aa2-4e01-a5f3-4fde55b1f5c0-jpg-f2a8a713f4.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/RK_3C_CLOSE_UP.jpg?v=1790149317&width=1100",
+      "assets/www-ethicus-in-cdn-shop-files-RK-3C-CLOSE-UP-jpg-2878287961.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/FRONT-Photoroom_b6dd424f-9a75-4960-a6c0-3109f54e5dc2.jpg?v=1746444650&width=1100",
+      "assets/les-FRONT-Photoroom-b6dd424f-9a75-4960-a6c0-3109f54e5dc2-jpg-1d117c2c25.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/BACK-Photoroom_36223d46-a56e-4644-a48c-7b8c43983799.jpg?v=1746444650&width=1100",
+      "assets/iles-BACK-Photoroom-36223d46-a56e-4644-a48c-7b8c43983799-jpg-7fbbc9d0ee.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/2_fe8b450f-e2d6-40f5-b74a-d476ee51b019.jpg?v=1729579434&width=450",
+      "assets/in-cdn-shop-files-2-fe8b450f-e2d6-40f5-b74a-d476ee51b019-jpg-1a0990bbfa.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/rAINBOW_SCARF_81f9ffc6-a19e-4561-8ea5-e5dd504ee61d.jpg?v=1746031027&width=450",
+      "assets/files-rAINBOW-SCARF-81f9ffc6-a19e-4561-8ea5-e5dd504ee61d-jpg-f445b2b670.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/1E0A8135_a57bac28-3280-4a76-baa8-9122b452042d.jpg?v=1746037454&width=450",
+      "assets/shop-files-1E0A8135-a57bac28-3280-4a76-baa8-9122b452042d-jpg-edeaf8396f.jpg"
+    ],
+    [
+      "https://instafeed.nfcube.com/cdn/instafeed-17.9.0.css",
+      "assets/instafeed-nfcube-com-cdn-instafeed-17-9-0-css-a4b8d3a418.css"
+    ],
+    [
+      "https://procdn.swymrelay.com/code/v3/swym_fonts.woff2",
+      "assets/procdn-swymrelay-com-code-v3-swym-fonts-woff2-b498c361d9.woff2"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shopifycloud/portable-wallets/latest/accelerated-checkout-backwards-compat.css",
+      "assets/ble-wallets-latest-accelerated-checkout-backwards-compat-css-6fc45dda39.css"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/t/5/assets/template-product.min.css?v=24275323929705097511728032029",
+      "assets/www-ethicus-in-cdn-shop-t-5-assets-template-product-min-css-c921bb456d.css"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/FRONT-Photoroom_12e4f07f-86c0-43c5-8745-7ac7875ef30b.jpg?v=1746441775&width=1445",
+      "assets/les-FRONT-Photoroom-12e4f07f-86c0-43c5-8745-7ac7875ef30b-jpg-a438e2dec5.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/CLOSEUP-Photoroom.jpg?v=1747298053&width=1445",
+      "assets/www-ethicus-in-cdn-shop-files-CLOSEUP-Photoroom-jpg-7685b8e919.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/t/5/assets/section-product-recommendations.min.css?v=76198840782659959191728032028",
+      "assets/-cdn-shop-t-5-assets-section-product-recommendations-min-css-50ba6670d6.css"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/4_4a10548f-a200-45a0-9412-04017be141a4.jpg?v=1785405679&width=1445",
+      "assets/in-cdn-shop-files-4-4a10548f-a200-45a0-9412-04017be141a4-jpg-689581cab3.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/t/5/assets/section-recently-viewed.min.css?v=2757099615139372481728032029",
+      "assets/hicus-in-cdn-shop-t-5-assets-section-recently-viewed-min-css-790715a74a.css"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/BACK-Photoroom_6d700a55-e197-4de3-8ef6-754add283388.jpg?v=1747298053&width=1445",
+      "assets/iles-BACK-Photoroom-6d700a55-e197-4de3-8ef6-754add283388-jpg-1ed58fdfa3.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/SIDE-Photoroom_fcc9afe2-8cbb-4d80-ad8c-daec268d70b1.jpg?v=1747298053&width=1445",
+      "assets/iles-SIDE-Photoroom-fcc9afe2-8cbb-4d80-ad8c-daec268d70b1-jpg-a38d852c77.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/CLOSEUP-Photoroom.jpg?v=1747298053&width=1100",
+      "assets/www-ethicus-in-cdn-shop-files-CLOSEUP-Photoroom-jpg-32721a651b.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/BACK-Photoroom_6d700a55-e197-4de3-8ef6-754add283388.jpg?v=1747298053&width=1100",
+      "assets/iles-BACK-Photoroom-6d700a55-e197-4de3-8ef6-754add283388-jpg-ff3dd06dbf.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/SIDE-Photoroom_fcc9afe2-8cbb-4d80-ad8c-daec268d70b1.jpg?v=1747298053&width=1100",
+      "assets/iles-SIDE-Photoroom-fcc9afe2-8cbb-4d80-ad8c-daec268d70b1-jpg-74a5eb4b3e.jpg"
+    ],
+    [
+      "https://cdn.shopify.com/s/files/1/0647/1159/0027/files/2024-10-24-19_1027pm-WhatsAppImage2024-10-22at5_13_04PM_jpeg.jpg?v=1729777228",
+      "assets/-10-24-19-1027pm-WhatsAppImage2024-10-22at5-13-04PM-jpeg-jpg-4c74183dae.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/2024-10-24-19_1027pm-WhatsAppImage2024-10-22at5_13_04PM_jpeg.jpg?v=1729777228&width=128",
+      "assets/-10-24-19-1027pm-WhatsAppImage2024-10-22at5-13-04PM-jpeg-jpg-f19a31e849.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/FRONT-Photoroom_09fa018c-0ec8-4335-8c51-18f2e73e0d90.jpg?v=1746434509&width=1100",
+      "assets/les-FRONT-Photoroom-09fa018c-0ec8-4335-8c51-18f2e73e0d90-jpg-9c5c8bbe9d.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/BACK-Photoroom_00907533-475c-4a4d-944d-7ce1c395a993.jpg?v=1746434509&width=1100",
+      "assets/iles-BACK-Photoroom-00907533-475c-4a4d-944d-7ce1c395a993-jpg-552f9ed90e.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/FRONT-Photoroom_a935b247-5d4e-4a03-838a-7937de55fcf3.jpg?v=1746509970&width=1100",
+      "assets/les-FRONT-Photoroom-a935b247-5d4e-4a03-838a-7937de55fcf3-jpg-ccf9d48208.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/BACK-Photoroom_945f1de2-b5ac-4098-899d-8814b1eeeefb.jpg?v=1746509970&width=1100",
+      "assets/iles-BACK-Photoroom-945f1de2-b5ac-4098-899d-8814b1eeeefb-jpg-a07be02c6e.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/CLOSE_UP_5bb49a43-1440-4d8e-bc98-f49bb10bbfaa.jpg?v=1790418083&width=1100",
+      "assets/shop-files-CLOSE-UP-5bb49a43-1440-4d8e-bc98-f49bb10bbfaa-jpg-6822d1cbae.jpg"
+    ],
+    [
+      "https://www.ethicus.in/cdn/shop/files/BACK-Photoroom_fb84da1e-5d6b-4aed-8306-ab066c8299eb.jpg?v=1759217671&width=1100",
+      "assets/iles-BACK-Photoroom-fb84da1e-5d6b-4aed-8306-ab066c8299eb-jpg-d8cca6105c.jpg"
+    ],
+    [
+      "https://stock.passport.local/fabric.jpg",
+      "assets/stock-fabric.jpg"
+    ],
+    [
+      "https://stock.passport.local/loom.jpg",
+      "assets/stock-loom.jpg"
+    ],
+    [
+      "https://stock.passport.local/maker.jpg",
+      "assets/stock-maker.jpg"
+    ]
+  ]
+}
