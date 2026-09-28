@@ -105,19 +105,62 @@ export async function localize({html, resources, extra = [], source, dir}) {
     await fs.mkdir(path.dirname(file), {recursive: true});
     await fs.writeFile(file, body);
   }
+  return {html: await finalizeHtml({html, map, source, dir}), map};
+}
 
+const FONT_TYPE = {woff2: 'font/woff2', woff: 'font/woff', ttf: 'font/ttf', otf: 'font/otf'};
+const pathKey = u => { try { const x = new URL(u); return x.hostname + x.pathname; } catch { return ''; } };
+
+// Rewrite the saved HTML so it renders when opened straight from disk (file://):
+// - every URL form (absolute, protocol-relative, root-relative, srcset, inline CSS url())
+//   points at the local copy, falling back to another captured size of the same image
+//   (themes request a different srcset width at other viewport sizes), else to https;
+// - fonts are inlined as data: URIs, because browsers block @font-face files on file://.
+// Idempotent, so it can also repair an already generated demo (tools/refresh-demo.mjs).
+export async function finalizeHtml({html, map, source, dir}) {
+  const byPath = new Map();
+  for (const [url, local] of map) if (!byPath.has(pathKey(url))) byPath.set(pathKey(url), local);
   const resolve = raw => {
     try {
       const abs = new URL(raw.replace(/&amp;/g, '&'), source);
-      return map.get(abs.href.split('#')[0]) || (/^https?:$/.test(abs.protocol) ? abs.href : raw);
+      const href = abs.href.split('#')[0];
+      return map.get(href) || (/^https?:$/.test(abs.protocol) ? byPath.get(pathKey(href)) || abs.href : raw);
     } catch { return raw; }
   };
+  const skip = /^(#|data:|blob:|javascript:|mailto:|tel:|assets\/)/i;
+
   for (const [orig, local] of map) html = html.split(orig).join(local);
   html = html.replace(/\b(src|data-src|poster|href)=(['"])([^'"]+)\2/gi, (m, a, q, u) =>
-    /^(#|data:|blob:|javascript:|mailto:|tel:|assets\/)/i.test(u) ? m : `${a}=${q}${resolve(u)}${q}`);
+    skip.test(u) ? m : `${a}=${q}${resolve(u)}${q}`);
   html = html.replace(/\b(srcset|data-srcset)=(['"])([^'"]+)\2/gi, (m, a, q, v) =>
-    `${a}=${q}${v.split(',').map(s => { const p = s.trim().split(/\s+/); if (!/^assets\//.test(p[0])) p[0] = resolve(p[0]); return p.join(' '); }).join(', ')}${q}`);
-  return {html, map};
+    `${a}=${q}${v.split(',').map(s => { const p = s.trim().split(/\s+/); if (!skip.test(p[0])) p[0] = resolve(p[0]); return p.join(' '); }).join(', ')}${q}`);
+  html = html.replace(/url\(\s*(&quot;|["']?)((?:(?!&quot;)[^"'()])+?)\1\s*\)/gi, (m, q, u) =>
+    skip.test(u) ? m : `url(${q}${resolve(u)}${q})`);
+
+  const fontCache = new Map();
+  const inlineFonts = async (css, prefix) => {
+    const refs = [...css.matchAll(new RegExp(`url\\(\\s*(&quot;|["']?)${prefix}(assets/[^"'()&]+?\\.(woff2?|ttf|otf))\\1\\s*\\)`, 'gi'))];
+    for (const [m, q, local, ext] of refs) {
+      if (!fontCache.has(local)) {
+        try { fontCache.set(local, `data:${FONT_TYPE[ext.toLowerCase()]};base64,${(await fs.readFile(path.resolve(dir, local))).toString('base64')}`); }
+        catch { fontCache.set(local, null); }
+      }
+      if (fontCache.get(local)) css = css.split(m).join(`url(${q}${fontCache.get(local)}${q})`);
+    }
+    return css;
+  };
+  html = await inlineFonts(html, '');
+  // Font preloads of local files would only fail on file:// now that the fonts are inlined.
+  html = html.replace(/<link\b[^>]*\bas=(["'])font\1[^>]*>/gi, m => /href=(["'])assets\//i.test(m) ? '' : m);
+  for (const local of new Set(map.values())) {
+    if (!local.endsWith('.css')) continue;
+    const file = path.resolve(dir, local);
+    try {
+      const css = await fs.readFile(file, 'utf8'), out = await inlineFonts(css, '\\.\\./');
+      if (out !== css) await fs.writeFile(file, out);
+    } catch {}
+  }
+  return html;
 }
 
 // Remove the site's own scripts/embeds so the copy is inert, then add our runtime.

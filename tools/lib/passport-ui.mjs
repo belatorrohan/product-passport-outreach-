@@ -129,20 +129,21 @@ export function renderPassport(m) {
 export const PASSPORT_CSS = `
 .pp-engine-hero{position:relative!important;overflow:hidden!important}
 #pp-pill,#pp-pill *,#pp-passport,#pp-passport *{all:revert;box-sizing:border-box}
-#pp-pill{position:absolute;left:18px;bottom:18px;z-index:2147483000;border:0;border-radius:999px;background:#fff;color:#1d1c1a;padding:11px 16px;box-shadow:0 6px 22px rgba(0,0,0,.17);font:500 12px/1 system-ui,-apple-system,sans-serif;cursor:pointer;display:flex;gap:8px;align-items:center;letter-spacing:.01em}
-#pp-passport{position:absolute;inset:0 auto 0 0;width:min(88%,700px);z-index:2147483001;background:#151513;color:#efe9df;transform:translateX(-103%);transition:transform .38s ease;box-shadow:22px 0 50px rgba(0,0,0,.3);display:flex;flex-direction:column;font:12px/1.55 system-ui,-apple-system,sans-serif;text-align:left}
-.pp-open #pp-passport{transform:translateX(0)}
+#pp-pill{position:absolute;left:18px;bottom:var(--pp-pill-b,18px);z-index:2147483000;border:0;border-radius:999px;background:#fff;color:#1d1c1a;padding:11px 16px;box-shadow:0 6px 22px rgba(0,0,0,.17);font:500 12px/1 system-ui,-apple-system,sans-serif;cursor:pointer;display:flex;gap:8px;align-items:center;letter-spacing:.01em}
+#pp-passport{position:absolute;left:0;top:var(--pp-top,0);height:var(--pp-h,100%);width:min(88%,700px);z-index:2147483001;background:#151513;color:#efe9df;transform:translateX(-103%);transition:transform .38s ease;box-shadow:22px 0 50px rgba(0,0,0,.3);display:flex;flex-direction:column;font:12px/1.55 system-ui,-apple-system,sans-serif;text-align:left}
+.pp-open #pp-passport,#pp-passport.pp-show{transform:translateX(0)}
 #pp-passport a{color:inherit;text-decoration:none}
 #pp-passport .pp-label{font:500 9px/1.3 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#a39c91}
-#pp-passport .pp-head{flex:none;display:grid;grid-template-columns:62px 1fr;gap:16px;padding:20px 52px 16px 24px;border-bottom:1px solid #34332f;position:relative;background:#151513}
+#pp-passport .pp-head{flex:none;display:grid;grid-template-columns:62px 1fr;gap:16px;align-items:start;padding:20px 52px 16px 24px;border-bottom:1px solid #34332f;position:relative;background:#151513}
 #pp-passport .pp-thumb{width:62px;height:80px;object-fit:cover;display:block}
 #pp-passport h2{font:400 26px/1.05 Georgia,'Times New Roman',serif;margin:6px 0 3px;color:#f4efe6}
 #pp-passport .pp-sub{font-size:10px;color:#8f897f}
-#pp-passport .pp-idrow{display:flex;gap:28px;flex-wrap:wrap;margin-top:12px}
+#pp-passport .pp-id{min-width:0}
+#pp-passport .pp-idrow{display:grid;grid-template-columns:repeat(2,max-content);gap:0 32px;align-items:start;margin-top:12px}
 #pp-passport .pp-idval{font:400 14px/1.3 Georgia,serif;margin-top:4px}
-#pp-passport .pp-trace{display:flex;gap:12px;font-size:9.5px;color:#8f897f;margin-top:2px}
-#pp-passport .pp-close{position:absolute;right:14px;top:10px;border:0;background:none;color:#efe9df;font-size:28px;line-height:1;cursor:pointer;padding:4px}
-#pp-passport .pp-scroll{flex:1;overflow:auto;padding:0 24px 28px;overscroll-behavior:contain}
+#pp-passport .pp-trace{display:flex;flex-wrap:wrap;gap:2px 12px;font-size:9.5px;color:#8f897f;margin-top:2px}
+#pp-passport .pp-close{position:absolute;right:14px;top:12px;border:0;background:none;color:#efe9df;font-size:28px;line-height:1;cursor:pointer;padding:4px}
+#pp-passport .pp-scroll{flex:1;min-height:0;overflow:auto;padding:0 24px 28px;overscroll-behavior:contain}
 #pp-passport .pp-sec{padding:24px 0;border-bottom:1px solid #2f2e2a}
 #pp-passport h3{font:400 21px/1.1 Georgia,serif;margin:12px 0 10px;color:#f4efe6}
 #pp-passport .pp-fig{margin:12px 0 0;position:relative;background:#22211e}
@@ -196,6 +197,7 @@ export const PASSPORT_CSS = `
   #pp-passport{position:fixed;inset:0;width:100%;height:100%}
   #pp-passport .pp-head{grid-template-columns:48px 1fr;padding:16px 46px 12px 16px}
   #pp-passport .pp-thumb{width:48px;height:62px}
+  #pp-passport .pp-idrow{grid-template-columns:1fr 1fr;gap:0 16px}
   #pp-passport h2{font-size:21px}
   #pp-passport .pp-scroll{padding:0 16px 24px}
   #pp-passport .pp-split{grid-template-columns:110px 1fr}
@@ -218,19 +220,52 @@ const remount=()=>{
   const img=scope&&[...scope.querySelectorAll('img')].filter(i=>area(i)>1e4).sort((a,b)=>area(b)-area(a))[0];
   if(!img)return;
   let box=img.parentElement;while(box.parentElement&&box.parentElement!==scope&&area(box.parentElement)<=area(img)*1.15)box=box.parentElement;
-  wrap.classList.remove('pp-engine-hero','pp-open');box.classList.add('pp-engine-hero');box.append(pill,panel);box.addEventListener('mouseleave',leave);wrap=box;
+  wrap.classList.remove('pp-engine-hero','pp-open');panel.classList.remove('pp-show');['--pp-top','--pp-h','--pp-pill-b'].forEach(p=>wrap.style.removeProperty(p));
+  box.classList.add('pp-engine-hero');box.append(pill,panel);box.addEventListener('mouseleave',leave);box.addEventListener('mouseenter',stay);wrap=box;
 };
-const leave=()=>{if(matchMedia('(hover:hover) and (min-width:801px)').matches)close()};
-const open=()=>{wrap.classList.add('pp-open');panel.setAttribute('aria-hidden','false')};
-const close=()=>{wrap.classList.remove('pp-open');panel.setAttribute('aria-hidden','true')};
-// A tap fires mouseenter then click; ignore a click that immediately follows a hover-open.
+// Desktop product photos are often taller than the screen. Keep the pill and the open
+// panel inside the part of the photo that is actually on screen (like position:sticky),
+// and below any sticky/fixed site header, so the passport header never scrolls away.
+const MIN_H=360;
+const barBottom=x=>{let b=0;for(const e of document.elementsFromPoint(x,2)){if(wrap.contains(e)||e.contains(wrap))continue;
+  for(let a=e;a&&a!==document.body;a=a.parentElement){const p=getComputedStyle(a).position;if(p==='fixed'||p==='sticky'){const r=a.getBoundingClientRect();if(r.top<=2&&r.height<innerHeight*.4)b=Math.max(b,r.bottom);break}}}return b};
+const layout=()=>{
+  const s=wrap.style;
+  if(mobile()){['--pp-top','--pp-h','--pp-pill-b'].forEach(p=>s.removeProperty(p));return}
+  const r=wrap.getBoundingClientRect();if(!r.height)return;
+  const top=Math.max(r.top,barBottom(r.left+r.width/2)),bottom=Math.min(r.bottom,innerHeight);
+  const h=Math.min(r.height,Math.max(bottom-top,MIN_H)),y=Math.min(Math.max(top-r.top,0),r.height-h);
+  s.setProperty('--pp-top',y+'px');s.setProperty('--pp-h',h+'px');
+  s.setProperty('--pp-pill-b',Math.max(18,Math.min(r.bottom-bottom+18,r.height-pill.offsetHeight-18))+'px');
+};
+let frame=0;const schedule=()=>{if(!frame)frame=requestAnimationFrame(()=>{frame=0;layout()})};
+// Hover opens a preview that closes when the pointer leaves the photo (after a brief grace
+// period). Clicking the pill, or clicking/scrolling inside the panel, pins it open so the
+// page can be scrolled freely; it then closes via ×, Escape or a click elsewhere.
+let leaveTimer=0,pinned=false;
+const stay=()=>clearTimeout(leaveTimer);
+const leave=()=>{if(!pinned&&matchMedia('(hover:hover) and (min-width:801px)').matches){clearTimeout(leaveTimer);leaveTimer=setTimeout(close,350)}};
+const isOpen=()=>wrap.classList.contains('pp-open');
+// Full-screen on phones: lift the panel to <body> while open so a sticky site header,
+// which outranks the theme's gallery stacking context, cannot paint over it.
+const mobile=()=>matchMedia('(max-width:800px)').matches;
+let homeTimer=0;
+const open=pin=>{stay();clearTimeout(homeTimer);pinned=pinned||!!pin;layout();
+  if(mobile()&&panel.parentElement!==document.body){document.body.append(panel);panel.getBoundingClientRect()}
+  wrap.classList.add('pp-open');panel.classList.add('pp-show');panel.setAttribute('aria-hidden','false')};
+const close=()=>{stay();pinned=false;wrap.classList.remove('pp-open');panel.classList.remove('pp-show');panel.setAttribute('aria-hidden','true');
+  if(panel.parentElement!==wrap){clearTimeout(homeTimer);homeTimer=setTimeout(()=>{if(!panel.classList.contains('pp-show'))wrap.append(panel)},400)}};
+// A tap fires mouseenter then click; a click right after a hover-open just pins it.
 let hoverOpenedAt=0;
-pill.addEventListener('mouseenter',()=>{if(!wrap.classList.contains('pp-open')){hoverOpenedAt=Date.now();open()}});
-pill.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();if(Date.now()-hoverOpenedAt<600)return;wrap.classList.contains('pp-open')?close():open()});
+pill.addEventListener('mouseenter',()=>{if(!isOpen()){hoverOpenedAt=Date.now();open()}});
+pill.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();if(Date.now()-hoverOpenedAt<600){pinned=true;return}isOpen()&&pinned?close():open(true)});
 panel.querySelector('.pp-close').addEventListener('click',e=>{e.preventDefault();e.stopPropagation();close()});
-panel.addEventListener('click',e=>{e.stopPropagation();const t=e.target.closest('[data-pp-toggle]');if(!t)return;e.preventDefault();const b=document.getElementById(t.getAttribute('aria-controls'));const on=t.getAttribute('aria-expanded')!=='true';t.setAttribute('aria-expanded',String(on));if(b)b.hidden=!on});
-wrap.addEventListener('mouseleave',leave);
-remount();addEventListener('resize',remount);
+panel.addEventListener('wheel',()=>{pinned=true},{passive:true});
+document.addEventListener('click',e=>{if(isOpen()&&!wrap.contains(e.target)&&!panel.contains(e.target))close()});
+panel.addEventListener('click',e=>{e.stopPropagation();pinned=true;const t=e.target.closest('[data-pp-toggle]');if(!t)return;e.preventDefault();const b=document.getElementById(t.getAttribute('aria-controls'));const on=t.getAttribute('aria-expanded')!=='true';t.setAttribute('aria-expanded',String(on));if(b)b.hidden=!on});
+wrap.addEventListener('mouseleave',leave);wrap.addEventListener('mouseenter',stay);
+remount();layout();
+addEventListener('resize',()=>{remount();schedule()});addEventListener('scroll',schedule,{passive:true});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
 document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>e.preventDefault()));
 })();`;

@@ -19,6 +19,8 @@ Input a brand website or product URL.
    - 01 Fabric · 02 Craft (weaving / embroidery / … chosen from the product) · 03 The maker · 04 From fabric to garment (expandable timeline) · 05 Garment record
    - "Connect production record →" call to action and a list of sources
 
+   On desktop the pill and the open panel stay inside the part of the photo that is on screen, below any sticky site header, so the passport header never scrolls away on product photos taller than the screen. Hover gives a preview that closes when the pointer leaves the photo; clicking the pill, or clicking or scrolling inside the panel, pins it open until ×, Esc or a click elsewhere. On phones it opens full-screen.
+
 ## Evidence levels
 
 | Label | Meaning |
@@ -40,6 +42,7 @@ Each section picks an image by its evidentiary role, from the brand's own site w
 ## Repo
 
 - `tools/make-passport.mjs`: CLI orchestration
+- `tools/refresh-demo.mjs`: re-applies the current passport UI and snapshot fixes to an existing demo offline (evidence model and asset map from its manifest, no re-crawl)
 - `tools/lib/snapshot.mjs`: browsing, product discovery, asset localization and URL rewriting
 - `tools/lib/extract.mjs`: product-page extraction and visible-hero detection
 - `tools/lib/archive.mjs`: brand-archive crawl and image classification
@@ -57,4 +60,10 @@ node tools/make-passport.mjs "https://theloomart.com/" demos/theloomart/black-sp
 node tools/make-passport.mjs "https://iroiro.in/" demos/iroiro/saaya-blazer.html "saaya"
 ```
 
-Open the resulting HTML file directly in a browser. The demo does **not** represent an integration with the brand site.
+Open the resulting HTML file directly in a browser. Fonts are inlined as data URIs because browsers block font files on `file://` pages. The demo does **not** represent an integration with the brand site.
+
+After changing `passport-ui.mjs` or `snapshot.mjs`, refresh the committed demos without re-crawling:
+
+```bash
+node tools/refresh-demo.mjs demos/theloomart/black-spade-blazer.html demos/iroiro/saaya-blazer.html
+```
