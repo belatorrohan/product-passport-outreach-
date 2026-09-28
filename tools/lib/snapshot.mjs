@@ -163,6 +163,76 @@ export async function finalizeHtml({html, map, source, dir}) {
   return html;
 }
 
+const MIME = {css: 'text/css', jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', gif: 'image/gif', webp: 'image/webp', avif: 'image/avif', svg: 'image/svg+xml', ...FONT_TYPE};
+
+// Single-file variant of a finalized page: stylesheets become <style> blocks and every
+// local asset a data: URI, so the page renders even when opened without its assets/
+// folder (downloaded, emailed, or moved on its own).
+export async function inlineAssets(html, dir) {
+  const cache = new Map();
+  const dataUri = async local => {
+    if (!cache.has(local)) {
+      const ext = (local.match(/\.([a-z0-9]+)$/i)?.[1] || '').toLowerCase();
+      try { cache.set(local, MIME[ext] ? `data:${MIME[ext]};base64,${(await fs.readFile(path.resolve(dir, local))).toString('base64')}` : null); }
+      catch { cache.set(local, null); }
+    }
+    return cache.get(local);
+  };
+  const replaceAsync = async (str, re, fn) => {
+    const parts = [];
+    let last = 0;
+    for (const m of str.matchAll(re)) { parts.push(str.slice(last, m.index), await fn(...m)); last = m.index + m[0].length; }
+    return parts.join('') + str.slice(last);
+  };
+  const LOCAL = `assets/[^"'()\\s,&]+`;
+  // Preload hints for local files would only duplicate the embedded bytes.
+  html = html.replace(/<link\b[^>]*\brel=(["'])(preload|prefetch)\1[^>]*>/gi, m => /href=(["'])assets\//i.test(m) ? '' : m);
+
+  html = await replaceAsync(html, /<link\b[^>]*\brel=(["'])stylesheet\1[^>]*>/gi, async m => {
+    const local = m.match(new RegExp(`href=(["'])(${LOCAL})\\1`, 'i'))?.[2];
+    if (!local) return m;
+    let css;
+    try { css = await fs.readFile(path.resolve(dir, local), 'utf8'); } catch { return m; }
+    css = await replaceAsync(css, new RegExp(`url\\(\\s*(["']?)\\.\\./(${LOCAL})\\1\\s*\\)`, 'gi'), async (u, q, a) => (await dataUri(a)) ? `url(${q}${await dataUri(a)}${q})` : u);
+    const media = m.match(/\bmedia=(["'])([^"']*)\1/i)?.[2];
+    return `<style${media ? ` media="${media}"` : ''}>${css.replace(/<\/style/gi, '<\\/style')}</style>`;
+  });
+  // The same photo is referenced by the gallery, thumbnails, zoom links and the passport.
+  // Embed each image once in a table and let a small script fill the attributes in,
+  // instead of repeating the same data: URI in every attribute.
+  const table = [], slot = new Map();
+  const ref = async local => {
+    if (!slot.has(local)) {
+      const uri = await dataUri(local);
+      slot.set(local, uri && uri.startsWith('data:image/') ? table.push(uri) - 1 : null);
+    }
+    return slot.get(local);
+  };
+  html = await replaceAsync(html, /\b(srcset|data-srcset)=(["'])([^"']+)\2/gi, async (m, a, q, v) => {
+    const seen = new Set(), keep = [];
+    for (const s of v.split(',')) {
+      const [u, d] = s.trim().split(/\s+/);
+      if (!/^assets\//.test(u) || seen.has(u)) continue;
+      seen.add(u);
+      const i = await ref(u);
+      if (i !== null) keep.push(d ? `#${i} ${d}` : `#${i}`);
+    }
+    return keep.length ? `data-pp-${a}=${q}${keep.join(', ')}${q}` : m;
+  });
+  html = await replaceAsync(html, new RegExp(`\\b(src|data-src|poster|href)=(["'])(${LOCAL})\\2`, 'gi'), async (m, a, q, u) => {
+    const i = await ref(u);
+    if (i !== null) return `data-pp-${a}=${q}#${i}${q}`;
+    return (await dataUri(u)) ? `${a}=${q}${await dataUri(u)}${q}` : m;
+  });
+  html = await replaceAsync(html, new RegExp(`url\\(\\s*(&quot;|["']?)(${LOCAL})\\1\\s*\\)`, 'gi'), async (m, q, u) =>
+    (await dataUri(u)) ? `url(${q}${await dataUri(u)}${q})` : m);
+  const fill = `<script data-pp-assets>(()=>{const A=${JSON.stringify(table)};`
+    + `for(const a of ['src','data-src','poster','href','srcset','data-srcset'])for(const e of document.querySelectorAll('[data-pp-'+a+']')){`
+    + `e.setAttribute(a,e.getAttribute('data-pp-'+a).replace(/#(\\d+)/g,(m,i)=>A[i]));e.removeAttribute('data-pp-'+a)}})();</script>`;
+  const at = html.indexOf('<script data-pp-runtime>');
+  return at < 0 ? html.replace('</body>', fill + '</body>') : html.slice(0, at) + fill + html.slice(at);
+}
+
 // Remove the site's own scripts/embeds so the copy is inert, then add our runtime.
 export function stripScripts(html) {
   return html

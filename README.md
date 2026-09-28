@@ -49,7 +49,7 @@ Each section picks an image by its evidentiary role, from the brand's own site w
 - `tools/lib/passport-model.mjs`: evidence model (the "never invent" rules live here)
 - `tools/lib/passport-ui.mjs`: passport markup, scoped CSS and the runtime shipped in the demo
 - `tools/stock/`: fallback artisan images plus attribution (`stock.json`)
-- `demos/theloomart/`, `demos/iroiro/`: generated demos (HTML, `assets/`, `snapshot-manifest.json` with the full evidence model, and a preview PNG)
+- `demos/theloomart/`, `demos/iroiro/`: generated demos (HTML, single-file `*.standalone.html`, `assets/`, `snapshot-manifest.json` with the full evidence model, and a preview PNG)
 
 ## Run the generator
 
@@ -60,7 +60,9 @@ node tools/make-passport.mjs "https://theloomart.com/" demos/theloomart/black-sp
 node tools/make-passport.mjs "https://iroiro.in/" demos/iroiro/saaya-blazer.html "saaya"
 ```
 
-Open the resulting HTML file directly in a browser. Fonts are inlined as data URIs because browsers block font files on `file://` pages. The demo does **not** represent an integration with the brand site.
+Open the resulting HTML file directly in a browser. It loads its styles and images from the `assets/` folder next to it, so open it from inside its folder. Fonts are inlined as data URIs because browsers block font files on `file://` pages.
+
+Each run also writes `<name>.standalone.html`: a single file with every stylesheet, font and image embedded (each image once). Use it when the page is downloaded, emailed or moved on its own; it works without the `assets/` folder. The demo does **not** represent an integration with the brand site.
 
 After changing `passport-ui.mjs` or `snapshot.mjs`, refresh the committed demos without re-crawling:
 

@@ -1,6 +1,6 @@
 // Re-apply the current passport UI and snapshot fixes to an already generated demo,
 // offline: no brand-site crawl, the evidence model and asset map come from the
-// demo's snapshot-manifest.json.
+// demo's snapshot-manifest.json. Also rewrites the single-file <name>.standalone.html.
 //
 //   node tools/refresh-demo.mjs demos/theloomart/black-spade-blazer.html [...more demos]
 //
@@ -9,7 +9,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {chromium} from 'playwright';
-import {finalizeHtml} from './lib/snapshot.mjs';
+import {finalizeHtml, inlineAssets} from './lib/snapshot.mjs';
 import {renderPassport, PASSPORT_CSS, PASSPORT_RUNTIME} from './lib/passport-ui.mjs';
 
 const files = process.argv.slice(2);
@@ -34,6 +34,7 @@ for (const file of files) {
   html = replaceBetween(html, '<script data-pp-runtime>', '</script>', `<script data-pp-runtime>${PASSPORT_RUNTIME}</script>`);
   html = await finalizeHtml({html, map: new Map(manifest.assets), source: manifest.sourceUrl, dir});
   await fs.writeFile(file, html, 'utf8');
+  await fs.writeFile(file.replace(/\.html?$/i, '') + '.standalone.html', await inlineAssets(html, dir), 'utf8');
 
   // Preview: passport open over the hero, same viewport as the generator.
   const browser = await chromium.launch({executablePath: process.env.CHROMIUM_PATH || undefined});

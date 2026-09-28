@@ -10,7 +10,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {openBrowser, captureResources, load, findProductPage, primeLazyContent, localize, stripScripts, fetchExtraImages} from './lib/snapshot.mjs';
+import {openBrowser, captureResources, load, findProductPage, primeLazyContent, localize, stripScripts, fetchExtraImages, inlineAssets} from './lib/snapshot.mjs';
 import {extractProduct} from './lib/extract.mjs';
 import {crawlArchive} from './lib/archive.mjs';
 import {buildPassportModel} from './lib/passport-model.mjs';
@@ -75,6 +75,8 @@ try {
   let {html, map} = await localize({html: stripScripts(await page.content()), resources, extra, source, dir});
   html = html.replace('</body>', `<script data-pp-runtime>${PASSPORT_RUNTIME}</script></body>`);
   await fs.writeFile(path.resolve(output), '<!doctype html>\n' + html, 'utf8');
+  // Single-file copy that works without the assets/ folder (to download, email or move).
+  await fs.writeFile(path.resolve(output).replace(/\.html?$/i, '') + '.standalone.html', '<!doctype html>\n' + await inlineAssets(html, dir), 'utf8');
 
   // Preview: passport open over the hero.
   try {
