@@ -15,7 +15,7 @@
 .panel{position:absolute;inset:0 auto 0 0;width:min(78%,670px);height:100%;background:#171716;color:#f2ede4;transform:translateX(-102%);transition:transform .38s ease;z-index:60;box-shadow:22px 0 50px rgba(0,0,0,.28);display:flex;flex-direction:column}.hero.open .panel{transform:translateX(0)}.close{position:absolute;right:20px;top:15px;background:none;border:0;color:#ddd7ce;font-size:25px;cursor:pointer}.phead{padding:25px 30px 18px;border-bottom:1px solid #353431}.eyebrow{font-size:8px;letter-spacing:.17em;color:#aaa49b}.phead h2{font:400 29px/1.05 Georgia,serif;margin:8px 45px 6px 0}.meta{font-size:9px;color:#908a81}.scroll{overflow:auto;padding:0 30px 40px}.step{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:24px 0;border-bottom:1px solid #34332f}.step img{width:118px;height:140px;object-fit:cover}.step h3{font:400 20px/1.08 Georgia,serif;margin:7px 0}.step p{font-size:11px;line-height:1.55;color:#ccc6bc;margin:0 0 9px}.source{font-size:8px;color:#8d887f;letter-spacing:.08em}.ok{font-size:8px;color:#91ad91;letter-spacing:.11em;margin-top:7px}.next{padding:26px 0}.next h3{font:400 21px Georgia,serif;margin:8px 0}.next p{font-size:11px;color:#bab4aa;line-height:1.5}.next span{font-size:8px;color:#91ad91;letter-spacing:.1em}
 .note{padding:25px 32px;border-top:1px solid #ddd9d2;font-size:10px;color:#777}
 @media(max-width:900px){.product{grid-template-columns:1fr}.gallery{grid-template-columns:1fr;padding:0 15px}.thumbs{display:none}.hero>img{height:650px}.info{padding:35px 22px}.nav .links{display:none}.panel{width:100%}.step{grid-template-columns:90px 1fr}.step img{width:90px;height:110px}.phead,.scroll{padding-left:22px;padding-right:22px}}
-</style>
+.hero{isolation:isolate}.panel{overscroll-behavior:contain}.panel .scroll{overscroll-behavior:contain}@media(max-width:600px){.journey{left:12px;bottom:12px;padding:11px 13px;font-size:10px}.panel{position:fixed;inset:0;width:100vw;height:100vh;max-height:100vh}.hero.open .panel{transform:translateX(0)}}</style>
 </head>
 <body>
 <div class="top">JOIN THE IRO IRO MAILING LIST TO RECEIVE 10% OFF YOUR FIRST ORDER</div>
@@ -29,11 +29,11 @@
 <img src="https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260072_3ef8c80a-0fdc-4072-b79b-64382020b8a7.jpg?v=1788851293&width=500" alt="">
 <img src="https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260075_46c277ef-665e-4d1f-98ff-da49beebaaec.jpg?v=1788851297&width=500" alt="">
 </div>
-<div class="hero" id="hero">
+<div class="hero" id="hero" data-product-passport-hero="true">
 <img src="https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260089.jpg?v=1788788092&width=1800" alt="Saaya Blazer">
-<button class="journey" id="journey"><span>◎</span><b>The journey of this piece</b><span>· hover</span></button>
+<button class="journey" id="journey" type="button" aria-controls="panel" aria-expanded="false"><span>◎</span><b>The journey of this piece</b><span>· hover</span></button>
 
-<aside class="panel" id="panel">
+<aside class="panel" id="panel" aria-hidden="true">
 <button class="close" id="close" aria-label="Close">×</button>
 <div class="phead"><div class="eyebrow">PRODUCT PASSPORT</div><h2>The journey of this piece.</h2><div class="meta">Saaya Blazer · Charcoal · prototype on Iro Iro product page</div></div>
 <div class="scroll">
@@ -58,16 +58,16 @@
 </main>
 <div class="note">Proof of concept only. This page is a recreated product-page simulation and is not an Iro Iro integration.</div>
 
+
 <script>
 const hero=document.getElementById('hero'), journey=document.getElementById('journey'), close=document.getElementById('close');
-function openP(){hero.classList.add('open');}
-function closeP(){hero.classList.remove('open');}
-journey.addEventListener('mouseenter',openP);
-journey.addEventListener('focus',openP);
+function openP(){hero.classList.add('open');journey.setAttribute('aria-expanded','true');document.getElementById('panel').setAttribute('aria-hidden','false')}
+function closeP(){hero.classList.remove('open');journey.setAttribute('aria-expanded','false');document.getElementById('panel').setAttribute('aria-hidden','true')}
+journey.addEventListener('mouseenter',openP);journey.addEventListener('focus',openP);
 journey.addEventListener('click',()=>hero.classList.contains('open')?closeP():openP());
 close.addEventListener('click',e=>{e.stopPropagation();closeP()});
 hero.addEventListener('mouseleave',()=>{if(matchMedia('(hover:hover)').matches)closeP()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeP()});
-</script>
-</body>
+document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>e.preventDefault()));
+</script></body>
 </html>
