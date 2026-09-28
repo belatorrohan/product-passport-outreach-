@@ -11,6 +11,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {spawn} from 'node:child_process';
+import dns from 'node:dns/promises';
+import net from 'node:net';
 import {fileURLToPath} from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -25,12 +27,23 @@ const TYPES = {'.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': '
 
 const slug = s => String(s).toLowerCase().replace(/^www\./, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60);
 
-function normalizeUrl(raw) {
+// Loopback, private, link-local and similar ranges: the generator drives a real browser,
+// so it must only ever be pointed at public websites.
+const PRIVATE = [/^0\./, /^10\./, /^127\./, /^169\.254\./, /^172\.(1[6-9]|2\d|3[01])\./, /^192\.168\./, /^100\.(6[4-9]|[7-9]\d|1[01]\d|12[0-7])\./,
+  /^::1?$/, /^f[cd][0-9a-f]{2}:/i, /^fe80:/i, /^::ffff:(0|10|127|169\.254|192\.168)\./i];
+const isPrivate = ip => PRIVATE.some(re => re.test(ip));
+
+async function normalizeUrl(raw) {
   let s = String(raw || '').trim();
   if (!/^https?:\/\//i.test(s)) s = 'https://' + s;
   let u;
   try { u = new URL(s); } catch { u = null; }
-  if (!u || !u.hostname.includes('.')) throw new Error('Enter a website address, for example https://www.ethicus.in');
+  if (!u || !/^https?:$/.test(u.protocol) || !u.hostname.includes('.')) throw new Error('Enter a website address, for example https://www.ethicus.in');
+  const host = u.hostname.replace(/^\[|\]$/g, '');
+  let addrs = [];
+  try { addrs = net.isIP(host) ? [host] : (await dns.lookup(host, {all: true})).map(a => a.address); } catch {}
+  if (!addrs.length) throw new Error('That website address could not be found. Check the link.');
+  if (addrs.some(isPrivate)) throw new Error('Only public websites can be used.');
   return u.href;
 }
 
@@ -151,7 +164,7 @@ const server = http.createServer(async (req, res) => {
     if (req.method === 'POST' && url.pathname === '/api/passports') {
       const body = await readJson(req);
       let target;
-      try { target = normalizeUrl(body.url); } catch (e) { return send(res, 400, {error: e.message}); }
+      try { target = await normalizeUrl(body.url); } catch (e) { return send(res, 400, {error: e.message}); }
       const job = startJob(target, String(body.product || '').trim().slice(0, 80));
       return send(res, 202, {id: job.id});
     }
