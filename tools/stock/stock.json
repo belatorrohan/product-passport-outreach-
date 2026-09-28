@@ -1,5 +1,26 @@
 {
-  "_note": "Illustrative artisan images used ONLY when the brand site publishes no artisan photo. Always shown captioned as stock, never as the maker of the garment.",
+  "_note": "Fixed illustrative section images, the same for every brand. Used only when the brand site publishes no fitting image of its own; always captioned as illustrative, never as this garment, its fabric or its maker. fabric/loom/maker are crops of weaver.jpg.",
+  "fabric": {
+    "file": "fabric.jpg",
+    "url": "https://commons.wikimedia.org/wiki/File:Handloom_weaver_in_Maheshwar_fort,_Khargone_district,_Madhya_Pradesh.jpg",
+    "credit": "Eskay001 / Wikimedia Commons",
+    "license": "CC BY-SA 4.0, cropped",
+    "alt": "Close-up of handloom cloth on a loom"
+  },
+  "loom": {
+    "file": "loom.jpg",
+    "url": "https://commons.wikimedia.org/wiki/File:Handloom_weaver_in_Maheshwar_fort,_Khargone_district,_Madhya_Pradesh.jpg",
+    "credit": "Eskay001 / Wikimedia Commons",
+    "license": "CC BY-SA 4.0, cropped",
+    "alt": "Warp threads and reed of a handloom"
+  },
+  "maker": {
+    "file": "maker.jpg",
+    "url": "https://commons.wikimedia.org/wiki/File:Handloom_weaver_in_Maheshwar_fort,_Khargone_district,_Madhya_Pradesh.jpg",
+    "credit": "Eskay001 / Wikimedia Commons",
+    "license": "CC BY-SA 4.0, cropped",
+    "alt": "A handloom weaver at work"
+  },
   "weaver": {
     "file": "weaver.jpg",
     "url": "https://commons.wikimedia.org/wiki/File:Handloom_weaver_in_Maheshwar_fort,_Khargone_district,_Madhya_Pradesh.jpg",

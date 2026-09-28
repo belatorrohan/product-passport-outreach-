@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product Passport Maker</title>
+<style>
+:root{
+  --bg:#f6f3ee;--surface:#fffdf9;--ink:#1d1c1a;--muted:#6f6a62;--faint:#a39c91;--line:#e3ddd3;
+  --accent:#1d1c1a;--accent-ink:#f6f3ee;--ok:#4f7a4a;--ok-bg:#e6efe3;--err:#9b3b2e;--err-bg:#f6e4e0;--focus:#b8862f;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#151513;--surface:#1d1c19;--ink:#efe9df;--muted:#a39c91;--faint:#77726a;--line:#34332f;
+  --accent:#efe9df;--accent-ink:#151513;--ok:#9fbf9a;--ok-bg:#243022;--err:#e39a8c;--err-bg:#3a2320;--focus:#e1c58c;
+}}
+:root[data-theme="dark"]{
+  --bg:#151513;--surface:#1d1c19;--ink:#efe9df;--muted:#a39c91;--faint:#77726a;--line:#34332f;
+  --accent:#efe9df;--accent-ink:#151513;--ok:#9fbf9a;--ok-bg:#243022;--err:#e39a8c;--err-bg:#3a2320;--focus:#e1c58c;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:980px;margin:0 auto;padding:56px 24px 80px}
+.label{font:500 11px/1.3 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+h1{font:400 clamp(30px,5vw,44px)/1.08 Georgia,"Times New Roman",serif;margin:12px 0 12px;max-width:22ch}
+h2{font:400 22px/1.2 Georgia,serif;margin:0}
+.lede{color:var(--muted);max-width:60ch;margin:0 0 32px}
+form{background:var(--surface);border:1px solid var(--line);padding:24px;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:end}
+label{display:grid;gap:6px;font-size:13px;color:var(--muted)}
+input{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:12px 14px;border-radius:2px;width:100%;min-width:0}
+input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+button,.btn{font:500 12px/1 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);padding:15px 22px;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap}
+.btn.ghost,button.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+button:disabled{opacity:.5;cursor:progress}
+.opt{color:var(--faint)}
+.hint{grid-column:1/-1;margin:0;font-size:12.5px;color:var(--faint)}
+.card{background:var(--surface);border:1px solid var(--line);padding:24px;margin-top:20px}
+[hidden]{display:none!important}
+.steps{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:8px}
+.steps li{display:grid;grid-template-columns:18px 1fr;gap:12px;align-items:center;color:var(--faint)}
+.steps li::before{content:"";width:10px;height:10px;border-radius:50%;border:1px solid currentColor;justify-self:center}
+.steps li.done{color:var(--muted)}
+.steps li.done::before{background:var(--ok);border-color:var(--ok)}
+.steps li.now{color:var(--ink)}
+.steps li.now::before{border-color:var(--focus);border-top-color:transparent;width:12px;height:12px;border-width:2px;animation:spin .9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.steps li.now::before{animation:none;border-top-color:var(--focus)}}
+.status-head{display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap}
+.muted{color:var(--muted)}
+.error{border-color:var(--err);background:var(--err-bg);color:var(--err)}
+.result{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px;align-items:start}
+.result img{width:100%;display:block;border:1px solid var(--line);background:var(--bg)}
+.facts{margin:14px 0 20px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-size:14px}
+.facts dt{color:var(--muted)}
+.facts dd{margin:0}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.linkrow{margin-top:14px;display:flex;gap:8px}
+.linkrow input{font-size:13px;padding:10px 12px}
+.list-head{display:flex;justify-content:space-between;align-items:baseline;margin:48px 0 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.item{background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column}
+.item .thumb{aspect-ratio:16/10;background:var(--bg) center/cover no-repeat;border-bottom:1px solid var(--line)}
+.item .body{padding:14px 16px 16px;display:grid;gap:4px;flex:1}
+.item .title{font:400 16px/1.25 Georgia,serif}
+.item .meta{font-size:12.5px;color:var(--muted)}
+.item .links{display:flex;gap:14px;margin-top:10px;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.item a{color:var(--ink)}
+.tag{justify-self:start;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:2px 6px}
+.empty{color:var(--faint)}
+@media (max-width:760px){
+  main{padding:32px 16px 64px}
+  form{grid-template-columns:1fr;padding:18px}
+  .result{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="label">Product passport · Outreach engine</div>
+  <h1>Make a product passport for any brand</h1>
+  <p class="lede">Paste the link to a product page. The engine opens that page, reads what the brand publishes about the product and its craft, and builds a proof-of-concept passport on the product's own photo. It takes about a minute.</p>
+
+  <form id="form" novalidate>
+    <label><span>Product page link</span>
+      <input id="url" name="url" type="text" inputmode="url" autocomplete="url" placeholder="https://thesummerhouse.in/products/soho-green-needlecord-embroidered-top" required>
+    </label>
+    <button id="go" type="submit">Make passport</button>
+    <p class="hint">Open the product on the brand's website and copy the address from the browser's address bar.</p>
+  </form>
+
+  <section id="status" class="card" hidden aria-live="polite">
+    <div class="status-head"><h2 id="status-title">Making the passport…</h2><span id="elapsed" class="muted"></span></div>
+    <ol class="steps" id="steps"></ol>
+  </section>
+
+  <section id="error" class="card error" hidden role="alert"></section>
+
+  <section id="result" class="card" hidden>
+    <div class="result">
+      <a id="r-preview-link" target="_blank" rel="noopener"><img id="r-preview" alt="Preview of the product passport open on the product page"></a>
+      <div>
+        <div class="label" id="r-brand"></div>
+        <h2 id="r-title" style="margin-top:8px"></h2>
+        <dl class="facts" id="r-facts"></dl>
+        <div class="actions">
+          <a class="btn" id="r-open" target="_blank" rel="noopener">Open passport →</a>
+          <a class="btn ghost" id="r-download">Download single file</a>
+        </div>
+        <div class="linkrow">
+          <input id="r-link" readonly aria-label="Link to the passport">
+          <button class="ghost" id="r-copy" type="button">Copy</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="list-head"><h2>Passports</h2><span class="muted" id="count"></span></div>
+  <div class="grid" id="list"><p class="empty">Loading…</p></div>
+</main>
+<script>
+const STEPS = ['Opening the product page', 'Loading product images', 'Reading product details',
+  'Reading the brand story', 'Building the passport', 'Saving the page', 'Rendering a preview'];
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+const abs = p => new URL(p, location.href).href;
+
+function renderSteps(current, finished) {
+  const at = STEPS.indexOf(current);
+  $('steps').innerHTML = STEPS.map((s, i) =>
+    `<li class="${finished || (at >= 0 && i < at) ? 'done' : i === at ? 'now' : ''}">${s}</li>`).join('');
+}
+
+function showResult(r) {
+  $('result').hidden = false;
+  $('r-brand').textContent = r.brand;
+  $('r-title').textContent = r.title;
+  $('r-preview').src = r.preview || '';
+  $('r-preview-link').href = r.page;
+  $('r-open').href = r.page;
+  $('r-download').href = r.standalone + '?download';
+  $('r-link').value = abs(r.page);
+  const facts = [['Price', r.price], ['Material', r.material], ['Craft', r.craft], ['Traceability', r.traceability], ['Source', r.sourceUrl && `<a href="${esc(r.sourceUrl)}" target="_blank" rel="noopener">${esc(new URL(r.sourceUrl).hostname)}</a>`]];
+  $('r-facts').innerHTML = facts.filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd>${k === 'Source' ? v : esc(v)}</dd>`).join('');
+  $('result').scrollIntoView({behavior: 'smooth', block: 'nearest'});
+}
+
+async function loadList() {
+  let items = [];
+  try { items = await (await fetch('/api/passports')).json(); } catch {}
+  $('count').textContent = items.length ? `${items.length}` : '';
+  $('list').innerHTML = items.length ? items.map(p => `<article class="item">
+    <a class="thumb" href="${esc(p.page)}" target="_blank" rel="noopener" style="background-image:url('${esc(p.preview || '')}')" aria-label="Open ${esc(p.title)}"></a>
+    <div class="body">
+      ${p.example ? '<span class="tag">Example</span>' : ''}
+      <div class="meta">${esc(p.brand)}</div>
+      <div class="title">${esc(p.title)}</div>
+      <div class="meta">${p.generatedAt ? new Date(p.generatedAt).toLocaleString() : ''}</div>
+      <div class="links"><a href="${esc(p.page)}" target="_blank" rel="noopener">Open</a><a href="${esc(p.standalone)}?download">Download</a></div>
+    </div></article>`).join('') : '<p class="empty">No passports yet. Make the first one above.</p>';
+}
+
+$('form').addEventListener('submit', async e => {
+  e.preventDefault();
+  const url = $('url').value.trim();
+  if (!url) { $('url').focus(); return; }
+  $('error').hidden = $('result').hidden = true;
+  $('go').disabled = true;
+  $('status').hidden = false;
+  $('status-title').textContent = 'Making the passport…';
+  renderSteps('', false);
+  try {
+    const r = await fetch('/api/passports', {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify({url})});
+    const body = await r.json();
+    if (!r.ok) throw new Error(body.error || 'Could not start');
+    for (;;) {
+      await new Promise(res => setTimeout(res, 1200));
+      const job = await (await fetch('/api/jobs/' + body.id)).json();
+      $('elapsed').textContent = job.elapsed ? `${Math.round(job.elapsed / 1000)}s` : '';
+      if (job.status === 'queued') { $('status-title').textContent = job.step; continue; }
+      if (job.status === 'running') { $('status-title').textContent = 'Making the passport…'; renderSteps(job.step, false); continue; }
+      if (job.status === 'done') { renderSteps('', true); $('status-title').textContent = 'Passport ready'; showResult(job.result); loadList(); break; }
+      throw new Error(job.error || 'Something went wrong.');
+    }
+  } catch (err) {
+    $('status').hidden = true;
+    $('error').hidden = false;
+    $('error').textContent = err.message;
+  } finally {
+    $('go').disabled = false;
+  }
+});
+
+$('r-copy').addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText($('r-link').value); } catch { $('r-link').select(); document.execCommand('copy'); }
+  $('r-copy').textContent = 'Copied';
+  setTimeout(() => { $('r-copy').textContent = 'Copy'; }, 1500);
+});
+
+loadList();
+</script>
+</body>
+</html>

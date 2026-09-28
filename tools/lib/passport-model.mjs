@@ -96,26 +96,30 @@ function bestClaim(sents, re, brandRe) {
     .sort((a, b) => b.score - a.score)[0] || null;
 }
 
-// Choose an image per passport section by its evidentiary role (§9, §18). A model/product
-// photo is never used for the craft or maker card; the fabric card may fall back to a
-// crop of the hero photograph, which the UI labels as such. If the brand publishes no
-// artisan photo, the maker card uses a craft-appropriate *illustrative stock* image,
-// always captioned as stock and never presented as the maker of this garment.
-function pickImages(product, archive, craftKey, stock) {
+// Choose a small thumbnail per passport section by its evidentiary role (§9, §18). The
+// brand's own archive image is preferred when one clearly fits; otherwise a fixed
+// *illustrative* image (the same for every brand), always captioned as illustrative and
+// never presented as this garment, its fabric or its maker. A model/product photo is
+// never used for the fabric, craft or maker card; the garment record shows the product
+// photo from the brand's own page.
+export function pickImages(product, archive, craftKey, stock) {
   const used = new Set(), take = pred => {
     const img = archive.images.find(i => !used.has(i.src) && pred(i));
     if (img) used.add(img.src);
     return img ? {src: img.src, alt: img.alt, source: img.source, kind: 'archive'} : null;
   };
+  const illustrative = key => {
+    const s = stock?.[key];
+    return s ? {src: s.src, alt: s.alt, source: s.url, credit: `${s.credit} · ${s.license}`, kind: 'stock'} : null;
+  };
   const craftCls = {weaving: 'loom', embroidery: 'embroidery', dyeing: 'dyeing', printing: 'dyeing', stitching: 'stitching'}[craftKey];
-  const craft = take(i => i.cls === craftCls && i.strong) || take(i => i.cls === craftCls);
-  const stockImg = stock?.[craftKey === 'embroidery' ? 'embroiderer' : 'weaver'];
-  const maker = take(i => i.cls === 'portrait' && i.strong) || take(i => i.cls === 'portrait')
-    || (stockImg ? {src: stockImg.src, alt: stockImg.alt, source: stockImg.url, credit: `${stockImg.credit} · ${stockImg.license}`, kind: 'stock'} : null);
+  const craft = take(i => i.cls === craftCls && i.strong) || take(i => i.cls === craftCls)
+    || illustrative(craftKey === 'embroidery' ? 'embroiderer' : 'loom');
+  const maker = take(i => i.cls === 'portrait' && i.strong) || take(i => i.cls === 'portrait') || illustrative('maker');
   // Fabric needs the image's own alt/caption/filename to say so; section text is too loose.
-  const fabric = take(i => i.cls === 'fabric' && i.strong)
-    || {src: product.hero, alt: `Detail of ${product.title}`, source: product.url, kind: 'hero-detail'};
-  return {fabric, craft, maker};
+  const fabric = take(i => i.cls === 'fabric' && i.strong) || illustrative('fabric');
+  const garment = product.hero ? {src: product.hero, alt: product.title, source: product.url, kind: 'product'} : null;
+  return {fabric, craft, maker, garment};
 }
 
 export function buildPassportModel(product, archive, stock = null) {
@@ -131,7 +135,9 @@ export function buildPassportModel(product, archive, stock = null) {
   // Material: only phrases literally on the product page.
   const materialMatch = pageText.match(new RegExp(`\\b((?:(?:${WEAVE})\\s+)?(?:(?:${FIBRE_QUALIFIERS})\\s)?(?:${FIBRES}))\\b`, 'i'));
   const weaveMatch = pageText.match(new RegExp(`\\b(${WEAVE})\\b`, 'i'));
-  const composition = (pageText.match(/\b\d{1,3}\s?%\s?[a-z]+(?:\s?[,/&]\s?\d{1,3}\s?%\s?[a-z]+)*/i) || [])[0];
+  // "100% organic cotton", "70% silk / 30% cotton": a percentage, an optional qualifier, a fibre word.
+  const pct = `\\d{1,3}\\s?%\\s?(?:(?:organic|recycled|${FIBRE_QUALIFIERS})\\s)?[a-z]+`;
+  const composition = (pageText.match(new RegExp(`\\b${pct}(?:\\s?[,/&]\\s?${pct})*`, 'i')) || [])[0];
   const cap = s => s && s[0].toUpperCase() + s.slice(1).toLowerCase();
 
   // Production chain (§10): stages the product page implies, plus universal garment steps.

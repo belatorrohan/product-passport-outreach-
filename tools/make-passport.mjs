@@ -9,38 +9,46 @@
 //    self-contained copy with localized assets, a manifest and a preview screenshot.
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import {fileURLToPath} from 'node:url';
-import {openBrowser, captureResources, load, findProductPage, primeLazyContent, localize, stripScripts, fetchExtraImages, inlineAssets} from './lib/snapshot.mjs';
+import {openBrowser, captureResources, load, findProductPage, primeLazyContent, hideOverlays, localize, stripScripts, fetchExtraImages, inlineAssets} from './lib/snapshot.mjs';
 import {extractProduct} from './lib/extract.mjs';
 import {crawlArchive} from './lib/archive.mjs';
 import {buildPassportModel} from './lib/passport-model.mjs';
+import {loadStock, STOCK_DIR, STOCK_ORIGIN} from './lib/stock.mjs';
 import {renderPassport, PASSPORT_CSS, PASSPORT_RUNTIME} from './lib/passport-ui.mjs';
 
-const [input, output = 'generated/passport.html', hint = ''] = process.argv.slice(2);
+// --product-page: the URL *is* the product page; use it as-is instead of looking for one.
+const args = process.argv.slice(2), direct = args.includes('--product-page');
+const [input, output = 'generated/passport.html', hint = ''] = args.filter(a => a !== '--product-page');
 if (!input) {
-  console.error('Usage: node tools/make-passport.mjs <website-or-product-url> [output.html] [product-name]');
+  console.error('Usage: node tools/make-passport.mjs <website-or-product-url> [output.html] [product-name] [--product-page]');
   process.exit(1);
 }
 const dir = path.resolve(path.dirname(output));
+// Progress for humans and for the web UI (tools/server.mjs), on stderr; stdout keeps the JSON summary.
+const step = text => console.error(`step: ${text}`);
 
-// Illustrative stock artisan images (fallback only; see tools/stock/stock.json).
-const stockDir = path.join(path.dirname(fileURLToPath(import.meta.url)), 'stock');
-const stockMeta = JSON.parse(await fs.readFile(path.join(stockDir, 'stock.json'), 'utf8'));
-const stock = Object.fromEntries(Object.entries(stockMeta).filter(([k]) => !k.startsWith('_'))
-  .map(([k, v]) => [k, {...v, src: `https://stock.passport.local/${v.file}`}]));
+// Fixed illustrative section images (see tools/stock/stock.json).
+const stock = await loadStock();
 await fs.mkdir(dir, {recursive: true});
 
 const {browser, context, page} = await openBrowser();
 try {
-  await context.route('https://stock.passport.local/**', route =>
-    route.fulfill({path: path.join(stockDir, new URL(route.request().url()).pathname.slice(1)), contentType: 'image/jpeg'}));
+  await context.route(STOCK_ORIGIN + '**', route =>
+    route.fulfill({path: path.join(STOCK_DIR, new URL(route.request().url()).pathname.slice(1)), contentType: 'image/jpeg'}));
   const resources = captureResources(page);
+  step(direct ? 'Opening the product page' : 'Opening the website');
   await load(page, input);
-  const source = await findProductPage(page, hint);
+  if (!direct) step('Finding a product page');
+  const source = direct ? page.url() : await findProductPage(page, hint);
+  step('Loading product images');
   await primeLazyContent(page);
+  await hideOverlays(page);
 
+  step('Reading product details');
   const product = await extractProduct(page);
+  step('Reading the brand story');
   const archive = await crawlArchive(context, page, product);
+  step('Building the passport');
   const model = buildPassportModel(product, archive, stock);
   const {pill, panel} = renderPassport(model);
 
@@ -68,10 +76,12 @@ try {
     wrap.insertAdjacentHTML('beforeend', pill + panel);
   }, {pill, panel, css: PASSPORT_CSS});
 
+  step('Saving the page');
+  await hideOverlays(page); // pop-ups that opened while the brand archive was being read
   const archiveImages = Object.values(model.images).filter(i => i?.kind === 'archive').map(i => i.src);
   const extra = await fetchExtraImages(context, archiveImages);
   for (const s of Object.values(stock)) if (Object.values(model.images).some(i => i?.src === s.src))
-    extra.push({url: s.src, type: 'image', ct: 'image/jpeg', body: await fs.readFile(path.join(stockDir, s.file))});
+    extra.push({url: s.src, type: 'image', ct: 'image/jpeg', body: await fs.readFile(path.join(STOCK_DIR, s.file))});
   let {html, map} = await localize({html: stripScripts(await page.content()), resources, extra, source, dir});
   html = html.replace('</body>', `<script data-pp-runtime>${PASSPORT_RUNTIME}</script></body>`);
   await fs.writeFile(path.resolve(output), '<!doctype html>\n' + html, 'utf8');
@@ -79,6 +89,8 @@ try {
   await fs.writeFile(path.resolve(output).replace(/\.html?$/i, '') + '.standalone.html', '<!doctype html>\n' + await inlineAssets(html, dir), 'utf8');
 
   // Preview: passport open over the hero.
+  step('Rendering a preview');
+  await hideOverlays(page).catch(() => {});
   try {
     await page.addScriptTag({content: PASSPORT_RUNTIME});
     await page.locator('.pp-engine-hero').scrollIntoViewIfNeeded();

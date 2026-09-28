@@ -310,18 +310,31 @@
     },
     "images": {
       "fabric": {
-        "src": "https://theloomart.com/cdn/shop/products/2_3213e945-fd3c-4f8c-80e9-ca22694a044d_900x.jpg?v=1680857304",
-        "alt": "Detail of Black Spade Blazer",
-        "source": "https://theloomart.com/products/black-spade-blazer",
-        "kind": "hero-detail"
-      },
-      "craft": null,
-      "maker": {
-        "src": "https://stock.passport.local/weaver.jpg",
-        "alt": "A handloom weaver at a loom in Maheshwar, Madhya Pradesh",
+        "src": "https://stock.passport.local/fabric.jpg",
+        "alt": "Close-up of handloom cloth on a loom",
         "source": "https://commons.wikimedia.org/wiki/File:Handloom_weaver_in_Maheshwar_fort,_Khargone_district,_Madhya_Pradesh.jpg",
-        "credit": "Eskay001 / Wikimedia Commons · CC BY-SA 4.0",
+        "credit": "Eskay001 / Wikimedia Commons · CC BY-SA 4.0, cropped",
         "kind": "stock"
+      },
+      "craft": {
+        "src": "https://stock.passport.local/loom.jpg",
+        "alt": "Warp threads and reed of a handloom",
+        "source": "https://commons.wikimedia.org/wiki/File:Handloom_weaver_in_Maheshwar_fort,_Khargone_district,_Madhya_Pradesh.jpg",
+        "credit": "Eskay001 / Wikimedia Commons · CC BY-SA 4.0, cropped",
+        "kind": "stock"
+      },
+      "maker": {
+        "src": "https://stock.passport.local/maker.jpg",
+        "alt": "A handloom weaver at work",
+        "source": "https://commons.wikimedia.org/wiki/File:Handloom_weaver_in_Maheshwar_fort,_Khargone_district,_Madhya_Pradesh.jpg",
+        "credit": "Eskay001 / Wikimedia Commons · CC BY-SA 4.0, cropped",
+        "kind": "stock"
+      },
+      "garment": {
+        "src": "https://theloomart.com/cdn/shop/products/2_3213e945-fd3c-4f8c-80e9-ca22694a044d_900x.jpg?v=1680857304",
+        "alt": "Black Spade Blazer",
+        "source": "https://theloomart.com/products/black-spade-blazer",
+        "kind": "product"
       }
     },
     "sources": [
@@ -857,6 +870,18 @@
     [
       "https://stock.passport.local/weaver.jpg",
       "assets/stock-passport-local-weaver-jpg-dd87ee04f1.jpg"
+    ],
+    [
+      "https://stock.passport.local/fabric.jpg",
+      "assets/stock-fabric.jpg"
+    ],
+    [
+      "https://stock.passport.local/loom.jpg",
+      "assets/stock-loom.jpg"
+    ],
+    [
+      "https://stock.passport.local/maker.jpg",
+      "assets/stock-maker.jpg"
     ]
   ]
 }

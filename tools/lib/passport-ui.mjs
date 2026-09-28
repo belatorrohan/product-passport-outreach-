@@ -27,15 +27,19 @@ function rows(list) {
     `<div class="pp-row"><dt>${esc(k)}</dt><dd>${val(f, missing)}</dd><dd class="pp-ev">${chip(f)}</dd></div>`).join('')}</dl>`;
 }
 
-function figure(img, {tall = false, label} = {}) {
-  if (!img) return `<div class="pp-fig pp-fig-empty${tall ? ' pp-tall' : ''}"><span>${esc(label)}</span><small>No public image linked</small></div>`;
-  const detail = img.kind === 'hero-detail';
-  const caption = detail ? 'Detail from product photograph · no fabric close-up published'
-    : img.kind === 'stock' ? `Illustrative stock image · not the maker of this garment · <a href="${esc(img.source)}" target="_blank" rel="noopener">${esc(img.credit)}</a>`
-    : `Brand archive · <a href="${esc(img.source)}" target="_blank" rel="noopener">source</a>`;
-  return `<figure class="pp-fig${tall ? ' pp-tall' : ''}${detail ? ' pp-detail' : ''}${img.kind === 'stock' ? ' pp-stock' : ''}"><img src="${esc(img.src)}" alt="${esc(img.alt || '')}" loading="lazy">`
-    + `<figcaption>${caption}</figcaption></figure>`;
+// Small fixed-size thumbnail beside each section (the text is the point, the image is
+// context). Captions say where the image comes from; illustrative images never claim to
+// show this garment.
+function thumb(img) {
+  if (!img) return '<div class="pp-media" aria-hidden="true"></div>';
+  const link = (href, text) => `<a href="${esc(href)}" target="_blank" rel="noopener">${text}</a>`;
+  const caption = img.kind === 'stock' ? 'Illustrative image<br>Not this garment'
+    : img.kind === 'product' ? link(img.source, 'Product photo') + '<br>Brand site'
+    : link(img.source, 'Brand archive') + '<br>Not linked to this garment';
+  return `<figure class="pp-media"><img src="${esc(img.src)}" alt="${esc(img.alt || '')}" loading="lazy"><figcaption>${caption}</figcaption></figure>`;
 }
+
+const section = (img, body) => `<section class="pp-sec">${thumb(img)}<div class="pp-body">${body}</div></section>`;
 
 function quote(f) {
   return f.value ? `<blockquote class="pp-quote">“${esc(f.value.length > 260 ? f.value.slice(0, 257).replace(/\s+\S*$/, '') + '…' : f.value)}”${chip(f)}</blockquote>` : '';
@@ -65,35 +69,25 @@ export function renderPassport(m) {
   <button class="pp-close" type="button" aria-label="Close passport">×</button>
 </header>`;
 
-  const fabric = `<section class="pp-sec">
+  const fabric = section(m.images.fabric, `
   <div class="pp-label">01 · Fabric</div>
-  ${figure(m.images.fabric, {tall: true, label: 'Fabric'})}
   <h3>${mat.name.value ? esc(mat.name.value) : 'Material not stated'}</h3>
   ${rows([['Fabric lot', mat.fabricLot], ['Weave', mat.weave, 'Not stated'], ['Composition', mat.composition, 'Not stated']])}
-  ${record('pp-rec-fabric', 'Fabric record', [['Material', mat.name, 'Not stated'], ['Weave', mat.weave, 'Not stated'], ['Composition', mat.composition, 'Not stated'], ['Fabric lot', mat.fabricLot], ['Quantity', mat.quantity], ['Recorded', {value: null, evidence: EVIDENCE.NONE}]])}
-</section>`;
+  ${record('pp-rec-fabric', 'Fabric record', [['Material', mat.name, 'Not stated'], ['Weave', mat.weave, 'Not stated'], ['Composition', mat.composition, 'Not stated'], ['Fabric lot', mat.fabricLot], ['Quantity', mat.quantity], ['Recorded', {value: null, evidence: EVIDENCE.NONE}]])}`);
 
-  const craft = `<section class="pp-sec">
+  const craft = section(m.images.craft, `
   <div class="pp-label">02 · ${esc(c.label)}</div>
-  ${figure(m.images.craft, {tall: true, label: c.label})}
   <h3>${esc(craftTitle)}</h3>
   ${quote(c.claim)}
-  ${rows([[c.role, c.person, 'Not linked to this garment'], ['Location', c.location], ['Production period', c.period], ['Fabric lot', mat.fabricLot]])}
-</section>`;
+  ${rows([[c.role, c.person, 'Not linked to this garment'], ['Location', c.location], ['Production period', c.period], ['Fabric lot', mat.fabricLot]])}`);
 
-  const maker = `<section class="pp-sec pp-maker">
+  const maker = section(m.images.maker, `
   <div class="pp-label">03 · The maker</div>
-  <div class="pp-split">
-    ${figure(m.images.maker, {label: 'Portrait'})}
-    <div>
-      <h3>The person behind the work</h3>
-      ${rows([[mk.name.value ? 'Story maker' : 'Name', mk.name], ['Role', mk.role.value ? mk.role : {value: c.role, evidence: EVIDENCE.NONE}], ['Relationship to this garment', {value: null, evidence: EVIDENCE.NONE}, 'Not established']])}
-    </div>
-  </div>
-  ${quote(mk.statement)}
-</section>`;
+  <h3>The person behind the work</h3>
+  ${rows([[mk.name.value ? 'Story maker' : 'Name', mk.name], ['Role', mk.role.value ? mk.role : {value: c.role, evidence: EVIDENCE.NONE}], ['Relationship to this garment', {value: null, evidence: EVIDENCE.NONE}, 'Not established']])}
+  ${quote(mk.statement)}`);
 
-  const timeline = `<section class="pp-sec">
+  const timeline = section(null, `
   <div class="pp-label">04 · From fabric to garment</div>
   <h3>The production chain</h3>
   <ol class="pp-chain">${m.stages.map((s, i) => `<li>
@@ -101,23 +95,23 @@ export function renderPassport(m) {
       <span class="pp-dot" data-ev="${s.process.evidence}"></span><span class="pp-node-name">${esc(s.label)}</span><span class="pp-node-ev">${chip(s.process)}</span>
     </button>
     <div class="pp-node-body" id="pp-stage-${i}" hidden>${rows([['Date', s.date], ['Location', s.location], ['Person / unit', s.person], ['Lot / record ID', s.lot]])}</div>
-  </li>`).join('')}</ol>
-</section>`;
+  </li>`).join('')}</ol>`);
 
-  const garment = `<section class="pp-sec">
+  const garment = section(m.images.garment || {src: p.hero, alt: p.name, source: p.url, kind: 'product'}, `
   <div class="pp-label">05 · Garment record</div>
   <h3>Every record attached to this piece</h3>
   ${rows(m.garmentRecord)}
   <div class="pp-gap">
     <p>This information may exist outside the public website. Connect the production record to complete this passport.</p>
     <span class="pp-cta">Connect production record <span aria-hidden="true">→</span></span>
-  </div>
-</section>`;
+  </div>`);
 
+  const credits = [...new Map(Object.values(m.images).filter(i => i?.kind === 'stock').map(i => [i.credit, i])).values()];
   const sources = `<footer class="pp-foot"><div class="pp-label">Sources</div><ul>
   <li><a href="${esc(p.url)}" target="_blank" rel="noopener">Product page</a></li>
   ${m.sources.map(s => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title || s.url)}</a></li>`).join('')}
-  </ul><p>Prototype. Public-web evidence only; nothing on this passport is invented. Fields marked “Not linked” need a production record.</p></footer>`;
+  </ul><p>Prototype. Public-web evidence only; nothing on this passport is invented. Fields marked “Not linked” need a production record.</p>
+  ${credits.length ? `<p>Illustrative images: ${credits.map(i => `<a href="${esc(i.source)}" target="_blank" rel="noopener">${esc(i.credit)}</a>`).join(', ')}.</p>` : ''}</footer>`;
 
   return {
     pill: `<button id="pp-pill" type="button" data-pp-pill aria-controls="pp-passport"><span aria-hidden="true">◎</span><span>The journey of this piece</span></button>`,
@@ -144,23 +138,13 @@ export const PASSPORT_CSS = `
 #pp-passport .pp-trace{display:flex;flex-wrap:wrap;gap:2px 12px;font-size:9.5px;color:#8f897f;margin-top:2px}
 #pp-passport .pp-close{position:absolute;right:14px;top:12px;border:0;background:none;color:#efe9df;font-size:28px;line-height:1;cursor:pointer;padding:4px}
 #pp-passport .pp-scroll{flex:1;min-height:0;overflow:auto;padding:0 24px 28px;overscroll-behavior:contain}
-#pp-passport .pp-sec{padding:24px 0;border-bottom:1px solid #2f2e2a}
-#pp-passport h3{font:400 21px/1.1 Georgia,serif;margin:12px 0 10px;color:#f4efe6}
-#pp-passport .pp-fig{margin:12px 0 0;position:relative;background:#22211e}
-#pp-passport .pp-fig img{display:block;width:100%;height:190px;object-fit:cover}
-#pp-passport .pp-fig.pp-tall img{height:230px}
-#pp-passport .pp-fig.pp-detail img{transform:scale(2.6);transform-origin:45% 55%}
-#pp-passport .pp-fig.pp-detail{overflow:hidden}
-#pp-passport figcaption{position:absolute;left:0;right:0;bottom:0;padding:18px 10px 7px;font-size:9px;letter-spacing:.06em;color:#d8d1c5;background:linear-gradient(transparent,rgba(0,0,0,.65))}
-#pp-passport figcaption a{text-decoration:underline}
-#pp-passport .pp-stock figcaption{font-size:8px;line-height:1.35;padding-top:26px}
-#pp-passport .pp-stock img{filter:grayscale(.35);object-position:38% 78%}
-#pp-passport .pp-fig-empty{height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:1px dashed #3c3a35;background:repeating-linear-gradient(135deg,#1b1a18 0 8px,#181715 8px 16px);color:#8f897f;font:400 15px Georgia,serif}
-#pp-passport .pp-fig-empty.pp-tall{height:180px}
-#pp-passport .pp-fig-empty small{font:9px system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#6f6a62}
-#pp-passport .pp-split{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:start}
-#pp-passport .pp-split .pp-fig{margin:12px 0 0}
-#pp-passport .pp-split .pp-fig img,#pp-passport .pp-split .pp-fig-empty{height:190px}
+#pp-passport .pp-sec{display:grid;grid-template-columns:120px minmax(0,1fr);gap:0 24px;align-items:start;padding:24px 0;border-bottom:1px solid #2f2e2a}
+#pp-passport .pp-body{min-width:0}
+#pp-passport h3{font:400 21px/1.15 Georgia,serif;margin:8px 0 10px;color:#f4efe6}
+#pp-passport .pp-media{margin:0;min-width:0}
+#pp-passport .pp-media img{display:block;width:100%;aspect-ratio:5/6;height:auto;object-fit:cover;background:#22211e}
+#pp-passport .pp-media figcaption{margin-top:7px;font-size:8.5px;line-height:1.4;letter-spacing:.04em;color:#77726a}
+#pp-passport .pp-media figcaption a{text-decoration:underline;color:#8f897f}
 #pp-passport .pp-fields{margin:6px 0 0}
 #pp-passport .pp-row{display:grid;grid-template-columns:minmax(110px,34%) 1fr auto;gap:10px;align-items:baseline;padding:7px 0;border-top:1px solid #262522}
 #pp-passport dt{color:#a39c91;font-size:10.5px}
@@ -189,10 +173,18 @@ export const PASSPORT_CSS = `
 #pp-passport .pp-gap{margin-top:16px;padding:16px;border:1px solid #3a3834}
 #pp-passport .pp-gap p{margin:0 0 10px;color:#bdb6aa;font-size:11.5px}
 #pp-passport .pp-cta{font:500 9.5px system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#e1c58c}
-#pp-passport .pp-foot{padding:18px 0 0;color:#77726a;font-size:10px}
+#pp-passport .pp-foot{padding:18px 0 0 144px;color:#77726a;font-size:10px}
 #pp-passport .pp-foot ul{margin:6px 0 8px;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:4px 14px}
 #pp-passport .pp-foot a{text-decoration:underline;color:#a39c91}
-#pp-passport .pp-foot p{margin:0}
+#pp-passport .pp-foot p{margin:0 0 6px}
+/* Narrow panels (small product photos): stack each row's value under its label. */
+#pp-passport .pp-scroll{container-type:inline-size}
+@container (max-width:520px){
+  #pp-passport .pp-sec{grid-template-columns:88px minmax(0,1fr);gap:0 16px}
+  #pp-passport .pp-row{grid-template-columns:1fr auto}
+  #pp-passport .pp-row dd:not(.pp-ev){grid-column:1/-1;grid-row:2}
+  #pp-passport .pp-foot{padding-left:0}
+}
 @media (max-width:800px){
   #pp-passport{position:fixed;inset:0;width:100%;height:100%}
   #pp-passport .pp-head{grid-template-columns:48px 1fr;padding:16px 46px 12px 16px}
@@ -200,8 +192,8 @@ export const PASSPORT_CSS = `
   #pp-passport .pp-idrow{grid-template-columns:1fr 1fr;gap:0 16px}
   #pp-passport h2{font-size:21px}
   #pp-passport .pp-scroll{padding:0 16px 24px}
-  #pp-passport .pp-split{grid-template-columns:110px 1fr}
-  #pp-passport .pp-split .pp-fig img,#pp-passport .pp-split .pp-fig-empty{height:140px}
+  #pp-passport .pp-sec{grid-template-columns:84px minmax(0,1fr);gap:0 14px}
+  #pp-passport .pp-foot{padding-left:0}
   #pp-passport .pp-row{grid-template-columns:1fr auto;}
   #pp-passport .pp-row dd:not(.pp-ev){grid-column:1/-1;grid-row:2}
 }`;

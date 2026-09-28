@@ -34,22 +34,38 @@ Input a brand website or product URL.
 
 ## Images
 
-Each section picks an image by its evidentiary role, from the brand's own site where possible:
-- **Fabric:** a brand image whose own alt text, caption or filename marks it as fabric; otherwise a close crop of the product photo, captioned as such.
-- **Craft:** a brand image of the loom, embroidery, dyeing or workshop; otherwise an empty "No public image linked" tile.
-- **Maker:** a brand photo of an artisan (founder, designer and model photos are excluded). If the brand publishes none, an **illustrative stock image** from `tools/stock/` (Wikimedia Commons, CC BY-SA, credited) is shown, captioned *"Illustrative stock image · not the maker of this garment"*.
+Each section shows a small thumbnail beside its text; the text is the point, the image is context. Images are chosen by evidentiary role:
+- **Fabric:** a brand image whose own alt text, caption or filename marks it as fabric; otherwise the fixed illustrative fabric close-up.
+- **Craft:** a brand image of the loom, embroidery, dyeing or workshop; otherwise the fixed illustrative loom (or embroidery) image.
+- **Maker:** a brand photo of an artisan (founder, designer and model photos are excluded); otherwise the fixed illustrative weaver image.
+- **Garment record:** the product photo from the brand's own product page.
+
+The fixed illustrative images live in `tools/stock/` and are the same for every brand (crops of a Wikimedia Commons photo, CC BY-SA 4.0, credited in the passport's Sources). They are always captioned *"Illustrative image · Not this garment"*; brand images are captioned with a link to their source.
 
 ## Repo
 
 - `tools/make-passport.mjs`: CLI orchestration
+- `tools/server.mjs`, `tools/ui/index.html`: the web UI (`npm run ui`)
 - `tools/refresh-demo.mjs`: re-applies the current passport UI and snapshot fixes to an existing demo offline (evidence model and asset map from its manifest, no re-crawl)
 - `tools/lib/snapshot.mjs`: browsing, product discovery, asset localization and URL rewriting
 - `tools/lib/extract.mjs`: product-page extraction and visible-hero detection
 - `tools/lib/archive.mjs`: brand-archive crawl and image classification
 - `tools/lib/passport-model.mjs`: evidence model (the "never invent" rules live here)
 - `tools/lib/passport-ui.mjs`: passport markup, scoped CSS and the runtime shipped in the demo
-- `tools/stock/`: fallback artisan images plus attribution (`stock.json`)
-- `demos/theloomart/`, `demos/iroiro/`: generated demos (HTML, single-file `*.standalone.html`, `assets/`, `snapshot-manifest.json` with the full evidence model, and a preview PNG)
+- `tools/lib/stock.mjs`, `tools/stock/`: fixed illustrative section images plus attribution (`stock.json`)
+- `demos/theloomart/`, `demos/iroiro/`, `demos/ethicus/`, `demos/thesummerhouse/`: generated demos (HTML, single-file `*.standalone.html`, `assets/`, `snapshot-manifest.json` with the full evidence model, and a preview PNG)
+
+## Web UI: paste a link, get a passport
+
+```bash
+npm install
+npx playwright install chromium
+npm run ui
+```
+
+Open http://localhost:4173, paste the link to a product page (open the product on the brand's site and copy the address bar), and press **Make passport**. The page shows each step while the generator runs (about a minute), then gives you **Open passport**, **Download single file** and a copyable link. Every passport made this way is kept in `generated/<site>-<product>/` (not committed) and listed under **Passports**, next to the committed examples in `demos/`.
+
+The UI runs the same generator as the command line, one passport at a time, on your machine: the links are local (`localhost`). Share a passport by sending its single file. Settings: `PORT` (default 4173), `HOST` (default 127.0.0.1), `CHROMIUM_PATH` (use an existing Chromium instead of Playwright's download).
 
 ## Run the generator
 
@@ -58,6 +74,9 @@ npm install
 npx playwright install --with-deps chromium
 node tools/make-passport.mjs "https://theloomart.com/" demos/theloomart/black-spade-blazer.html "black spade blazer"
 node tools/make-passport.mjs "https://iroiro.in/" demos/iroiro/saaya-blazer.html "saaya"
+node tools/make-passport.mjs "https://www.ethicus.in/" demos/ethicus/rainbow-organic-cotton-saree.html
+# a product page link, used as-is (what the web UI does):
+node tools/make-passport.mjs "https://thesummerhouse.in/products/soho-green-needlecord-embroidered-top" demos/thesummerhouse/soho-green-needlecord-embroidered-top.html "" --product-page
 ```
 
 Open the resulting HTML file directly in a browser. It loads its styles and images from the `assets/` folder next to it, so open it from inside its folder. Fonts are inlined as data URIs because browsers block font files on `file://` pages.
@@ -67,5 +86,5 @@ Each run also writes `<name>.standalone.html`: a single file with every styleshe
 After changing `passport-ui.mjs` or `snapshot.mjs`, refresh the committed demos without re-crawling:
 
 ```bash
-node tools/refresh-demo.mjs demos/theloomart/black-spade-blazer.html demos/iroiro/saaya-blazer.html
+node tools/refresh-demo.mjs demos/theloomart/black-spade-blazer.html demos/iroiro/saaya-blazer.html demos/ethicus/rainbow-organic-cotton-saree.html
 ```

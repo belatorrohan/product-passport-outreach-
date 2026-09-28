@@ -8,7 +8,8 @@ import {chromium} from 'playwright';
 const PRODUCT_PATH = /\/(products?|item|p)\//i;
 
 export async function openBrowser() {
-  const browser = await chromium.launch({headless: true});
+  // CHROMIUM_PATH: use an existing Chromium build instead of Playwright's download.
+  const browser = await chromium.launch({headless: true, executablePath: process.env.CHROMIUM_PATH || undefined});
   const context = await browser.newContext({viewport: {width: 1440, height: 1100}, deviceScaleFactor: 1});
   const page = await context.newPage();
   return {browser, context, page};
@@ -50,6 +51,28 @@ export async function findProductPage(page, hint) {
   if (!links.length) throw new Error('No product link discovered. Pass a direct product URL or product name.');
   await load(page, links[0].u);
   return page.url();
+}
+
+// Close pop-ups (newsletter, cookie, verification, region pickers) and their backdrops, and
+// lift the scroll lock they set, so they neither hide the product photo from hero detection
+// nor end up frozen over the saved copy.
+export async function hideOverlays(page) {
+  await page.keyboard.press('Escape').catch(() => {});
+  await page.evaluate(() => {
+    const W = innerWidth, H = innerHeight;
+    const DIALOG = /modal|popup|pop-up|overlay|backdrop|newsletter|klaviyo|privy|verify|captcha|interstitial|cookie|consent|geolocation|country-selector/i;
+    for (const e of document.querySelectorAll('body *')) {
+      const s = getComputedStyle(e);
+      if (s.position !== 'fixed' || s.display === 'none' || s.visibility === 'hidden' || Number(s.opacity) === 0) continue;
+      const r = e.getBoundingClientRect();
+      if (!r.width || !r.height) continue;
+      const covers = r.width >= W * .85 && r.height >= H * .85;
+      const centred = Math.abs(r.left + r.width / 2 - W / 2) < W * .2 && Math.abs(r.top + r.height / 2 - H / 2) < H * .25;
+      const dialog = e.matches('dialog[open],[role="dialog"],[role="alertdialog"],[aria-modal="true"]') || DIALOG.test(`${e.className} ${e.id}`);
+      if (covers || (dialog && centred && r.width * r.height > W * H * .03)) e.style.setProperty('display', 'none', 'important');
+    }
+    for (const e of [document.documentElement, document.body]) if (getComputedStyle(e).overflowY === 'hidden') e.style.setProperty('overflow', 'visible', 'important');
+  });
 }
 
 // Scroll through the page so lazy images load, then return to the top instantly
@@ -109,7 +132,10 @@ export async function localize({html, resources, extra = [], source, dir}) {
 }
 
 const FONT_TYPE = {woff2: 'font/woff2', woff: 'font/woff', ttf: 'font/ttf', otf: 'font/otf'};
-const pathKey = u => { try { const x = new URL(u); return x.hostname + x.pathname; } catch { return ''; } };
+// Same image at another size: ignore the query and Shopify's size suffix in the file name
+// ("photo_180x.jpg", "photo_2048x2048.jpg", "photo_grande.jpg" are all "photo.jpg").
+const SIZE_SUFFIX = /_(?:\d+x\d*|x\d+|pico|icon|thumb|small|compact|medium|large|grande|original|master)(?:_crop_[a-z]+)?(?:@\dx)?(?=\.[a-z0-9]+$)/i;
+const pathKey = u => { try { const x = new URL(u); return x.hostname + x.pathname.replace(SIZE_SUFFIX, ''); } catch { return ''; } };
 
 // Rewrite the saved HTML so it renders when opened straight from disk (file://):
 // - every URL form (absolute, protocol-relative, root-relative, srcset, inline CSS url())
@@ -133,7 +159,7 @@ export async function finalizeHtml({html, map, source, dir}) {
   html = html.replace(/\b(src|data-src|poster|href)=(['"])([^'"]+)\2/gi, (m, a, q, u) =>
     skip.test(u) ? m : `${a}=${q}${resolve(u)}${q}`);
   html = html.replace(/\b(srcset|data-srcset)=(['"])([^'"]+)\2/gi, (m, a, q, v) =>
-    `${a}=${q}${v.split(',').map(s => { const p = s.trim().split(/\s+/); if (!skip.test(p[0])) p[0] = resolve(p[0]); return p.join(' '); }).join(', ')}${q}`);
+    `${a}=${q}${v.split(',').map(s => s.trim()).filter(Boolean).map(s => { const p = s.split(/\s+/); if (!skip.test(p[0])) p[0] = resolve(p[0]); return p.join(' '); }).join(', ')}${q}`);
   html = html.replace(/url\(\s*(&quot;|["']?)((?:(?!&quot;)[^"'()])+?)\1\s*\)/gi, (m, q, u) =>
     skip.test(u) ? m : `url(${q}${resolve(u)}${q})`);
 
@@ -234,8 +260,12 @@ export async function inlineAssets(html, dir) {
 }
 
 // Remove the site's own scripts/embeds so the copy is inert, then add our runtime.
+// Comments go first: their text is not escaped, so a comment that merely mentions
+// "<script>" would otherwise start a match that eats the comment's closing "-->" and
+// turn the rest of the page (passport included) into one long comment.
 export function stripScripts(html) {
   return html
+    .replace(/<!--[\s\S]*?-->/g, '')
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
     .replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, '')
     .replace(/<iframe\b[\s\S]*?<\/iframe>/gi, '');

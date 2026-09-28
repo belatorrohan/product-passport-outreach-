@@ -1,0 +1,9 @@
+ .slideshow__content-inner-container a:focus {color: #fff;}
+  @media only screen and (max-width:787px){  
+  .slideshow__content-wrap .slideshow__content .slideshow__content-inner .slideshow__link {font-size: 13px !important;}
+  .slideshow__content-wrap .slideshow__content .slideshow__content-inner .slideshow__subheading { font-size: 14px !important;} 
+  }
+  .slideshow__content-wrap .slideshow__content .slideshow__content-inner .slideshow__heading{letter-spacing: 0.2px;}
+  .slideshow__content-wrap .slideshow__content .slideshow__content-inner .slideshow__subheading {font-size: 18px;letter-spacing: 0.2px;}
+  .slideshow__content-wrap .slideshow__content .slideshow__content-inner .slideshow__link {font-size: 16px; letter-spacing: 4px;}
+  .slideshow__content-wrap .slideshow__content .slideshow__content-inner .slideshow__link:hover{color:#ffffff !important;}

@@ -12,6 +12,9 @@ export async function extractProduct(page) {
     // hidden lightbox/product-card copies are not).
     const ownsHit = (img, hit) => {
       if (!hit) return false;
+      // A transparent full-viewport layer (pop-up backdrop, click catcher) does not hide the photo.
+      const hr = hit.getBoundingClientRect();
+      if (!hit.contains(img) && hr.width >= innerWidth * .9 && hr.height >= innerHeight * .9) return true;
       const r = img.getBoundingClientRect(), area = r.width * r.height;
       for (let e = img, k = 0; e && k < 5; e = e.parentElement, k++) {
         const q = e.getBoundingClientRect();
@@ -30,10 +33,15 @@ export async function extractProduct(page) {
 
     const imgs = [...document.images].map(i => {
       const r = i.getBoundingClientRect();
-      return {el: i, src: abs(i.currentSrc || i.src || i.getAttribute('data-src') || ''), w: i.naturalWidth || 0, h: i.naturalHeight || 0, a: Math.max(0, r.width) * Math.max(0, r.height), v: shown(i)};
+      return {el: i, src: abs(i.currentSrc || i.src || i.getAttribute('data-src') || ''), w: i.naturalWidth || 0, h: i.naturalHeight || 0, a: Math.max(0, r.width) * Math.max(0, r.height), top: r.top, v: shown(i)};
     }).filter(x => x.src);
     const large = imgs.filter(x => x.w >= 350 && x.h >= 350);
-    const hero = large.filter(x => x.v).sort((a, b) => b.a - a.a)[0] || [...large].sort((a, b) => b.w * b.h - a.w * a.h)[0] || imgs[0];
+    // Prefer the largest painted photo; failing that the largest one in the first screenful
+    // (the product gallery), and only then the largest file anywhere on the page.
+    const byArea = (a, b) => b.a - a.a;
+    const hero = large.filter(x => x.v).sort(byArea)[0]
+      || large.filter(x => x.a > 0 && x.top < innerHeight && x.top > -innerHeight / 2).sort(byArea)[0]
+      || [...large].sort((a, b) => b.w * b.h - a.w * a.h)[0] || imgs[0];
     document.querySelectorAll('[data-pp-hero-img]').forEach(e => e.removeAttribute('data-pp-hero-img'));
     hero?.el?.setAttribute('data-pp-hero-img', '');
 

@@ -11,12 +11,16 @@ import {pathToFileURL} from 'node:url';
 import {chromium} from 'playwright';
 import {finalizeHtml, inlineAssets} from './lib/snapshot.mjs';
 import {renderPassport, PASSPORT_CSS, PASSPORT_RUNTIME} from './lib/passport-ui.mjs';
+import {pickImages} from './lib/passport-model.mjs';
+import {loadStock, STOCK_DIR} from './lib/stock.mjs';
 
 const files = process.argv.slice(2);
 if (!files.length) {
   console.error('Usage: node tools/refresh-demo.mjs <demo.html> [...]');
   process.exit(1);
 }
+
+const stock = await loadStock();
 
 const replaceBetween = (html, start, end, next) => {
   const i = html.indexOf(start), j = i < 0 ? -1 : html.indexOf(end, i);
@@ -26,13 +30,29 @@ const replaceBetween = (html, start, end, next) => {
 
 for (const file of files) {
   const dir = path.dirname(path.resolve(file));
-  const manifest = JSON.parse(await fs.readFile(path.join(dir, 'snapshot-manifest.json'), 'utf8'));
-  const {pill, panel} = renderPassport(manifest.passport);
+  const manifestPath = path.join(dir, 'snapshot-manifest.json');
+  const manifest = JSON.parse(await fs.readFile(manifestPath, 'utf8'));
+  const m = manifest.passport, map = new Map(manifest.assets);
+
+  // Re-pick section images with the current rules, from the archive images the crawl
+  // recorded; copy any fixed illustrative image into assets/ like a captured image.
+  m.images = pickImages({hero: m.product.hero, title: m.product.name, url: m.product.url},
+    {images: manifest.archiveImagesConsidered || []}, m.craft.key, stock);
+  for (const s of Object.values(stock)) {
+    if (!Object.values(m.images).some(i => i?.src === s.src)) continue;
+    const local = `assets/stock-${s.file}`;
+    await fs.copyFile(path.join(STOCK_DIR, s.file), path.join(dir, local));
+    map.set(s.src, local);
+  }
+  manifest.assets = [...map.entries()];
+  await fs.writeFile(manifestPath, JSON.stringify(manifest, null, 2));
+
+  const {pill, panel} = renderPassport(m);
   let html = await fs.readFile(file, 'utf8');
   html = replaceBetween(html, '<button id="pp-pill"', '</aside>', pill + panel);
   html = replaceBetween(html, '<style data-pp-style', '</style>', `<style data-pp-style="">${PASSPORT_CSS}</style>`);
   html = replaceBetween(html, '<script data-pp-runtime>', '</script>', `<script data-pp-runtime>${PASSPORT_RUNTIME}</script>`);
-  html = await finalizeHtml({html, map: new Map(manifest.assets), source: manifest.sourceUrl, dir});
+  html = await finalizeHtml({html, map, source: manifest.sourceUrl, dir});
   await fs.writeFile(file, html, 'utf8');
   await fs.writeFile(file.replace(/\.html?$/i, '') + '.standalone.html', await inlineAssets(html, dir), 'utf8');
 
