@@ -38,7 +38,7 @@ async function normalizeUrl(raw) {
   if (!/^https?:\/\//i.test(s)) s = 'https://' + s;
   let u;
   try { u = new URL(s); } catch { u = null; }
-  if (!u || !/^https?:$/.test(u.protocol) || !u.hostname.includes('.')) throw new Error('Enter a website address, for example https://www.ethicus.in');
+  if (!u || !/^https?:$/.test(u.protocol) || !u.hostname.includes('.')) throw new Error('Paste a product page link, for example https://thesummerhouse.in/products/soho-green-needlecord-embroidered-top');
   const host = u.hostname.replace(/^\[|\]$/g, '');
   let addrs = [];
   try { addrs = net.isIP(host) ? [host] : (await dns.lookup(host, {all: true})).map(a => a.address); } catch {}
@@ -52,7 +52,7 @@ function explain(log) {
   const text = log.join('\n');
   if (/ERR_NAME_NOT_RESOLVED|ENOTFOUND/.test(text)) return 'That website address could not be found. Check the link.';
   if (/ERR_TUNNEL_CONNECTION_FAILED|ERR_CONNECTION|ERR_TIMED_OUT|Timeout .*exceeded/.test(text)) return 'The website could not be reached or took too long to load. Try again, or paste a direct product link.';
-  if (/No product link discovered/.test(text)) return 'No product page was found from that link. Paste a direct product link, or add a product name.';
+  if (/No product link discovered/.test(text)) return 'No product page was found from that link. Paste the link to a product page.';
   if (/Could not identify hero image|No hero container/.test(text)) return 'The product photo could not be found on that page. Try a different product link.';
   if (/Executable doesn't exist|playwright install/i.test(text)) return 'The browser used by the generator is not installed. Run: npx playwright install chromium';
   const line = [...log].reverse().find(l => /error|failed|cannot|could not/i.test(l));
@@ -62,9 +62,11 @@ function explain(log) {
 const jobs = new Map();
 let queue = Promise.resolve();
 
-function startJob(url, product) {
-  const name = slug(new URL(url).hostname) + (product ? '-' + slug(product) : '');
-  const job = {id: crypto.randomUUID(), url, product, name, status: 'queued', step: 'Waiting for the previous passport to finish', log: [], startedAt: null};
+// generated/<site>-<product handle>/, e.g. thesummerhouse-in-soho-green-needlecord-embroidered-top
+function startJob(url) {
+  const u = new URL(url), handle = u.pathname.split('/').filter(Boolean).pop() || '';
+  const name = slug(`${u.hostname} ${handle.replace(/\.[a-z]+$/i, '')}`) || 'passport';
+  const job = {id: crypto.randomUUID(), url, name, status: 'queued', step: 'Waiting for the previous passport to finish', log: [], startedAt: null};
   jobs.set(job.id, job);
   queue = queue.then(() => run(job));
   return job;
@@ -74,7 +76,7 @@ function run(job) {
   return new Promise(resolve => {
     Object.assign(job, {status: 'running', step: 'Starting', startedAt: Date.now()});
     const out = path.join('generated', job.name, 'passport.html');
-    const child = spawn(process.execPath, [path.join(ROOT, 'tools', 'make-passport.mjs'), job.url, out, job.product || ''], {cwd: ROOT, env: process.env});
+    const child = spawn(process.execPath, [path.join(ROOT, 'tools', 'make-passport.mjs'), job.url, out, '', '--product-page'], {cwd: ROOT, env: process.env});
     let stdout = '';
     child.stdout.on('data', d => { stdout += d; });
     child.stderr.on('data', d => {
@@ -165,15 +167,15 @@ const server = http.createServer(async (req, res) => {
       const body = await readJson(req);
       let target;
       try { target = await normalizeUrl(body.url); } catch (e) { return send(res, 400, {error: e.message}); }
-      const job = startJob(target, String(body.product || '').trim().slice(0, 80));
+      const job = startJob(target);
       return send(res, 202, {id: job.id});
     }
     const jobMatch = url.pathname.match(/^\/api\/jobs\/([\w-]+)$/);
     if (req.method === 'GET' && jobMatch) {
       const job = jobs.get(jobMatch[1]);
       if (!job) return send(res, 404, {error: 'Unknown job'});
-      const {id, url: target, product, status, step, error, result, startedAt} = job;
-      return send(res, 200, {id, url: target, product, status, step, error, result, elapsed: startedAt ? Date.now() - startedAt : 0});
+      const {id, url: target, status, step, error, result, startedAt} = job;
+      return send(res, 200, {id, url: target, status, step, error, result, elapsed: startedAt ? Date.now() - startedAt : 0});
     }
     const fileMatch = url.pathname.match(/^\/(p|d)\/(.+)$/);
     if (req.method === 'GET' && fileMatch) return serveFile(res, fileMatch[1], fileMatch[2], url.searchParams.has('download'));

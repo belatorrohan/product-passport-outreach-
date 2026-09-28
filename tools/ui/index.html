@@ -24,7 +24,7 @@ main{max-width:980px;margin:0 auto;padding:56px 24px 80px}
 h1{font:400 clamp(30px,5vw,44px)/1.08 Georgia,"Times New Roman",serif;margin:12px 0 12px;max-width:22ch}
 h2{font:400 22px/1.2 Georgia,serif;margin:0}
 .lede{color:var(--muted);max-width:60ch;margin:0 0 32px}
-form{background:var(--surface);border:1px solid var(--line);padding:24px;display:grid;grid-template-columns:1fr 260px auto;gap:14px;align-items:end}
+form{background:var(--surface);border:1px solid var(--line);padding:24px;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:end}
 label{display:grid;gap:6px;font-size:13px;color:var(--muted)}
 input{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:12px 14px;border-radius:2px;width:100%;min-width:0}
 input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
@@ -77,17 +77,14 @@ button:disabled{opacity:.5;cursor:progress}
 <main>
   <div class="label">Product passport · Outreach engine</div>
   <h1>Make a product passport for any brand</h1>
-  <p class="lede">Paste a brand's website or a product link. The engine opens the site, picks a product, reads what the brand publishes about it, and builds a proof-of-concept passport on that product's own page. It takes about a minute.</p>
+  <p class="lede">Paste the link to a product page. The engine opens that page, reads what the brand publishes about the product and its craft, and builds a proof-of-concept passport on the product's own photo. It takes about a minute.</p>
 
   <form id="form" novalidate>
-    <label><span>Brand website or product link</span>
-      <input id="url" name="url" type="text" inputmode="url" autocomplete="url" placeholder="https://www.ethicus.in" required>
-    </label>
-    <label><span>Product name <span class="opt">(optional)</span></span>
-      <input id="product" name="product" type="text" placeholder="e.g. cotton saree">
+    <label><span>Product page link</span>
+      <input id="url" name="url" type="text" inputmode="url" autocomplete="url" placeholder="https://thesummerhouse.in/products/soho-green-needlecord-embroidered-top" required>
     </label>
     <button id="go" type="submit">Make passport</button>
-    <p class="hint">Without a product name, the first product on the site is used. A direct product link gives the most predictable result.</p>
+    <p class="hint">Open the product on the brand's website and copy the address from the browser's address bar.</p>
   </form>
 
   <section id="status" class="card" hidden aria-live="polite">
@@ -120,7 +117,7 @@ button:disabled{opacity:.5;cursor:progress}
   <div class="grid" id="list"><p class="empty">Loading…</p></div>
 </main>
 <script>
-const STEPS = ['Opening the website', 'Finding a product page', 'Loading product images', 'Reading product details',
+const STEPS = ['Opening the product page', 'Loading product images', 'Reading product details',
   'Reading the brand story', 'Building the passport', 'Saving the page', 'Rendering a preview'];
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
@@ -171,7 +168,7 @@ $('form').addEventListener('submit', async e => {
   $('status-title').textContent = 'Making the passport…';
   renderSteps('', false);
   try {
-    const r = await fetch('/api/passports', {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify({url, product: $('product').value})});
+    const r = await fetch('/api/passports', {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify({url})});
     const body = await r.json();
     if (!r.ok) throw new Error(body.error || 'Could not start');
     for (;;) {

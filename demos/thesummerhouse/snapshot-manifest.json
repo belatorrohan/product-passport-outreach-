@@ -1,0 +1,692 @@
+{
+  "sourceUrl": "https://us.thesummerhouse.in/products/soho-green-needlecord-embroidered-top?shpxid=edea944a-8cd7-4934-aa66-10dd326f2004",
+  "generatedAt": "2026-09-28T18:05:18.417Z",
+  "brand": "The Summer House",
+  "title": "Sōhō Green Needlecord Embroidered Top",
+  "price": "₹13,825",
+  "hero": "https://us.thesummerhouse.in/cdn/shop/files/303_44c13468-b194-4703-98a3-ef4abf2dac88_1512x.jpg?v=1785841586",
+  "passport": {
+    "product": {
+      "name": "Sōhō Green Needlecord Embroidered Top",
+      "brand": "The Summer House",
+      "price": "₹13,825",
+      "url": "https://us.thesummerhouse.in/products/soho-green-needlecord-embroidered-top?shpxid=edea944a-8cd7-4934-aa66-10dd326f2004",
+      "hero": "https://us.thesummerhouse.in/cdn/shop/files/303_44c13468-b194-4703-98a3-ef4abf2dac88_1512x.jpg?v=1785841586",
+      "sku": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "garmentId": {
+        "value": null,
+        "evidence": "not-linked"
+      }
+    },
+    "material": {
+      "name": {
+        "value": "Cotton",
+        "evidence": "product-page",
+        "source": "https://us.thesummerhouse.in/products/soho-green-needlecord-embroidered-top?shpxid=edea944a-8cd7-4934-aa66-10dd326f2004"
+      },
+      "weave": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "composition": {
+        "value": "100% cotton corduroy",
+        "evidence": "product-page",
+        "source": "https://us.thesummerhouse.in/products/soho-green-needlecord-embroidered-top?shpxid=edea944a-8cd7-4934-aa66-10dd326f2004"
+      },
+      "fabricLot": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "quantity": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "statement": {
+        "value": "Appliqué work on the world’s finest 21 wales needlecord. Designed for tastefully done occasions. Can be worn front and back - choose between a V or modish neckline as desired. The garment is exquisitely embroidered by hand in our studio. Slight differences in embroidery speak to the hand process involved.",
+        "evidence": "product-page",
+        "source": "https://us.thesummerhouse.in/products/soho-green-needlecord-embroidered-top?shpxid=edea944a-8cd7-4934-aa66-10dd326f2004"
+      }
+    },
+    "craft": {
+      "key": "embroidery",
+      "label": "Embroidery",
+      "role": "Embroiderer",
+      "claim": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "person": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "location": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "period": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "workshop": {
+        "value": null,
+        "evidence": "not-linked"
+      }
+    },
+    "maker": {
+      "name": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "role": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "statement": {
+        "value": "For centuries, the weavers of Kutch, Maheshwar, Bengal, and beyond have created textiles so refined, their weft feels like language.",
+        "evidence": "brand-archive",
+        "source": "https://us.thesummerhouse.in/pages/the-journal"
+      },
+      "linkedToProduct": false
+    },
+    "stages": [
+      {
+        "key": "fibre",
+        "label": "Yarn",
+        "process": {
+          "value": "Described in brand archive",
+          "evidence": "brand-archive",
+          "source": "https://us.thesummerhouse.in/pages/about-us"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      },
+      {
+        "key": "embroidery",
+        "label": "Embroidery",
+        "process": {
+          "value": "Stated on product page",
+          "evidence": "product-page",
+          "source": "https://us.thesummerhouse.in/products/soho-green-needlecord-embroidered-top?shpxid=edea944a-8cd7-4934-aa66-10dd326f2004"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      },
+      {
+        "key": "cutting",
+        "label": "Cutting",
+        "process": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      },
+      {
+        "key": "stitching",
+        "label": "Stitching",
+        "process": {
+          "value": "Described in brand archive",
+          "evidence": "brand-archive",
+          "source": "https://us.thesummerhouse.in/pages/the-journal"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      },
+      {
+        "key": "finishing",
+        "label": "Finishing",
+        "process": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      }
+    ],
+    "garmentRecord": [
+      [
+        "Product",
+        {
+          "value": "Sōhō Green Needlecord Embroidered Top",
+          "evidence": "product-page",
+          "source": "https://us.thesummerhouse.in/products/soho-green-needlecord-embroidered-top?shpxid=edea944a-8cd7-4934-aa66-10dd326f2004"
+        }
+      ],
+      [
+        "SKU",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Garment ID",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Material",
+        {
+          "value": "Cotton",
+          "evidence": "product-page",
+          "source": "https://us.thesummerhouse.in/products/soho-green-needlecord-embroidered-top?shpxid=edea944a-8cd7-4934-aa66-10dd326f2004"
+        }
+      ],
+      [
+        "Fabric lot",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Fabric quantity",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Workshop",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Embroiderer",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Location",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Garment unit",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Production date",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ]
+    ],
+    "traceability": {
+      "status": "Partially documented",
+      "publicRecords": 5,
+      "recordLinks": 0,
+      "missing": 9
+    },
+    "images": {
+      "fabric": {
+        "src": "https://us.thesummerhouse.in/cdn/shop/files/khadi.webp?v=1651576273",
+        "alt": "",
+        "source": "https://us.thesummerhouse.in/pages/meet-the-makers",
+        "kind": "archive"
+      },
+      "craft": {
+        "src": "https://stock.passport.local/embroiderer.jpg",
+        "alt": "An artisan hand-embroidering fabric stretched on a frame",
+        "source": "https://commons.wikimedia.org/wiki/File:Zardozi_Artisan.jpg",
+        "credit": "Notakeyboard567 / Wikimedia Commons · CC BY-SA 4.0",
+        "kind": "stock"
+      },
+      "maker": {
+        "src": "https://stock.passport.local/maker.jpg",
+        "alt": "A handloom weaver at work",
+        "source": "https://commons.wikimedia.org/wiki/File:Handloom_weaver_in_Maheshwar_fort,_Khargone_district,_Madhya_Pradesh.jpg",
+        "credit": "Eskay001 / Wikimedia Commons · CC BY-SA 4.0, cropped",
+        "kind": "stock"
+      },
+      "garment": {
+        "src": "https://us.thesummerhouse.in/cdn/shop/files/303_44c13468-b194-4703-98a3-ef4abf2dac88_1512x.jpg?v=1785841586",
+        "alt": "Sōhō Green Needlecord Embroidered Top",
+        "source": "https://us.thesummerhouse.in/products/soho-green-needlecord-embroidered-top?shpxid=edea944a-8cd7-4934-aa66-10dd326f2004",
+        "kind": "product"
+      }
+    },
+    "sources": [
+      {
+        "url": "https://us.thesummerhouse.in/pages/meet-the-makers",
+        "title": "Meet the maker – The Summer House"
+      },
+      {
+        "url": "https://us.thesummerhouse.in/pages/about-us",
+        "title": "The Summer House | Luxurious essentials for the modern woman"
+      },
+      {
+        "url": "https://us.thesummerhouse.in/pages/the-journal",
+        "title": "The Journal – The Summer House"
+      }
+    ]
+  },
+  "archiveImagesConsidered": [
+    {
+      "src": "https://us.thesummerhouse.in/cdn/shop/files/khadi.webp?v=1651576273",
+      "cls": "fabric",
+      "strong": true,
+      "alt": "",
+      "source": "https://us.thesummerhouse.in/pages/meet-the-makers"
+    }
+  ],
+  "assets": [
+    [
+      "https://us.thesummerhouse.in/cdn/shop/t/291/assets/custom.css?v=82870864267453322411787805455",
+      "assets/us-thesummerhouse-in-cdn-shop-t-291-assets-custom-css-dfa2685ffe.css"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/t/291/assets/theme.css?v=5040160559319432191787806309",
+      "assets/us-thesummerhouse-in-cdn-shop-t-291-assets-theme-css-6ad4daa3c9.css"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/300_8dd9bc03-b189-45a6-aeb8-4a9982094936_1512x.jpg?v=1785841586",
+      "assets/hop-files-300-8dd9bc03-b189-45a6-aeb8-4a9982094936-1512x-jpg-ef768d3960.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/t/291/assets/swiper-bundle.min.css?v=28514252315153773571751874760",
+      "assets/hesummerhouse-in-cdn-shop-t-291-assets-swiper-bundle-min-css-2455b58761.css"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/303_44c13468-b194-4703-98a3-ef4abf2dac88_1512x.jpg?v=1785841586",
+      "assets/hop-files-303-44c13468-b194-4703-98a3-ef4abf2dac88-1512x-jpg-38eb55a696.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/302_a46fc1c8-19a5-45a5-86a9-fee90caf1167_1512x.jpg?v=1785841586",
+      "assets/hop-files-302-a46fc1c8-19a5-45a5-86a9-fee90caf1167-1512x-jpg-b7aac601f1.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/301_dbb8c8e5-fea1-49d7-a712-612a7e59e5da_1512x.jpg?v=1785841586",
+      "assets/hop-files-301-dbb8c8e5-fea1-49d7-a712-612a7e59e5da-1512x-jpg-20c3c1bc11.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/311_0197fbb2-bde9-4050-b01c-4d4dcc92e877_1512x.jpg?v=1785841586",
+      "assets/hop-files-311-0197fbb2-bde9-4050-b01c-4d4dcc92e877-1512x-jpg-258bbd8fce.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/TheSummerHouseLogo_white_3_6e1d33cf-06ee-41d6-81d7-626890356453_250x.png?v=1739190618",
+      "assets/seLogo-white-3-6e1d33cf-06ee-41d6-81d7-626890356453-250x-png-81e56913d9.png"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/t/291/assets/Crown1.svg?v=179705478356146639461751874759",
+      "assets/us-thesummerhouse-in-cdn-shop-t-291-assets-Crown1-svg-50c0345f71.svg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/t/291/assets/Crown2.svg?v=75629588721040243631751874759",
+      "assets/us-thesummerhouse-in-cdn-shop-t-291-assets-Crown2-svg-8c93faa304.svg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/fonts/lora/lora_n4.9a60cb39eff3bfbc472bac5b3c5c4d7c878f0a8d.woff2",
+      "assets/-lora-lora-n4-9a60cb39eff3bfbc472bac5b3c5c4d7c878f0a8d-woff2-c8923815d5.woff2"
+    ],
+    [
+      "https://cdn.shopify.com/s/files/1/0397/1809/files/fair-wage.png?v=1654774108",
+      "assets/cdn-shopify-com-s-files-1-0397-1809-files-fair-wage-png-edb2f43f8a.png"
+    ],
+    [
+      "https://cdn.shopify.com/s/files/1/0397/1809/files/made-on-order.png?v=1654774164",
+      "assets/cdn-shopify-com-s-files-1-0397-1809-files-made-on-order-png-24c4a8e9d5.png"
+    ],
+    [
+      "https://cdn.shopify.com/s/files/1/0397/1809/files/zero-waste.png?v=1654776138",
+      "assets/cdn-shopify-com-s-files-1-0397-1809-files-zero-waste-png-e10cf3e3c0.png"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shopifycloud/shopify-plyr/v1.0/shopify-plyr.css",
+      "assets/house-in-cdn-shopifycloud-shopify-plyr-v1-0-shopify-plyr-css-a98b4f1b94.css"
+    ],
+    [
+      "https://cdn.shopify.com/s/files/1/0397/1809/files/waste-water-management.png?v=1654776329",
+      "assets/ify-com-s-files-1-0397-1809-files-waste-water-management-png-371c5ffa0e.png"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/t/291/assets/slideshow-split.css?v=29102089622625492801751874759",
+      "assets/-thesummerhouse-in-cdn-shop-t-291-assets-slideshow-split-css-9e53c96f65.css"
+    ],
+    [
+      "https://cdn.shopify.com/s/files/1/0397/1809/files/JULY_SHOOT_2_-_2026_-_PDP_8.png?v=1786375635",
+      "assets/fy-com-s-files-1-0397-1809-files-JULY-SHOOT-2-2026-PDP-8-png-2861ffb719.png"
+    ],
+    [
+      "https://cdn.shopify.com/s/files/1/0397/1809/files/JULY_SHOOT_2_-_2026_-_PDP_9.png?v=1786375698",
+      "assets/fy-com-s-files-1-0397-1809-files-JULY-SHOOT-2-2026-PDP-9-png-c732d5cde3.png"
+    ],
+    [
+      "https://cdn.shopify.com/s/files/1/0397/1809/files/Lora-Regular.ttf?v=1745474519",
+      "assets/cdn-shopify-com-s-files-1-0397-1809-files-Lora-Regular-ttf-926866b623.ttf"
+    ],
+    [
+      "https://cdn.shopify.com/s/files/1/0397/1809/files/LC_WA.png?v=1709892486",
+      "assets/cdn-shopify-com-s-files-1-0397-1809-files-LC-WA-png-4df60a4fae.png"
+    ],
+    [
+      "https://cdn.shopify.com/s/files/1/0397/1809/files/FuturaLT.ttf?v=1679586144",
+      "assets/cdn-shopify-com-s-files-1-0397-1809-files-FuturaLT-ttf-f05232c68f.ttf"
+    ],
+    [
+      "https://cdn.shopify.com/extensions/01a0e8b3-42ad-7387-9abd-e6e00a57d3ff/judgeme-763/assets/widget_v3_base.css",
+      "assets/7387-9abd-e6e00a57d3ff-judgeme-763-assets-widget-v3-base-css-f944dffd38.css"
+    ],
+    [
+      "https://www.google.com/images/phd/px.gif?t=1790618676934&r=0.31147107919335204",
+      "assets/www-google-com-images-phd-px-gif-69002acf33.gif"
+    ],
+    [
+      "https://www.google.com/images/phd/px.gif?t=1790618677134&r=0.4433332081436988",
+      "assets/www-google-com-images-phd-px-gif-77493ad83e.gif"
+    ],
+    [
+      "https://www.google.com/images/phd/px.gif?t=1790618677326&r=0.5517807720090201",
+      "assets/www-google-com-images-phd-px-gif-d5bcf77b5e.gif"
+    ],
+    [
+      "https://www.gstatic.com/recaptcha/releases/kemdRjWFxNjgsGdhRslyEPwU/styles__ltr.css",
+      "assets/m-recaptcha-releases-kemdRjWFxNjgsGdhRslyEPwU-styles-ltr-css-03bab47ee2.css"
+    ],
+    [
+      "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap",
+      "assets/fonts-googleapis-com-css2-ea78c7be20.css"
+    ],
+    [
+      "https://www.google.com/images/phd/px.gif?t=1790618677542&r=0.4694907418246479",
+      "assets/www-google-com-images-phd-px-gif-257b6e64a8.gif"
+    ],
+    [
+      "https://www.gstatic.com/recaptcha/api2/logo_48.png",
+      "assets/www-gstatic-com-recaptcha-api2-logo-48-png-c1452452d1.png"
+    ],
+    [
+      "https://www.google.com/images/phd/px.gif?t=1790618678040&r=0.26007164762867097",
+      "assets/www-google-com-images-phd-px-gif-9309e814aa.gif"
+    ],
+    [
+      "https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2",
+      "assets/om-s-roboto-v48-KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA-woff2-fb5169d9a9.woff2"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/307_46d72928-eeb4-45c4-9cf2-d7d09cbaf326_180x.jpg?v=1785841586",
+      "assets/shop-files-307-46d72928-eeb4-45c4-9cf2-d7d09cbaf326-180x-jpg-4a6d4e052a.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/308_d6d16f79-0ce0-4282-8757-544e7b4b3a82_180x.jpg?v=1785841586",
+      "assets/shop-files-308-d6d16f79-0ce0-4282-8757-544e7b4b3a82-180x-jpg-09caabc8ff.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/309_ab934736-20d9-4849-8028-94c9eae9180d_180x.jpg?v=1785841586",
+      "assets/shop-files-309-ab934736-20d9-4849-8028-94c9eae9180d-180x-jpg-0df48598df.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/306_031aac79-9f2e-45a9-b68d-d619437bf0a6_180x.jpg?v=1785841586",
+      "assets/shop-files-306-031aac79-9f2e-45a9-b68d-d619437bf0a6-180x-jpg-f49a5c3b57.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/305_bc3d3cf2-aa30-4e26-9add-962813b6326c_180x.jpg?v=1785841586",
+      "assets/shop-files-305-bc3d3cf2-aa30-4e26-9add-962813b6326c-180x-jpg-5db902ccf3.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/312_5e7f960c-ad80-4bca-be7f-9fc71aaf01ed_180x.jpg?v=1785841586",
+      "assets/shop-files-312-5e7f960c-ad80-4bca-be7f-9fc71aaf01ed-180x-jpg-a770b097d2.jpg"
+    ],
+    [
+      "https://cdn.shopify.com/s/files/1/0397/1809/files/Sustainable-fabrics.png?v=1654773922",
+      "assets/hopify-com-s-files-1-0397-1809-files-Sustainable-fabrics-png-b982accdc0.png"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/316_7f3776aa-f618-4dad-af86-340c561a24a1_180x.jpg?v=1785841586",
+      "assets/shop-files-316-7f3776aa-f618-4dad-af86-340c561a24a1-180x-jpg-18a15741e0.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/314_b8ae1e2f-6648-4638-8084-aed822c40ab1_180x.jpg?v=1785841586",
+      "assets/shop-files-314-b8ae1e2f-6648-4638-8084-aed822c40ab1-180x-jpg-c6de94368f.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/315_6ae78ccc-eaf7-4ca9-8057-1400b00956e8_180x.jpg?v=1785841586",
+      "assets/shop-files-315-6ae78ccc-eaf7-4ca9-8057-1400b00956e8-180x-jpg-7eb7f05104.jpg"
+    ],
+    [
+      "https://cdn.shopify.com/s/files/1/0397/1809/files/Futura_Round.ttf?v=1679586187",
+      "assets/cdn-shopify-com-s-files-1-0397-1809-files-Futura-Round-ttf-d5f225a8e0.ttf"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/312_5e7f960c-ad80-4bca-be7f-9fc71aaf01ed_720x.jpg?v=1785841586",
+      "assets/shop-files-312-5e7f960c-ad80-4bca-be7f-9fc71aaf01ed-720x-jpg-d11fce8d00.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/308_d6d16f79-0ce0-4282-8757-544e7b4b3a82_720x.jpg?v=1785841586",
+      "assets/shop-files-308-d6d16f79-0ce0-4282-8757-544e7b4b3a82-720x-jpg-69c3e775ea.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/305_bc3d3cf2-aa30-4e26-9add-962813b6326c_720x.jpg?v=1785841586",
+      "assets/shop-files-305-bc3d3cf2-aa30-4e26-9add-962813b6326c-720x-jpg-40d5510eff.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/306_031aac79-9f2e-45a9-b68d-d619437bf0a6_720x.jpg?v=1785841586",
+      "assets/shop-files-306-031aac79-9f2e-45a9-b68d-d619437bf0a6-720x-jpg-6763f24e07.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/307_46d72928-eeb4-45c4-9cf2-d7d09cbaf326_720x.jpg?v=1785841586",
+      "assets/shop-files-307-46d72928-eeb4-45c4-9cf2-d7d09cbaf326-720x-jpg-ecf280eebc.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/316_7f3776aa-f618-4dad-af86-340c561a24a1_720x.jpg?v=1785841586",
+      "assets/shop-files-316-7f3776aa-f618-4dad-af86-340c561a24a1-720x-jpg-8590690e3b.jpg"
+    ],
+    [
+      "https://www.google.com/pagead/1p-user-list/956408496/?random=1790618678014&cv=11&fst=1790618400000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be69o0v9164600192za200zd9164600192xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121280970&u_w=800&u_h=600&url=https%3A%2F%2Fus.thesummerhouse.in%2Fweb-pixels%40a5bf51cfwabd6c495p49b74ff1maa529d2b%2Fcustom%2Fweb-pixel-115900726%401%2Fsandbox%2Fmodern%2Fproducts%2Fsoho-green-needlecord-embroidered-top%3Fshpxid%3Dedea944a-8cd7-4934-aa66-10dd326f2004&rcb=6&frm=2&tiba=S%C5%8Dh%C5%8D%20Green%20Needlecord%20Embroidered%20Top%20%E2%80%93%20The%20Summer%20House&did=dMDg0Yz&gdid=dMDg0Yz&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=155782379.1790618678&data=event%3Dgtag.config&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS7AEAQM4h3NbNY_bjWLaebnD2bv6v7XMAugVWtft-3DPn-qY_gJpCfhV3reo1HgYZs2BBB-JFJ46DAwlixnbghdzHChtGU7jA8N-sogoU3Ul-uqnXYoZqpThDfEZUwwH9I2kKnJwazY8qd04cP6lG_PxL4eKshWetZiLoT4XIRbNJEd_jSk613HmDyOKEfaalSybPBxoc353wdzM5Crx6x8mKjIAOX5jjbFZixOnasvD3oy9d5Ex8wF7hOPERqpEgPqzUJX6CpxFI8hc1vWBfnMGMJvA7QTcWxt-bfqi6ephP7zRh_HQeWrRcmpJZHQ&random=4109020596&rmt_tld=0&ipr=y",
+      "assets/www-google-com-pagead-1p-user-list-956408496--0fe87cb66a.bin"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/309_ab934736-20d9-4849-8028-94c9eae9180d_720x.jpg?v=1785841586",
+      "assets/shop-files-309-ab934736-20d9-4849-8028-94c9eae9180d-720x-jpg-f5667208e1.jpg"
+    ],
+    [
+      "https://www.google.com/pagead/1p-user-list/956408496/?random=1790618678337&cv=11&fst=1790618400000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be69o0h1v9164600192za200zd9164600192xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938466~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153&u_w=800&u_h=600&url=https%3A%2F%2Fus.thesummerhouse.in%2Fweb-pixels%40a5bf51cfwabd6c495p49b74ff1maa529d2b%2Fcustom%2Fweb-pixel-131596598%401%2Fsandbox%2Fmodern%2Fproducts%2Fsoho-green-needlecord-embroidered-top%3Fshpxid%3Dedea944a-8cd7-4934-aa66-10dd326f2004&rcb=5&frm=2&tiba=S%C5%8Dh%C5%8D%20Green%20Needlecord%20Embroidered%20Top%20%E2%80%93%20The%20Summer%20House&did=dMDg0Yz&gdid=dMDg0Yz&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1798977201.1790618678&data=event%3Dgtag.config&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS7AEAQM4h3N0N70_qb9yoEOGQbe-ZHkXfIWQX72XGcfNPG1nOyvodtfNI9FqbmwwtIkzS8CF013TjHmpRGCt4GvVy1df19sU8BH_YVgb1LyQ5vxh9fGppR-MFHeICNAil6QKiwrVJAb3vJJIQ0I3qgsYWTOcq4J9voNZ562js6dOS8zxqb6cSiPRY-Bf25Zt3Rg-dCWth0N8OqObYHr-SgERMMQZOBuyMVFOpzeUm_yzLlzsMWxcypRXSYfE3-5qjkVJywdg_FWwCSxJuLsH5wZTOyZC0lKoUIbB84Tjfrm9rquXThJVPOSXBmJpRUg&random=1348821000&rmt_tld=0&ipr=y",
+      "assets/www-google-com-pagead-1p-user-list-956408496--501ffcefd8.bin"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/314_b8ae1e2f-6648-4638-8084-aed822c40ab1_720x.jpg?v=1785841586",
+      "assets/shop-files-314-b8ae1e2f-6648-4638-8084-aed822c40ab1-720x-jpg-f7ae40c13e.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/315_6ae78ccc-eaf7-4ca9-8057-1400b00956e8_720x.jpg?v=1785841586",
+      "assets/shop-files-315-6ae78ccc-eaf7-4ca9-8057-1400b00956e8-720x-jpg-c719d8a77a.jpg"
+    ],
+    [
+      "https://checkout.shopflo.co/stable/assets/assests-Dm5yghLX.css",
+      "assets/checkout-shopflo-co-stable-assets-assests-Dm5yghLX-css-22fc7e8514.css"
+    ],
+    [
+      "https://checkout.shopflo.co/stable/assets/auth-components-Rkh5BCSq.css",
+      "assets/eckout-shopflo-co-stable-assets-auth-components-Rkh5BCSq-css-0d0038bfc1.css"
+    ],
+    [
+      "https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap",
+      "assets/fonts-googleapis-com-css2-3ea423ffb6.css"
+    ],
+    [
+      "https://checkout.shopflo.co/stable/assets/index-Dgi5jYHI.css",
+      "assets/checkout-shopflo-co-stable-assets-index-Dgi5jYHI-css-a26b5e24c9.css"
+    ],
+    [
+      "https://www.googleadservices.com/ccm/conversion/956408496/?random=1790618681301&cv=11&fst=1790618681301&fmt=3&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be69o0v9164600192za200xecxf1&gcs=G111&gcd=13t3t3t2t5l1&dma=0&tag_exp=115616986~115938466~115938468~117776796~118897920~118897930~120032691~120213116~120385422~120469145~120469153&u_w=1440&u_h=1100&url=https%3A%2F%2Fus.thesummerhouse.in%2Fproducts%2Fsoho-green-needlecord-embroidered-top%3Fshpxid%3Dedea944a-8cd7-4934-aa66-10dd326f2004&rcb=9&label=XCAWCP2PxuUDELDFhsgD&capi=1&gtm_ee=1&evnid=sh-e930b87a-05F8-4E8E-B392-C5DE3A083802&excid=shp.3dec6c8e-ee8b-4a7e-890c-70edb1a2f72e&tiba=S%C5%8Dh%C5%8D%20Green%20Needlecord%20Embroidered%20Top%20%E2%80%93%20The%20Summer%20House&frm=0&did=dYmNjMT%2CdNzYwYj&gdid=dYmNjMT&edid=dNzYwYj&hn=www.googleadservices.com&rdp=0&npa=0&pscdl=noapi&auid=1798977201.1790618678&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uamb=0&uam=&uap=Linux&uapv=6.18.44&uaw=0&ec_mode=c&oid=GG_899486795.1790618681&oidsrc=3&ecsid2=1095459951.1790618681&_tu=ABI&gcl_ctr=1~0~0~0&data=event%3Dpage_view%3Bshopify_event_name%3Dpage_viewed%3Bpage_path%3D%2Fproducts%2Fsoho-green-needlecord-embroidered-top&category=acrcp_v1_512&em=tv.1&emd=tvd.1",
+      "assets/www-googleadservices-com-ccm-conversion-956408496--af47ff347c.bin"
+    ],
+    [
+      "https://www.googleadservices.com/ccm/conversion/956408496/?random=1790618681341&cv=11&fst=1790618681341&fmt=3&bg=ffffff&guid=ON&async=1&en=view_item&gtm=45be69o0v9164600192za200xecxf1&gcs=G111&gcd=13t3t3t2t5l1&dma=0&tag_exp=115616986~115938466~115938468~117776796~118897920~118897930~120032691~120213116~120385422~120469145~120469153&u_w=1440&u_h=1100&url=https%3A%2F%2Fus.thesummerhouse.in%2Fproducts%2Fsoho-green-needlecord-embroidered-top%3Fshpxid%3Dedea944a-8cd7-4934-aa66-10dd326f2004&rcb=9&label=-eaACIOQxuUDELDFhsgD&capi=1&gtm_ee=1&evnid=sh-e930b92c-D03B-4DC9-B6E5-72D2A5A41763&excid=shp.3dec6c8e-ee8b-4a7e-890c-70edb1a2f72e&frm=0&tiba=S%C5%8Dh%C5%8D%20Green%20Needlecord%20Embroidered%20Top%20%E2%80%93%20The%20Summer%20House&did=dYmNjMT%2CdNzYwYj&gdid=dYmNjMT&edid=dNzYwYj&value=13825&currency_code=INR&hn=www.googleadservices.com&rdp=0&npa=0&pscdl=noapi&auid=1798977201.1790618678&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uamb=0&uam=&uap=Linux&uapv=6.18.44&uaw=0&ec_mode=c&oid=GG_528966935.1790618681&oidsrc=3&ecsid2=1095459951.1790618681&_tu=ABI&gcl_ctr=2~0~0~0&data=event%3Dview_item%3Bshopify_event_name%3Dproduct_viewed%3Becomm_prodid%3Dshopify_IN_10798869971254_54367456624950%3Becomm_totalvalue%3D13825%3Becomm_pagetype%3Dproduct&category=acrcp_v1_512&em=tv.1&emd=tvd.1",
+      "assets/www-googleadservices-com-ccm-conversion-956408496--81c16bf6b2.bin"
+    ],
+    [
+      "https://procdn.swymrelay.com/code/v3/swym_fonts.woff2",
+      "assets/procdn-swymrelay-com-code-v3-swym-fonts-woff2-b498c361d9.woff2"
+    ],
+    [
+      "https://c.clarity.ms/c.gif?ctsa=mr&CtsSyncId=250D06D202AD46359C8143167810782B&MUID=28BF8E38D8116CAF052E99DAD93C6D38",
+      "assets/c-clarity-ms-c-gif-bc2606c9c9.gif"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/HOMEPAGE_SIZE_2_19_720x.jpg?v=1753987659",
+      "assets/thesummerhouse-in-cdn-shop-files-HOMEPAGE-SIZE-2-19-720x-jpg-2aa6f7d0f2.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/3_9a712ce7-8ca7-4c4b-8778-c786d75ab3df_360x.jpg?v=1788779796",
+      "assets/n-shop-files-3-9a712ce7-8ca7-4c4b-8778-c786d75ab3df-360x-jpg-b3fad0c752.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/1_98eea8d8-1d02-4f2a-9307-d18ecc3a7f2a_360x.jpg?v=1788779795",
+      "assets/n-shop-files-1-98eea8d8-1d02-4f2a-9307-d18ecc3a7f2a-360x-jpg-033f35305c.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/319_af14635c-12c9-4391-bf2d-3eb1eaffd210_360x.jpg?v=1785840959",
+      "assets/shop-files-319-af14635c-12c9-4391-bf2d-3eb1eaffd210-360x-jpg-7efed427c4.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/135_d97c8d32-7d5b-4b2d-aa20-f0f1591fae85_360x.jpg?v=1785840823",
+      "assets/shop-files-135-d97c8d32-7d5b-4b2d-aa20-f0f1591fae85-360x-jpg-de4e8d869c.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/318_a0fdd82c-b66c-4cbb-9e93-49486c23dbc2_360x.jpg?v=1785840959",
+      "assets/shop-files-318-a0fdd82c-b66c-4cbb-9e93-49486c23dbc2-360x-jpg-b184b1f517.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/139_2efc67ab-b333-4776-9b95-63015b541a8a_360x.jpg?v=1785840823",
+      "assets/shop-files-139-2efc67ab-b333-4776-9b95-63015b541a8a-360x-jpg-071b06c960.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/52_d7d446f6-e23d-42e6-af61-6d8214d8ed9c_360x.jpg?v=1785842270",
+      "assets/-shop-files-52-d7d446f6-e23d-42e6-af61-6d8214d8ed9c-360x-jpg-63980ef61c.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/30_969dce13-3c44-48b0-b7e7-884be76ac726_360x.jpg?v=1785904185",
+      "assets/-shop-files-30-969dce13-3c44-48b0-b7e7-884be76ac726-360x-jpg-75d3dcf0c4.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/55_41bd2cb5-f3a0-4f1a-9f78-0aa0b6a9df26_360x.jpg?v=1785842270",
+      "assets/-shop-files-55-41bd2cb5-f3a0-4f1a-9f78-0aa0b6a9df26-360x-jpg-e1800dd358.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/26_bde6c388-72cb-45c3-9b47-f24b5b81f64d_360x.jpg?v=1785904185",
+      "assets/-shop-files-26-bde6c388-72cb-45c3-9b47-f24b5b81f64d-360x-jpg-d98e59ff2d.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/458_907940fd-a682-4336-b5c2-e73c65d552ea_360x.jpg?v=1785842321",
+      "assets/shop-files-458-907940fd-a682-4336-b5c2-e73c65d552ea-360x-jpg-43820470dc.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/460_2599ee56-9829-49ff-b562-b00c76fb17b0_360x.jpg?v=1785842321",
+      "assets/shop-files-460-2599ee56-9829-49ff-b562-b00c76fb17b0-360x-jpg-9d8685707e.jpg"
+    ],
+    [
+      "https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap",
+      "assets/fonts-googleapis-com-css2-87ecf5e29f.css"
+    ],
+    [
+      "https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap",
+      "assets/fonts-googleapis-com-css2-75d79296c2.css"
+    ],
+    [
+      "https://fonts.gstatic.com/s/castoro/v20/1q2GY5yMCld3-O4cLY9OzQ.woff2",
+      "assets/fonts-gstatic-com-s-castoro-v20-1q2GY5yMCld3-O4cLY9OzQ-woff2-47832ce113.woff2"
+    ],
+    [
+      "https://fonts.gstatic.com/s/cardo/v21/wlp_gwjKBV1pqhv43IE.woff2",
+      "assets/fonts-gstatic-com-s-cardo-v21-wlp-gwjKBV1pqhv43IE-woff2-9dbefcc1c6.woff2"
+    ],
+    [
+      "https://stock.passport.local/embroiderer.jpg",
+      "assets/stock-passport-local-embroiderer-jpg-8e907bbd99.jpg"
+    ],
+    [
+      "https://stock.passport.local/maker.jpg",
+      "assets/stock-passport-local-maker-jpg-ed0d136e5e.jpg"
+    ],
+    [
+      "https://us.thesummerhouse.in/cdn/shop/files/khadi.webp?v=1651576273",
+      "assets/us-thesummerhouse-in-cdn-shop-files-khadi-webp-c6533189b6.webp"
+    ]
+  ]
+}
