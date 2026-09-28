@@ -1,0 +1,1 @@
+{"name":"product-passport-outreach-engine","private":true,"type":"module","scripts":{"make":"node tools/make-passport.mjs"},"dependencies":{"playwright":"^1.55.0"}}
