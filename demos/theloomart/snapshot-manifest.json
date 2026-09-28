@@ -1,0 +1,862 @@
+{
+  "sourceUrl": "https://theloomart.com/products/black-spade-blazer",
+  "generatedAt": "2026-09-28T15:29:45.167Z",
+  "brand": "Theloomart",
+  "title": "Black Spade Blazer",
+  "price": "₹17,000",
+  "hero": "https://theloomart.com/cdn/shop/products/2_3213e945-fd3c-4f8c-80e9-ca22694a044d_900x.jpg?v=1680857304",
+  "passport": {
+    "product": {
+      "name": "Black Spade Blazer",
+      "brand": "Theloomart",
+      "price": "₹17,000",
+      "url": "https://theloomart.com/products/black-spade-blazer",
+      "hero": "https://theloomart.com/cdn/shop/products/2_3213e945-fd3c-4f8c-80e9-ca22694a044d_900x.jpg?v=1680857304",
+      "sku": {
+        "value": "AR4321",
+        "evidence": "product-page",
+        "source": "https://theloomart.com/products/black-spade-blazer"
+      },
+      "garmentId": {
+        "value": null,
+        "evidence": "not-linked"
+      }
+    },
+    "material": {
+      "name": {
+        "value": "Handwoven satin silk",
+        "evidence": "product-page",
+        "source": "https://theloomart.com/products/black-spade-blazer"
+      },
+      "weave": {
+        "value": "Handwoven",
+        "evidence": "product-page",
+        "source": "https://theloomart.com/products/black-spade-blazer"
+      },
+      "composition": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "fabricLot": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "quantity": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "statement": {
+        "value": "A double-breasted raven black blazer in handwoven satin silk with wide lapels covered buttons at the front and long sleeves with a slit at the cuffs. It has flap front pockets and straight cut hems.The white highlights on the edges of the blazer makes it a statement in itself.",
+        "evidence": "product-page",
+        "source": "https://theloomart.com/products/black-spade-blazer"
+      }
+    },
+    "craft": {
+      "key": "weaving",
+      "label": "Weaving",
+      "role": "Weaver",
+      "claim": {
+        "value": "Her label focuses on reviving old authentic craft techniques, and generating a platform of employment for locals & bringing handloom back in vogue.",
+        "evidence": "brand-archive",
+        "source": "https://theloomart.com/pages/about-us"
+      },
+      "person": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "location": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "period": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "workshop": {
+        "value": null,
+        "evidence": "not-linked"
+      }
+    },
+    "maker": {
+      "name": {
+        "value": "Dilshad Ji",
+        "evidence": "brand-archive",
+        "source": "https://theloomart.com/blogs/news/meet-our-story-makers"
+      },
+      "role": {
+        "value": "Hand embroidery",
+        "evidence": "brand-archive",
+        "source": "https://theloomart.com/blogs/news/meet-our-story-makers"
+      },
+      "statement": {
+        "value": "(Dilshad Ji Loves This Piece Because He Really Worked Hard On It. He Did A Really Crucial Work On It. Seven To Eight Different Techniques Of Embroidery Has Been Used In This Shirt And It Took A Lot Of Efforts To Complete This One.)",
+        "evidence": "brand-archive",
+        "source": "https://theloomart.com/blogs/news/meet-our-story-makers"
+      },
+      "linkedToProduct": false
+    },
+    "stages": [
+      {
+        "key": "fibre",
+        "label": "Yarn",
+        "process": {
+          "value": "Described in brand archive",
+          "evidence": "brand-archive",
+          "source": "https://theloomart.com/pages/about-us"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      },
+      {
+        "key": "weaving",
+        "label": "Weaving",
+        "process": {
+          "value": "Stated on product page",
+          "evidence": "product-page",
+          "source": "https://theloomart.com/products/black-spade-blazer"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      },
+      {
+        "key": "cutting",
+        "label": "Cutting",
+        "process": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      },
+      {
+        "key": "stitching",
+        "label": "Stitching",
+        "process": {
+          "value": "Described in brand archive",
+          "evidence": "brand-archive",
+          "source": "https://theloomart.com/pages/about-us"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      },
+      {
+        "key": "finishing",
+        "label": "Finishing",
+        "process": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      }
+    ],
+    "garmentRecord": [
+      [
+        "Product",
+        {
+          "value": "Black Spade Blazer",
+          "evidence": "product-page",
+          "source": "https://theloomart.com/products/black-spade-blazer"
+        }
+      ],
+      [
+        "SKU",
+        {
+          "value": "AR4321",
+          "evidence": "product-page",
+          "source": "https://theloomart.com/products/black-spade-blazer"
+        }
+      ],
+      [
+        "Garment ID",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Material",
+        {
+          "value": "Handwoven satin silk",
+          "evidence": "product-page",
+          "source": "https://theloomart.com/products/black-spade-blazer"
+        }
+      ],
+      [
+        "Fabric lot",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Fabric quantity",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Loom",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Weaver",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Location",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Garment unit",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Production date",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ]
+    ],
+    "traceability": {
+      "status": "Partially documented",
+      "publicRecords": 7,
+      "recordLinks": 0,
+      "missing": 8
+    },
+    "images": {
+      "fabric": {
+        "src": "https://theloomart.com/cdn/shop/products/2_3213e945-fd3c-4f8c-80e9-ca22694a044d_900x.jpg?v=1680857304",
+        "alt": "Detail of Black Spade Blazer",
+        "source": "https://theloomart.com/products/black-spade-blazer",
+        "kind": "hero-detail"
+      },
+      "craft": null,
+      "maker": {
+        "src": "https://stock.passport.local/weaver.jpg",
+        "alt": "A handloom weaver at a loom in Maheshwar, Madhya Pradesh",
+        "source": "https://commons.wikimedia.org/wiki/File:Handloom_weaver_in_Maheshwar_fort,_Khargone_district,_Madhya_Pradesh.jpg",
+        "credit": "Eskay001 / Wikimedia Commons · CC BY-SA 4.0",
+        "kind": "stock"
+      }
+    },
+    "sources": [
+      {
+        "url": "https://theloomart.com/pages/about-us",
+        "title": "About Us – Theloomart"
+      },
+      {
+        "url": "https://theloomart.com/blogs/news",
+        "title": "News – Theloomart"
+      },
+      {
+        "url": "https://theloomart.com/blogs/news/meet-our-story-makers",
+        "title": "Meet Our Story Makers – Theloomart"
+      },
+      {
+        "url": "https://theloomart.com/blogs/news/state-of-mind",
+        "title": "State Of Mind – Theloomart"
+      },
+      {
+        "url": "https://theloomart.com/blogs/news/tumhari-pyaari-nani",
+        "title": "Tumhari Pyaari Nani – Theloomart"
+      }
+    ]
+  },
+  "archiveImagesConsidered": [
+    {
+      "src": "https://theloomart.com/wp-content/uploads/2018/02/intro-1000x1000.jpg",
+      "cls": "fabric",
+      "strong": false,
+      "alt": "",
+      "source": "https://theloomart.com/blogs/news/tumhari-pyaari-nani"
+    },
+    {
+      "src": "https://theloomart.com/wp-content/uploads/2018/02/advice-1-1000x1000.jpg",
+      "cls": "fabric",
+      "strong": false,
+      "alt": "",
+      "source": "https://theloomart.com/blogs/news/tumhari-pyaari-nani"
+    },
+    {
+      "src": "https://theloomart.com/wp-content/uploads/2018/02/advice-2-1000x1000.jpg",
+      "cls": "fabric",
+      "strong": false,
+      "alt": "",
+      "source": "https://theloomart.com/blogs/news/tumhari-pyaari-nani"
+    },
+    {
+      "src": "https://theloomart.com/wp-content/uploads/2018/02/advice-3-1000x1000.jpg",
+      "cls": "fabric",
+      "strong": false,
+      "alt": "",
+      "source": "https://theloomart.com/blogs/news/tumhari-pyaari-nani"
+    }
+  ],
+  "assets": [
+    [
+      "https://theloomart.com/cdn/shop/files/animated-logo-new_150x.gif?v=1637121292",
+      "assets/theloomart-com-cdn-shop-files-animated-logo-new-150x-gif-2dcfc44836.gif"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/t/7/assets/index.css?v=67014929449530578131784788401",
+      "assets/theloomart-com-cdn-shop-t-7-assets-index-css-10e788d6dc.css"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/FINAL_FILE_FOR_THE_BANNER_300x300.jpg?v=1749552232",
+      "assets/art-com-cdn-shop-files-FINAL-FILE-FOR-THE-BANNER-300x300-jpg-ffdb0be88c.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/TLA0675_1_300x300.jpg?v=1748860377",
+      "assets/theloomart-com-cdn-shop-files-TLA0675-1-300x300-jpg-a5ecead6e2.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shopifycloud/shopify-plyr/v1.0/shopify-plyr.css",
+      "assets/mart-com-cdn-shopifycloud-shopify-plyr-v1-0-shopify-plyr-css-593f47e751.css"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/TLA0563_1_300x300.jpg?v=1749028123",
+      "assets/theloomart-com-cdn-shop-files-TLA0563-1-300x300-jpg-f3f3997ae2.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/TLA0384_300x300.jpg?v=1749447604",
+      "assets/theloomart-com-cdn-shop-files-TLA0384-300x300-jpg-ad90455ced.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Teal_Illustration_Digital_Business_Blog_Banner_5_300x300.jpg?v=1751875647",
+      "assets/Teal-Illustration-Digital-Business-Blog-Banner-5-300x300-jpg-aceef78ab6.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Teal_Illustration_Digital_Business_Blog_Banner_4_300x300.jpg?v=1751875523",
+      "assets/Teal-Illustration-Digital-Business-Blog-Banner-4-300x300-jpg-2215f3f86e.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/banner_2_300x300.jpg?v=1631520288",
+      "assets/theloomart-com-cdn-shop-files-banner-2-300x300-jpg-bf9ff8b0db.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/AURORA_SS24_page-0058_300x300.jpg?v=1682335578",
+      "assets/loomart-com-cdn-shop-files-AURORA-SS24-page-0058-300x300-jpg-e98a48e129.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/fonts/maven_pro/mavenpro_n4.c68ed1d8b5c0af622b14d3bb80bf3ead8907ac11.woff2",
+      "assets/o-mavenpro-n4-c68ed1d8b5c0af622b14d3bb80bf3ead8907ac11-woff2-33eca39d25.woff2"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_50_dffc8009-b04d-4161-9248-bc135fa93861_300x300.jpg?v=1751629680",
+      "assets/d-design-50-dffc8009-b04d-4161-9248-bc135fa93861-300x300-jpg-71685a1eb2.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_51_86b665fb-a35c-437e-8e6a-129f99f9668a_300x300.jpg?v=1751629680",
+      "assets/d-design-51-86b665fb-a35c-437e-8e6a-129f99f9668a-300x300-jpg-9af07801aa.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_52_97a3b48a-71cd-4ac8-82a0-d5e31295bf6a_300x300.jpg?v=1751623028",
+      "assets/d-design-52-97a3b48a-71cd-4ac8-82a0-d5e31295bf6a-300x300-jpg-fa89a91a96.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_55_4f25914c-3a57-4f98-9877-47593d1b3fd3_300x300.jpg?v=1751623028",
+      "assets/d-design-55-4f25914c-3a57-4f98-9877-47593d1b3fd3-300x300-jpg-82834505cb.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_48_300x300.jpg?v=1751610212",
+      "assets/theloomart-com-cdn-shop-files-Untitled-design-48-300x300-jpg-84f7e10526.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_49_300x300.jpg?v=1751610204",
+      "assets/theloomart-com-cdn-shop-files-Untitled-design-49-300x300-jpg-4d673b6c80.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_53_605028cd-975b-4436-97ed-c79d9ab1b787_300x300.jpg?v=1751629680",
+      "assets/d-design-53-605028cd-975b-4436-97ed-c79d9ab1b787-300x300-jpg-b495d9df8d.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_55_2199eefb-2647-46b8-be40-bceccdc01aab_300x300.jpg?v=1751629680",
+      "assets/d-design-55-2199eefb-2647-46b8-be40-bceccdc01aab-300x300-jpg-f1565c29e0.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/fonts/maven_pro/mavenpro_n5.ce007c5b78ce56cdb6d8a7dfd4b878f24918d849.woff2",
+      "assets/o-mavenpro-n5-ce007c5b78ce56cdb6d8a7dfd4b878f24918d849-woff2-d1b5985677.woff2"
+    ],
+    [
+      "https://theloomart.com/cdn/fonts/nunito_sans/nunitosans_i4.6e408730afac1484cf297c30b0e67c86d17fc586.woff2",
+      "assets/nunitosans-i4-6e408730afac1484cf297c30b0e67c86d17fc586-woff2-a180b521bc.woff2"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_68_2e7d69e7-5215-4834-a936-16b6467c3189_300x300.jpg?v=1751623027",
+      "assets/d-design-68-2e7d69e7-5215-4834-a936-16b6467c3189-300x300-jpg-475f15e983.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_69_c5f30193-b0cc-49d0-a064-185f473fb7ff_300x300.jpg?v=1751623029",
+      "assets/d-design-69-c5f30193-b0cc-49d0-a064-185f473fb7ff-300x300-jpg-197d36109e.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_61_300x300.jpg?v=1751610179",
+      "assets/theloomart-com-cdn-shop-files-Untitled-design-61-300x300-jpg-5c108f81ae.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_62_300x300.jpg?v=1751610179",
+      "assets/theloomart-com-cdn-shop-files-Untitled-design-62-300x300-jpg-89628bf17f.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_57_a7c8237d-8a85-4751-91c4-5f19a6c7b53b_300x300.jpg?v=1751623028",
+      "assets/d-design-57-a7c8237d-8a85-4751-91c4-5f19a6c7b53b-300x300-jpg-3b8de7d1a6.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_58_3b0a172e-bf49-4160-8f87-8214cd6cef6d_300x300.jpg?v=1751623028",
+      "assets/d-design-58-3b0a172e-bf49-4160-8f87-8214cd6cef6d-300x300-jpg-a168c9caed.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_50_6055bfd4-15ee-4ebb-8d44-a50deeae14a7_300x300.jpg?v=1751623028",
+      "assets/d-design-50-6055bfd4-15ee-4ebb-8d44-a50deeae14a7-300x300-jpg-3b2f9746ee.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_20_300x300.jpg?v=1751610225",
+      "assets/theloomart-com-cdn-shop-files-Untitled-design-20-300x300-jpg-5fbeef7628.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/new_launch_img_300x300.jpg?v=1749557720",
+      "assets/theloomart-com-cdn-shop-files-new-launch-img-300x300-jpg-99b0012ec5.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/B1_58e0aa1c-c483-41f0-a138-b0493f160947_300x300.jpg?v=1678780810",
+      "assets/op-files-B1-58e0aa1c-c483-41f0-a138-b0493f160947-300x300-jpg-e1a1e67c6c.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/3_2_300x300.jpg?v=1632378472",
+      "assets/theloomart-com-cdn-shop-files-3-2-300x300-jpg-1dc6e372ac.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/4_43d234f1-4aad-4bf4-8c04-5ede380af002_300x300.jpg?v=1647508550",
+      "assets/hop-files-4-43d234f1-4aad-4bf4-8c04-5ede380af002-300x300-jpg-ae7be03816.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_78_300x300.png?v=1647510024",
+      "assets/theloomart-com-cdn-shop-files-Untitled-design-78-300x300-png-a460199b1b.png"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/TLA0871_1_300x300.jpg?v=1748862529",
+      "assets/theloomart-com-cdn-shop-files-TLA0871-1-300x300-jpg-3e59f19910.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/IMG_6650_300x300.jpg?v=1678783857",
+      "assets/theloomart-com-cdn-shop-files-IMG-6650-300x300-jpg-c89fb68ced.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Artboard_1_300x300.jpg?v=1749554558",
+      "assets/theloomart-com-cdn-shop-files-Artboard-1-300x300-jpg-52e0eab04c.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/GREEN_300x300.jpg?v=1749552795",
+      "assets/theloomart-com-cdn-shop-files-GREEN-300x300-jpg-ba9a78368b.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/LOOKBOOK_COVER_SHOPIFY_300x300.jpg?v=1678790105",
+      "assets/oomart-com-cdn-shop-files-LOOKBOOK-COVER-SHOPIFY-300x300-jpg-60602b4c90.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_80_300x300.png?v=1647943409",
+      "assets/theloomart-com-cdn-shop-files-Untitled-design-80-300x300-png-e76dddd484.png"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/DSC_1804_300x300.jpg?v=1647943685",
+      "assets/theloomart-com-cdn-shop-files-DSC-1804-300x300-jpg-8c592e72aa.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/1_b02641d5-4d3f-4eec-96c3-fc8c6bf27a11_300x300.png?v=1633086902",
+      "assets/hop-files-1-b02641d5-4d3f-4eec-96c3-fc8c6bf27a11-300x300-png-5ecbaf4837.png"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/2_83be993f-d9fc-423f-96b9-d08d4e3b3062_300x300.png?v=1633086983",
+      "assets/hop-files-2-83be993f-d9fc-423f-96b9-d08d4e3b3062-300x300-png-a0db4609b3.png"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/1_5ebcd5f1-8035-49aa-8dd5-4ee644eafbee_300x300.jpg?v=1657958468",
+      "assets/hop-files-1-5ebcd5f1-8035-49aa-8dd5-4ee644eafbee-300x300-jpg-b31805d86e.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/3_507edfe4-b2a4-4ebd-9584-af8a57a63bd2_300x300.jpg?v=1702014707",
+      "assets/-products-3-507edfe4-b2a4-4ebd-9584-af8a57a63bd2-300x300-jpg-77edca35d8.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/1_e9fbe058-cea8-4bcf-a6b2-48e834e1f836_300x300.jpg?v=1702014707",
+      "assets/-products-1-e9fbe058-cea8-4bcf-a6b2-48e834e1f836-300x300-jpg-0e2db1e479.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/4_a38274ec-1643-4461-81c3-7c07b4ce37f9_300x300.jpg?v=1702014724",
+      "assets/-products-4-a38274ec-1643-4461-81c3-7c07b4ce37f9-300x300-jpg-1b8b1708e4.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/1_fefd8ef3-b617-4041-8510-f9c82c14f994_300x300.jpg?v=1702014724",
+      "assets/-products-1-fefd8ef3-b617-4041-8510-f9c82c14f994-300x300-jpg-552097caf6.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/2_3213e945-fd3c-4f8c-80e9-ca22694a044d_300x300.jpg?v=1680857304",
+      "assets/-products-2-3213e945-fd3c-4f8c-80e9-ca22694a044d-300x300-jpg-f1944ded1a.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/4_f08e3fbe-1b2c-4685-851f-5da88a80ea31_300x300.jpg?v=1680857304",
+      "assets/-products-4-f08e3fbe-1b2c-4685-851f-5da88a80ea31-300x300-jpg-6d3a8b0d15.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/4_3e289ac5-1ced-43c0-856f-9fee591cf782_300x300.jpg?v=1702014813",
+      "assets/-products-4-3e289ac5-1ced-43c0-856f-9fee591cf782-300x300-jpg-8c089d636b.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/1_3e41ed3b-4f91-476e-8805-cd81be24a9bd_300x300.jpg?v=1702014813",
+      "assets/-products-1-3e41ed3b-4f91-476e-8805-cd81be24a9bd-300x300-jpg-b608d33244.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/1_993cf1dc-68f0-4a5c-b8be-30b5b57e3db1_300x300.jpg?v=1680857781",
+      "assets/-products-1-993cf1dc-68f0-4a5c-b8be-30b5b57e3db1-300x300-jpg-b8401976ef.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/5_b5cd1c3e-d840-468f-83f4-fbba1517294a_300x300.jpg?v=1680857781",
+      "assets/-products-5-b5cd1c3e-d840-468f-83f4-fbba1517294a-300x300-jpg-44dc1f5993.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/4_e94196cc-6e3c-4dc7-95e2-efff4d185b0b_300x300.jpg?v=1702015447",
+      "assets/-products-4-e94196cc-6e3c-4dc7-95e2-efff4d185b0b-300x300-jpg-0eee43dc86.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/1_02a0ffc1-75de-4177-9f2d-97bf8a4b3863_300x300.jpg?v=1702015447",
+      "assets/-products-1-02a0ffc1-75de-4177-9f2d-97bf8a4b3863-300x300-jpg-e7ae40e250.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/4_a2b44f0f-9ea0-411e-8e6a-7df399f56ef4_300x300.jpg?v=1702015645",
+      "assets/-products-4-a2b44f0f-9ea0-411e-8e6a-7df399f56ef4-300x300-jpg-24ea5154e6.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/t/7/assets/Background.jpg?v=72852688952121215771784788401",
+      "assets/theloomart-com-cdn-shop-t-7-assets-Background-jpg-27683f4f96.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/fonts/nunito_sans/nunitosans_n4.0276fe080df0ca4e6a22d9cb55aed3ed5ba6b1da.woff2",
+      "assets/nunitosans-n4-0276fe080df0ca4e6a22d9cb55aed3ed5ba6b1da-woff2-6eacb08458.woff2"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Pop_up_image_small.jpg?v=1632142639",
+      "assets/theloomart-com-cdn-shop-files-Pop-up-image-small-jpg-7f1f0e1ec0.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/fonts/nunito_sans/nunitosans_n5.6fc0ed1feb3fc393c40619f180fc49c4d0aae0db.woff2",
+      "assets/nunitosans-n5-6fc0ed1feb3fc393c40619f180fc49c4d0aae0db-woff2-8598cc624c.woff2"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/1_e5717dcc-1179-47a9-9817-decbeb7e362d_300x300.jpg?v=1702015645",
+      "assets/-products-1-e5717dcc-1179-47a9-9817-decbeb7e362d-300x300-jpg-1695a1f5c5.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/2_72af213e-9238-4ac9-9cb2-6532fa79eec7_300x300.jpg?v=1702015747",
+      "assets/-products-2-72af213e-9238-4ac9-9cb2-6532fa79eec7-300x300-jpg-a78f2d5c01.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/1_acb1490b-a4f5-4698-a9d1-6193728c1e7c_300x300.jpg?v=1702015747",
+      "assets/-products-1-acb1490b-a4f5-4698-a9d1-6193728c1e7c-300x300-jpg-704b50c4f2.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Women_s_wear_banner_300x300.jpg?v=1631530661",
+      "assets/heloomart-com-cdn-shop-files-Women-s-wear-banner-300x300-jpg-fa3462012a.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/t/7/assets/Bckgrnd.JPG?v=156978241104752466911784788401",
+      "assets/theloomart-com-cdn-shop-t-7-assets-Bckgrnd-JPG-0a697fa2b2.JPG"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/FINAL_FILE_FOR_THE_BANNER_2048x.jpg?v=1749552232",
+      "assets/omart-com-cdn-shop-files-FINAL-FILE-FOR-THE-BANNER-2048x-jpg-77f3fbc276.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/TLA0563_1_1512x.jpg?v=1749028123",
+      "assets/theloomart-com-cdn-shop-files-TLA0563-1-1512x-jpg-fc0a59b264.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_52_97a3b48a-71cd-4ac8-82a0-d5e31295bf6a_360x.jpg?v=1751623028",
+      "assets/tled-design-52-97a3b48a-71cd-4ac8-82a0-d5e31295bf6a-360x-jpg-58e6cbb4b1.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_53_605028cd-975b-4436-97ed-c79d9ab1b787_360x.jpg?v=1751629680",
+      "assets/tled-design-53-605028cd-975b-4436-97ed-c79d9ab1b787-360x-jpg-42e984e03f.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_50_dffc8009-b04d-4161-9248-bc135fa93861_360x.jpg?v=1751629680",
+      "assets/tled-design-50-dffc8009-b04d-4161-9248-bc135fa93861-360x-jpg-c3e84b9629.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_48_360x.jpg?v=1751610212",
+      "assets/theloomart-com-cdn-shop-files-Untitled-design-48-360x-jpg-162f148650.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_68_2e7d69e7-5215-4834-a936-16b6467c3189_360x.jpg?v=1751623027",
+      "assets/tled-design-68-2e7d69e7-5215-4834-a936-16b6467c3189-360x-jpg-7d94d1275b.jpg"
+    ],
+    [
+      "https://www.youtube.com/s/player/7460dd14/www-player.css",
+      "assets/www-youtube-com-s-player-7460dd14-www-player-css-0574c0aff1.css"
+    ],
+    [
+      "https://www.youtube.com/s/_/ytembeds/_/ss/k=ytembeds.base.g08Wc2u8n-g.L.W.O/am=AAAAQA/d=1/br=1/rs=AGKMywFYwwbcY5283qLj6UrexIyINfSenQ/m=root,base",
+      "assets/A-d-1-br-1-rs-AGKMywFYwwbcY5283qLj6UrexIyINfSenQ-m-root-base-cad1aae6b5.css"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_57_a7c8237d-8a85-4751-91c4-5f19a6c7b53b_360x.jpg?v=1751623028",
+      "assets/tled-design-57-a7c8237d-8a85-4751-91c4-5f19a6c7b53b-360x-jpg-4cfbe7eb02.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_50_6055bfd4-15ee-4ebb-8d44-a50deeae14a7_360x.jpg?v=1751623028",
+      "assets/tled-design-50-6055bfd4-15ee-4ebb-8d44-a50deeae14a7-360x-jpg-f60df1a91c.jpg"
+    ],
+    [
+      "https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2",
+      "assets/om-s-roboto-v48-KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA-woff2-fb5169d9a9.woff2"
+    ],
+    [
+      "https://cdn.shopify.com/extensions/01a0900d-dba9-7f99-9fcd-ce9bd54595ee/beast-currency-converter-63/assets/currency-flags.png",
+      "assets/4595ee-beast-currency-converter-63-assets-currency-flags-png-efbb605afd.png"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_55_4f25914c-3a57-4f98-9877-47593d1b3fd3_360x.jpg?v=1751623028",
+      "assets/tled-design-55-4f25914c-3a57-4f98-9877-47593d1b3fd3-360x-jpg-84ff2b9e2c.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_51_86b665fb-a35c-437e-8e6a-129f99f9668a_360x.jpg?v=1751629680",
+      "assets/tled-design-51-86b665fb-a35c-437e-8e6a-129f99f9668a-360x-jpg-55fd5c71f4.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_49_360x.jpg?v=1751610204",
+      "assets/theloomart-com-cdn-shop-files-Untitled-design-49-360x-jpg-fa1310f4c9.jpg"
+    ],
+    [
+      "https://www.youtube.com/generate_204?9gYtiQ",
+      "assets/www-youtube-com-generate-204-4d3ce14fd9.bin"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Pop_up_image_360x.jpg?v=1632142639",
+      "assets/theloomart-com-cdn-shop-files-Pop-up-image-360x-jpg-da926bf1b8.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_55_2199eefb-2647-46b8-be40-bceccdc01aab_360x.jpg?v=1751629680",
+      "assets/tled-design-55-2199eefb-2647-46b8-be40-bceccdc01aab-360x-jpg-a4e94a932d.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_69_c5f30193-b0cc-49d0-a064-185f473fb7ff_360x.jpg?v=1751623029",
+      "assets/tled-design-69-c5f30193-b0cc-49d0-a064-185f473fb7ff-360x-jpg-14bf8bfd11.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_58_3b0a172e-bf49-4160-8f87-8214cd6cef6d_360x.jpg?v=1751623028",
+      "assets/tled-design-58-3b0a172e-bf49-4160-8f87-8214cd6cef6d-360x-jpg-c48e2398a3.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Untitled_design_20_360x.jpg?v=1751610225",
+      "assets/theloomart-com-cdn-shop-files-Untitled-design-20-360x-jpg-4e1407633e.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Teal_Illustration_Digital_Business_Blog_Banner_4_2048x.jpg?v=1751875523",
+      "assets/s-Teal-Illustration-Digital-Business-Blog-Banner-4-2048x-jpg-a46d11aefc.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/AURORA_SS24_page-0058_2048x.jpg?v=1682335578",
+      "assets/heloomart-com-cdn-shop-files-AURORA-SS24-page-0058-2048x-jpg-d8c41534b1.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/banner_2_1728x.jpg?v=1631520288",
+      "assets/theloomart-com-cdn-shop-files-banner-2-1728x-jpg-17ae3cc329.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Size_Chart_TLA_300x300.jpg?v=1778736653",
+      "assets/theloomart-com-cdn-shop-files-Size-Chart-TLA-300x300-jpg-07fe556d5a.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/2_3213e945-fd3c-4f8c-80e9-ca22694a044d_900x.jpg?v=1680857304",
+      "assets/hop-products-2-3213e945-fd3c-4f8c-80e9-ca22694a044d-900x-jpg-7aaf237df8.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/4_f08e3fbe-1b2c-4685-851f-5da88a80ea31_180x.jpg?v=1680857304",
+      "assets/hop-products-4-f08e3fbe-1b2c-4685-851f-5da88a80ea31-180x-jpg-e841b09358.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/2_3213e945-fd3c-4f8c-80e9-ca22694a044d_180x.jpg?v=1680857304",
+      "assets/hop-products-2-3213e945-fd3c-4f8c-80e9-ca22694a044d-180x-jpg-8d574407c4.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/files/Size_Chart_TLA_540x.jpg?v=1778736653",
+      "assets/theloomart-com-cdn-shop-files-Size-Chart-TLA-540x-jpg-7c6c079aa5.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/1_5637912d-d669-4a63-a05f-9fce7516747d_300x300.jpg?v=1678703709",
+      "assets/-products-1-5637912d-d669-4a63-a05f-9fce7516747d-300x300-jpg-ca1a0fde92.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/2_79c2b5cf-f927-46fc-bbda-627f2d7c7c67_300x300.jpg?v=1702028787",
+      "assets/-products-2-79c2b5cf-f927-46fc-bbda-627f2d7c7c67-300x300-jpg-31314a2480.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/2_2de6199b-512b-417b-9889-8a048babdc52_300x300.jpg?v=1678703710",
+      "assets/-products-2-2de6199b-512b-417b-9889-8a048babdc52-300x300-jpg-abc9670762.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/4_ee0f4381-e7fc-43bd-bb93-14a971643616_300x300.jpg?v=1702028720",
+      "assets/-products-4-ee0f4381-e7fc-43bd-bb93-14a971643616-300x300-jpg-b661292603.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/1_7bbae523-59b0-4bb7-a615-f2a1a80bee02_300x300.jpg?v=1702028787",
+      "assets/-products-1-7bbae523-59b0-4bb7-a615-f2a1a80bee02-300x300-jpg-8c109e5387.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/1_277225d3-dd36-4544-9eae-304eb47b78a8_300x300.jpg?v=1702028720",
+      "assets/-products-1-277225d3-dd36-4544-9eae-304eb47b78a8-300x300-jpg-a3436f51c9.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/yinyangpant1_300x300.jpg?v=1680847531",
+      "assets/theloomart-com-cdn-shop-products-yinyangpant1-300x300-jpg-2fecda7ef2.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/yinyangpant2_300x300.jpg?v=1680847530",
+      "assets/theloomart-com-cdn-shop-products-yinyangpant2-300x300-jpg-4fc2acf132.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/4_3e289ac5-1ced-43c0-856f-9fee591cf782_360x.jpg?v=1702014813",
+      "assets/hop-products-4-3e289ac5-1ced-43c0-856f-9fee591cf782-360x-jpg-697c277fad.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/2_3213e945-fd3c-4f8c-80e9-ca22694a044d_1512x.jpg?v=1680857304",
+      "assets/op-products-2-3213e945-fd3c-4f8c-80e9-ca22694a044d-1512x-jpg-5f321e32da.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/1_993cf1dc-68f0-4a5c-b8be-30b5b57e3db1_360x.jpg?v=1680857781",
+      "assets/hop-products-1-993cf1dc-68f0-4a5c-b8be-30b5b57e3db1-360x-jpg-8abe108f75.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/1_5637912d-d669-4a63-a05f-9fce7516747d_360x.jpg?v=1678703709",
+      "assets/hop-products-1-5637912d-d669-4a63-a05f-9fce7516747d-360x-jpg-f032cf4f4b.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/2_79c2b5cf-f927-46fc-bbda-627f2d7c7c67_360x.jpg?v=1702028787",
+      "assets/hop-products-2-79c2b5cf-f927-46fc-bbda-627f2d7c7c67-360x-jpg-73cec96ce0.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/4_f08e3fbe-1b2c-4685-851f-5da88a80ea31_1512x.jpg?v=1680857304",
+      "assets/op-products-4-f08e3fbe-1b2c-4685-851f-5da88a80ea31-1512x-jpg-4c1127bfc4.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/2_2de6199b-512b-417b-9889-8a048babdc52_360x.jpg?v=1678703710",
+      "assets/hop-products-2-2de6199b-512b-417b-9889-8a048babdc52-360x-jpg-ae194c6f67.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/1_3e41ed3b-4f91-476e-8805-cd81be24a9bd_360x.jpg?v=1702014813",
+      "assets/hop-products-1-3e41ed3b-4f91-476e-8805-cd81be24a9bd-360x-jpg-72e717517a.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/yinyangpant2_360x.jpg?v=1680847530",
+      "assets/theloomart-com-cdn-shop-products-yinyangpant2-360x-jpg-e89fba2c49.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/5_b5cd1c3e-d840-468f-83f4-fbba1517294a_360x.jpg?v=1680857781",
+      "assets/hop-products-5-b5cd1c3e-d840-468f-83f4-fbba1517294a-360x-jpg-b1ad485f1b.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/4_ee0f4381-e7fc-43bd-bb93-14a971643616_360x.jpg?v=1702028720",
+      "assets/hop-products-4-ee0f4381-e7fc-43bd-bb93-14a971643616-360x-jpg-f76ab57517.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/yinyangpant1_360x.jpg?v=1680847531",
+      "assets/theloomart-com-cdn-shop-products-yinyangpant1-360x-jpg-9640d0d4a0.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/1_7bbae523-59b0-4bb7-a615-f2a1a80bee02_360x.jpg?v=1702028787",
+      "assets/hop-products-1-7bbae523-59b0-4bb7-a615-f2a1a80bee02-360x-jpg-2e00e1b41b.jpg"
+    ],
+    [
+      "https://theloomart.com/cdn/shop/products/1_277225d3-dd36-4544-9eae-304eb47b78a8_360x.jpg?v=1702028720",
+      "assets/hop-products-1-277225d3-dd36-4544-9eae-304eb47b78a8-360x-jpg-74e250c708.jpg"
+    ],
+    [
+      "https://stock.passport.local/weaver.jpg",
+      "assets/stock-passport-local-weaver-jpg-dd87ee04f1.jpg"
+    ]
+  ]
+}

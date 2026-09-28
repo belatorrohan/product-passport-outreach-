@@ -1,0 +1,17 @@
+{
+  "_note": "Illustrative artisan images used ONLY when the brand site publishes no artisan photo. Always shown captioned as stock, never as the maker of the garment.",
+  "weaver": {
+    "file": "weaver.jpg",
+    "url": "https://commons.wikimedia.org/wiki/File:Handloom_weaver_in_Maheshwar_fort,_Khargone_district,_Madhya_Pradesh.jpg",
+    "credit": "Eskay001 / Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "alt": "A handloom weaver at a loom in Maheshwar, Madhya Pradesh"
+  },
+  "embroiderer": {
+    "file": "embroiderer.jpg",
+    "url": "https://commons.wikimedia.org/wiki/File:Zardozi_Artisan.jpg",
+    "credit": "Notakeyboard567 / Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "alt": "An artisan hand-embroidering fabric stretched on a frame"
+  }
+}

@@ -1,17 +1,38 @@
-# The Loom Art test
+# Generator test runs (2026-09-28)
 
-Test input: `https://theloomart.com/`
+Both demos in `demos/` are **real generator output**, not hand-built fixtures:
 
-The engine's website-level flow was applied conceptually to the live public site:
+```bash
+node tools/make-passport.mjs "https://theloomart.com/" demos/theloomart/black-spade-blazer.html "black spade blazer"
+node tools/make-passport.mjs "https://iroiro.in/" demos/iroiro/saaya-blazer.html "saaya"
+```
 
-1. The homepage exposes product links under its shop/best-seller areas.
-2. **Black Spade Blazer** was selected as the concrete product example.
-3. The product page exposes the title, Rs.17,000 price, XS–XXL sizes, Add to cart, and product description.
-4. The product description states that the blazer is made in handwoven satin silk.
-5. The brand site separately states that its fabrics are handwoven, and describes fair trade, artisans, weavers and handcrafted work.
+The full evidence model for each run is stored in the demo's `snapshot-manifest.json` (`passport` key).
 
-The POC output is `demos/theloomart/black-spade-blazer.html`.
+## The Loom Art: Black Spade Blazer
 
-The passport uses images from the actual The Loom Art product gallery (not stock imagery). Product-specific facts and broader brand-level context are deliberately separated in the passport UI.
+- Homepage input → product discovered at `/products/black-spade-blazer`.
+- Product page: title, ₹17,000, SKU `AR4321`, material **Handwoven satin silk** (product page).
+- Archive crawl: About Us, News, and three craft-related posts, including *Meet Our Story Makers*.
+- Maker: the post names artisans (e.g. **Dilshad Ji**, hand embroidery). The passport shows this as a brand-archive *story maker* with "Relationship to this garment: Not established".
+- Images: the site publishes no fabric close-up and no artisan photo. The About page portrait is the founder, so it is excluded. The fabric card uses a captioned crop of the product photo; the maker card uses the **illustrative stock** weaver image (captioned and credited); the weaving card shows "No public image linked".
 
-Note: this environment could inspect the live site but could not execute Playwright against the external site directly. The generated demo is therefore a site-specific fixture based on the inspected public page, while the generic generator code is structured to perform the same discovery and injection when run locally with network access.
+## Iro Iro: Saaya Blazer
+
+- Product page: ₹57,441, SKU `IRMJA2601IVXS`, **Cotton**, weave **Flatweave**, composition **100% Cotton** (product page).
+- Archive crawl: Sustainability, About and Journal pages. The weaving card uses the brand's own **loom photograph** from the Sustainability page and the claim *"These materials are transformed through handloom weaving and small-scale production…"* (brand archive).
+- No named maker and no artisan portrait → stock weaver image, captioned.
+
+## Checks (Playwright, all external requests blocked)
+
+For both demos at 1440px desktop and 400px mobile:
+- the pill sits on the visible main product image; hover (desktop) or tap (mobile) opens the passport;
+- 5 sections render; the header stays fixed while the panel scrolls; "View record" and timeline nodes expand; Escape closes;
+- every passport image loads from local `assets/`; there are no page errors;
+- every garment-record field without a public source reads **Not linked** (Garment ID, fabric lot, quantity, loom, weaver, location, unit, date).
+
+## Known limitations
+
+- Some of the brand pages' own lazy-loaded images still reference the brand's CDN (the passport itself is fully local).
+- On Iro Iro, the theme's floating "Story / More" labels sit above the open panel.
+- On themes that swap galleries per breakpoint, the runtime re-mounts the pill on the visible mobile gallery photo.

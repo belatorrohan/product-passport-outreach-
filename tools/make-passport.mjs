@@ -1,30 +1,105 @@
+// Product passport generator.
+//
+//   node tools/make-passport.mjs <website-or-product-url> [output.html] [product-name-hint]
+//
+// 1. Open the site, find the product page, snapshot it.
+// 2. Extract product-page facts and lightly crawl the brand archive (About/Craft/Story).
+// 3. Build an evidence model (nothing invented; gaps stay "Not linked").
+// 4. Inject the passport pill + panel into the visible hero image and save a static,
+//    self-contained copy with localized assets, a manifest and a preview screenshot.
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import crypto from 'node:crypto';
-import {chromium} from 'playwright';
+import {fileURLToPath} from 'node:url';
+import {openBrowser, captureResources, load, findProductPage, primeLazyContent, localize, stripScripts, fetchExtraImages} from './lib/snapshot.mjs';
+import {extractProduct} from './lib/extract.mjs';
+import {crawlArchive} from './lib/archive.mjs';
+import {buildPassportModel} from './lib/passport-model.mjs';
+import {renderPassport, PASSPORT_CSS, PASSPORT_RUNTIME} from './lib/passport-ui.mjs';
 
-const input=process.argv[2], output=process.argv[3]||'generated/passport.html', hint=(process.argv[4]||'').toLowerCase();
-if(!input){console.error('Usage: node tools/make-passport.mjs <website-or-product-url> [output.html] [product-name]');process.exit(1)}
-const dir=path.resolve(path.dirname(output)); await fs.mkdir(path.join(dir,'assets'),{recursive:true});
-const browser=await chromium.launch({headless:true});
-const page=await browser.newPage({viewport:{width:1440,height:1100},deviceScaleFactor:1});
-const resources=new Map();
-page.on('response',r=>{const t=r.request().resourceType(),u=r.url().split('#')[0];if(!['stylesheet','image','font'].includes(t)||!/^https?:/i.test(u)||resources.has(u)||r.status()>=400)return;resources.set(u,{type:t,ct:r.headers()['content-type']||'',body:r.body().catch(()=>null)})});
-const load=async u=>{await page.goto(u,{waitUntil:'domcontentloaded',timeout:60000});try{await page.waitForLoadState('networkidle',{timeout:10000})}catch{}await page.waitForTimeout(1200)};
-async function product(){const u=page.url();if(/\/(products?|item|p)\//i.test(new URL(u).pathname))return u;const links=await page.evaluate(h=>{const out=[];for(const a of document.querySelectorAll('a[href]')){let u='';try{u=new URL(a.getAttribute('href'),location.href).href}catch{}if(!u||!/\/(products?|item|p)\//i.test(new URL(u).pathname))continue;const c=a.closest('article,li,[class*="card" i],[class*="product" i]');const tx=((a.textContent||'')+' '+(a.getAttribute('aria-label')||'')+' '+(c?.textContent||'')).replace(/\s+/g,' ').trim();out.push({u,tx,im:!!a.querySelector('img'),score:(h&&tx.toLowerCase().includes(h)?100:0)+(a.querySelector('img')?20:0)+Math.min(tx.length,40)/10})}return [...new Map(out.map(x=>[x.u,x])).values()].sort((a,b)=>b.score-a.score).slice(0,20)},hint);if(!links.length)throw new Error('No product link discovered. Pass a direct product URL or product name.');await load(links[0].u);return page.url()}
-await load(input); const source=await product();
-await page.evaluate(async()=>{for(let y=0;y<Math.min(document.body.scrollHeight,14000);y+=900)scrollTo({top:y,behavior:'instant'});await new Promise(r=>setTimeout(r,700));scrollTo({top:0,behavior:'instant'})});await page.waitForTimeout(500);
-const snap=await page.evaluate(()=>{const clean=s=>(s||'').replace(/\s+/g,' ').trim(),meta=n=>(document.querySelector('meta[property="'+n+'"]')||document.querySelector('meta[name="'+n+'"]'))?.content||'',abs=u=>{try{return new URL(u,location.href).href.split('#')[0]}catch{return ''}};const shown=i=>{const r=i.getBoundingClientRect();if(!r.width||!r.height||(i.checkVisibility&&!i.checkVisibility({opacityProperty:true,visibilityProperty:true})))return false;const x=r.left+r.width/2,y=r.top+Math.min(r.height/2,innerHeight/2);if(x<0||x>innerWidth||y<0||y>innerHeight)return false;return ((i,h)=>{if(!h)return false;const r=i.getBoundingClientRect(),a=r.width*r.height;for(let e=i,k=0;e&&k<5;e=e.parentElement,k++){const q=e.getBoundingClientRect();if(k&&q.width*q.height>a*1.6)break;if(e===h||e.contains(h))return true}return h.contains(i)})(i,document.elementFromPoint(x,y))};const imgs=[...document.images].map(i=>{const r=i.getBoundingClientRect();return{src:abs(i.currentSrc||i.src||i.getAttribute('data-src')||i.getAttribute('data-original')||''),w:i.naturalWidth||0,h:i.naturalHeight||0,a:Math.max(0,r.width)*Math.max(0,r.height),v:shown(i),el:i}}).filter(x=>x.src),large=imgs.filter(x=>x.w>=350&&x.h>=350),hero=(large.filter(x=>x.v).sort((a,b)=>b.a-a.a)[0]||large.sort((a,b)=>b.w*b.h-a.w*a.h)[0]||imgs[0]);document.querySelectorAll('[data-pp-hero-img]').forEach(e=>e.removeAttribute('data-pp-hero-img'));hero?.el?.setAttribute('data-pp-hero-img','');return{url:location.href,brand:meta('og:site_name')||location.hostname.replace(/^www\./,''),title:clean(document.querySelector('h1')?.textContent)||meta('og:title')||document.title,desc:clean(document.querySelector('[itemprop="description"],[class*="description" i]')?.textContent)||meta('og:description'),price:clean(document.querySelector('[itemprop="price"],.price,[class*="price" i],[data-price]')?.textContent)||meta('product:price:amount'),hero:hero?.src||'',gallery:large.sort((a,b)=>b.w*b.h-a.w*a.h).slice(0,8).map(x=>x.src)}});
-if(!snap.hero)throw new Error('Could not identify hero image');
-await page.evaluate(d=>{const seen=i=>{const r=i.getBoundingClientRect(),w=Math.max(0,Math.min(r.right,innerWidth)-Math.max(r.left,0)),h=Math.max(0,r.height);if(!w||!h||(i.checkVisibility&&!i.checkVisibility({opacityProperty:true,visibilityProperty:true})))return 0;const x=Math.max(r.left,0)+w/2,y=r.top+Math.min(h/2,innerHeight/2),t=document.elementFromPoint(x,y);return ((i,h)=>{if(!h)return false;const r=i.getBoundingClientRect(),a=r.width*r.height;for(let e=i,k=0;e&&k<5;e=e.parentElement,k++){const q=e.getBoundingClientRect();if(k&&q.width*q.height>a*1.6)break;if(e===h||e.contains(h))return true}return h.contains(i)})(i,t)?w*h:w*h/1e6},same=i=>{try{return new URL(i.currentSrc||i.src,location.href).href.split('#')[0]===d.hero}catch{return false}};scrollTo({top:0,behavior:'instant'});const hero=document.querySelector('img[data-pp-hero-img]')||[...document.images].filter(same).sort((a,b)=>seen(b)-seen(a))[0]||[...document.images].sort((a,b)=>seen(b)-seen(a))[0];let wrap=hero?.closest('figure'),ir=hero?.getBoundingClientRect();const good=e=>{if(!e||!ir)return false;const r=e.getBoundingClientRect();return r.width>=ir.width*.92&&r.height>=ir.height*.92&&r.width<=innerWidth*1.08};if(!good(wrap))for(let p=hero?.parentElement,i=0;p&&i<8;p=p.parentElement,i++)if(good(p)){wrap=p;break}wrap=wrap||hero?.parentElement;if(!wrap)throw new Error('No hero container');if(getComputedStyle(wrap).position==='static')wrap.style.position='relative';wrap.style.overflow='hidden';wrap.classList.add('pp-engine-hero');wrap.setAttribute('data-product-passport-hero','true');const s=document.createElement('style');s.textContent='.pp-engine-hero{position:relative!important}.pp-pill{position:absolute;left:18px;bottom:18px;z-index:2147483000;border:0;border-radius:999px;background:#fff;color:#222;padding:12px 16px;box-shadow:0 6px 22px rgba(0,0,0,.17);font:12px system-ui,sans-serif;cursor:pointer;display:flex;gap:8px;align-items:center}.pp-panel{position:absolute;left:0;top:0;bottom:0;width:min(82%,680px);z-index:2147483001;background:#171716;color:#f2eee6;transform:translateX(-103%);transition:transform .38s ease;box-shadow:22px 0 50px rgba(0,0,0,.3);overflow:hidden;display:flex;flex-direction:column}.pp-engine-hero.pp-open .pp-panel{transform:translateX(0)}.pp-head{padding:24px 28px 17px;border-bottom:1px solid #383733;position:relative}.pp-close{position:absolute;right:15px;top:10px;border:0;background:none;color:#eee;font-size:28px;cursor:pointer}.pp-eyebrow{font:9px/1 system-ui,sans-serif;letter-spacing:.15em;color:#a69f96;text-transform:uppercase}.pp-head h2{font:400 31px/1.05 Georgia,serif;margin:9px 45px 5px 0}.pp-meta{font:10px system-ui,sans-serif;color:#908a81}.pp-scroll{overflow:auto;padding:0 28px 36px}.pp-step{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:23px 0;border-bottom:1px solid #35342f}.pp-step img{width:118px;height:132px;object-fit:cover;display:block}.pp-step h3{font:400 20px/1.08 Georgia,serif;margin:7px 0}.pp-step p{font:11px/1.55 system-ui,sans-serif;color:#cbc6be;margin:0 0 9px}.pp-status{font:8px system-ui,sans-serif;letter-spacing:.1em;color:#91ad91}.pp-next{padding:26px 0}.pp-next h3{font:400 21px Georgia,serif;margin:8px 0}.pp-next p{font:11px/1.5 system-ui,sans-serif;color:#bab4aa}.pp-next span{font:8px system-ui,sans-serif;letter-spacing:.1em;color:#91ad91}@media(max-width:800px){.pp-engine-hero .pp-panel{position:fixed;width:100%;height:100vh}.pp-step{grid-template-columns:90px 1fr}.pp-step img{width:90px;height:108px}}';wrap.appendChild(s);const pill=document.createElement('button');pill.className='pp-pill';pill.setAttribute('data-pp-pill','true');pill.innerHTML='<span>◎</span><span>The journey of this piece</span><span style="color:#8d8a84;font-size:9px">· hover</span>';wrap.appendChild(pill);const panel=document.createElement('aside');panel.className='pp-panel';panel.setAttribute('data-pp-panel','true');panel.setAttribute('aria-hidden','true');panel.innerHTML='<div class="pp-head"><button class="pp-close" type="button">×</button><div class="pp-eyebrow">PRODUCT PASSPORT</div><h2></h2><div class="pp-meta"></div></div><div class="pp-scroll"></div>';panel.querySelector('h2').textContent=d.title;panel.querySelector('.pp-meta').textContent=d.brand+' · '+(d.price||'')+' · prototype';const labels=['Material','Craft','Making','Technique','Evidence'],texts=[d.desc||'Product and material information captured from the public product page.','Craft and construction information from the public brand site.','Production information visible on the public site; connect the specific workshop record here.','Technique information captured from the product story.','Connect each public claim to its underlying production record or document.'];const sc=panel.querySelector('.pp-scroll');d.gallery.filter(Boolean).slice(0,5).forEach((src,i)=>{const a=document.createElement('article');a.className='pp-step';const im=document.createElement('img');im.src=src;const c=document.createElement('div');c.innerHTML='<div class="pp-eyebrow">0'+(i+1)+' · '+labels[i]+'</div><h3>'+labels[i]+'</h3><p></p><div class="pp-status">PUBLIC SITE EVIDENCE · NO STOCK IMAGERY</div>';c.querySelector('p').textContent=texts[i];a.append(im,c);sc.append(a)});const n=document.createElement('div');n.className='pp-next';n.innerHTML='<div class="pp-eyebrow">NEXT LAYER</div><h3>Connect the production record.</h3><p>Maker · material lot · craft cluster · workshop · production date · residual material</p><span>READY FOR SUPPLY-CHAIN EVIDENCE →</span>';sc.append(n);wrap.append(panel);const open=()=>{wrap.classList.add('pp-open');panel.setAttribute('aria-hidden','false')},close=()=>{wrap.classList.remove('pp-open');panel.setAttribute('aria-hidden','true')};pill.addEventListener('mouseenter',open);pill.addEventListener('click',()=>wrap.classList.contains('pp-open')?close():open());panel.querySelector('.pp-close').addEventListener('click',e=>{e.stopPropagation();close()});wrap.addEventListener('mouseleave',()=>{if(matchMedia('(hover:hover)').matches)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()})},{hero:snap.hero,title:snap.title,brand:snap.brand,price:snap.price,desc:snap.desc,gallery:snap.gallery});
-let html=await page.content();html=html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'').replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi,'').replace(/<iframe\b[\s\S]*?<\/iframe>/gi,'');
-const entries=await Promise.all([...resources].map(async([url,r])=>({url,...r,body:await r.body}))), map=new Map();
-function ext(u,t,c){const m=new URL(u).pathname.match(/\.([a-z0-9]{2,5})$/i);if(m)return m[1];if(c.includes('css')||t==='stylesheet')return'css';if(c.includes('woff2'))return'woff2';if(c.includes('woff'))return'woff';if(c.includes('svg'))return'svg';if(c.includes('webp'))return'webp';if(c.includes('png'))return'png';if(c.includes('jpeg'))return'jpg';return'bin'}
-for(const e of entries){if(!e.body)continue;const lim=e.type==='image'?15*1024*1024:e.type==='stylesheet'?4*1024*1024:8*1024*1024;if(e.body.byteLength>lim)continue;const h=crypto.createHash('sha1').update(e.url).digest('hex').slice(0,10),base=(new URL(e.url).hostname+new URL(e.url).pathname).replace(/[^a-z0-9]+/gi,'-').slice(-60),local='assets/'+base+'-'+h+'.'+ext(e.url,e.type,e.ct);map.set(e.url,local)}
-const cssRewrite=(txt,u)=>txt.replace(/url\(([^)]+)\)/gi,(m,x)=>{const q=x.trim().replace(/^['"]|['"]$/g,'');if(/^(data:|blob:|#)/i.test(q))return m;let a='';try{a=new URL(q,u).href.split('#')[0]}catch{return m}return map.has(a)?'url("../'+map.get(a)+'")':m});
-for(const e of entries){const local=map.get(e.url);if(!local||!e.body)continue;let b=e.body;if(e.type==='stylesheet')b=Buffer.from(cssRewrite(b.toString('utf8'),e.url));const f=path.resolve(dir,local);await fs.mkdir(path.dirname(f),{recursive:true});await fs.writeFile(f,b)}
-for(const [o,l] of map){const esc=o.replace(/[.*+?^$()|[\]\\]/g,'\\$&');html=html.replace(new RegExp(esc,'g'),l)}
-html=html.replace(/\b(src|data-src|poster|href)=(['"])([^'"]+)\2/gi,(m,a,q,u)=>{if(/^(#|data:|blob:|javascript:|mailto:|tel:|assets\/)/i.test(u))return m;let x=u;try{const abs=new URL(u.replace(/&amp;/g,'&'),source);x=map.get(abs.href.split('#')[0])||(/^https?:$/.test(abs.protocol)?abs.href:u)}catch{}return a+'='+q+x+q});
-html=html.replace(/\b(srcset|data-srcset)=(['"])([^'"]+)\2/gi,(m,a,q,v)=>a+'='+q+v.split(',').map(s=>{const p=s.trim().split(/\s+/);try{const abs=new URL(p[0].replace(/&amp;/g,'&'),source).href;p[0]=map.get(abs.split('#')[0])||abs}catch{}return p.join(' ')}).join(', ')+q);
-const runtime='<script data-pp-runtime="true">(()=>{const p=document.querySelector("[data-pp-pill]"),w=document.querySelector(".pp-engine-hero"),x=document.querySelector("[data-pp-panel]");if(!p||!w||!x)return;const o=()=>{w.classList.add("pp-open");x.setAttribute("aria-hidden","false")},c=()=>{w.classList.remove("pp-open");x.setAttribute("aria-hidden","true")};p.addEventListener("mouseenter",o);p.addEventListener("click",()=>w.classList.contains("pp-open")?c():o());x.querySelector(".pp-close").addEventListener("click",c);w.addEventListener("mouseleave",()=>{if(matchMedia("(hover:hover)").matches)c()});document.addEventListener("keydown",e=>{if(e.key==="Escape")c()});document.querySelectorAll("form").forEach(f=>f.addEventListener("submit",e=>e.preventDefault()));})();</script>';
-html=html.replace('</body>',runtime+'</body>');await fs.writeFile(path.resolve(output),'<!doctype html>\n'+html,'utf8');try{await page.screenshot({path:output.replace(/\.html?$/i,'')+'.png',fullPage:true})}catch{}await fs.writeFile(path.join(dir,'snapshot-manifest.json'),JSON.stringify({sourceUrl:source,brand:snap.brand,title:snap.title,price:snap.price,hero:snap.hero,assets:[...map.entries()]},null,2));console.log(JSON.stringify({output:path.resolve(output),sourceUrl:source,brand:snap.brand,title:snap.title,assets:map.size,images:snap.gallery.length},null,2));await browser.close();
+const [input, output = 'generated/passport.html', hint = ''] = process.argv.slice(2);
+if (!input) {
+  console.error('Usage: node tools/make-passport.mjs <website-or-product-url> [output.html] [product-name]');
+  process.exit(1);
+}
+const dir = path.resolve(path.dirname(output));
+
+// Illustrative stock artisan images (fallback only; see tools/stock/stock.json).
+const stockDir = path.join(path.dirname(fileURLToPath(import.meta.url)), 'stock');
+const stockMeta = JSON.parse(await fs.readFile(path.join(stockDir, 'stock.json'), 'utf8'));
+const stock = Object.fromEntries(Object.entries(stockMeta).filter(([k]) => !k.startsWith('_'))
+  .map(([k, v]) => [k, {...v, src: `https://stock.passport.local/${v.file}`}]));
+await fs.mkdir(dir, {recursive: true});
+
+const {browser, context, page} = await openBrowser();
+try {
+  await context.route('https://stock.passport.local/**', route =>
+    route.fulfill({path: path.join(stockDir, new URL(route.request().url()).pathname.slice(1)), contentType: 'image/jpeg'}));
+  const resources = captureResources(page);
+  await load(page, input);
+  const source = await findProductPage(page, hint);
+  await primeLazyContent(page);
+
+  const product = await extractProduct(page);
+  const archive = await crawlArchive(context, page, product);
+  const model = buildPassportModel(product, archive, stock);
+  const {pill, panel} = renderPassport(model);
+
+  // Mount on the container that tightly wraps the tagged hero image.
+  await page.evaluate(({pill, panel, css}) => {
+    const hero = document.querySelector('img[data-pp-hero-img]') || document.images[0];
+    const ir = hero?.getBoundingClientRect();
+    const fits = e => {
+      if (!e || !ir) return false;
+      const r = e.getBoundingClientRect();
+      return r.width >= ir.width * .92 && r.height >= ir.height * .92 && r.width <= innerWidth * 1.08;
+    };
+    let wrap = hero?.closest('figure');
+    if (!fits(wrap)) for (let p = hero?.parentElement, i = 0; p && i < 8; p = p.parentElement, i++) if (fits(p)) { wrap = p; break; }
+    wrap = wrap || hero?.parentElement;
+    // Never mount inside a link: the panel contains links/buttons, and nested interactive
+    // content is re-parented when the saved HTML is parsed again, scrambling the panel.
+    while (wrap?.closest('a,button')) wrap = wrap.closest('a,button').parentElement;
+    if (!wrap) throw new Error('No hero container');
+    wrap.classList.add('pp-engine-hero');
+    const style = document.createElement('style');
+    style.setAttribute('data-pp-style', '');
+    style.textContent = css;
+    document.head.appendChild(style);
+    wrap.insertAdjacentHTML('beforeend', pill + panel);
+  }, {pill, panel, css: PASSPORT_CSS});
+
+  const archiveImages = Object.values(model.images).filter(i => i?.kind === 'archive').map(i => i.src);
+  const extra = await fetchExtraImages(context, archiveImages);
+  for (const s of Object.values(stock)) if (Object.values(model.images).some(i => i?.src === s.src))
+    extra.push({url: s.src, type: 'image', ct: 'image/jpeg', body: await fs.readFile(path.join(stockDir, s.file))});
+  let {html, map} = await localize({html: stripScripts(await page.content()), resources, extra, source, dir});
+  html = html.replace('</body>', `<script data-pp-runtime>${PASSPORT_RUNTIME}</script></body>`);
+  await fs.writeFile(path.resolve(output), '<!doctype html>\n' + html, 'utf8');
+
+  // Preview: passport open over the hero.
+  try {
+    await page.addScriptTag({content: PASSPORT_RUNTIME});
+    await page.locator('.pp-engine-hero').scrollIntoViewIfNeeded();
+    await page.click('[data-pp-pill]');
+    await page.waitForTimeout(600);
+    await page.screenshot({path: output.replace(/\.html?$/i, '') + '.png'});
+  } catch {}
+
+  await fs.writeFile(path.join(dir, 'snapshot-manifest.json'), JSON.stringify({
+    sourceUrl: source, generatedAt: new Date().toISOString(),
+    brand: product.brand, title: product.title, price: product.price, hero: product.hero,
+    passport: model,
+    archiveImagesConsidered: archive.images.map(({src, cls, strong, alt, source}) => ({src, cls, strong, alt, source})),
+    assets: [...map.entries()],
+  }, null, 2));
+
+  console.log(JSON.stringify({
+    output: path.resolve(output), sourceUrl: source, brand: product.brand, title: product.title, price: product.price,
+    sku: product.sku || null, material: model.material.name.value, craft: model.craft.label,
+    archivePages: archive.pages.length, archiveImages: archive.images.length,
+    images: Object.fromEntries(Object.entries(model.images).map(([k, v]) => [k, v?.kind || null])),
+    maker: model.maker.name.value, traceability: model.traceability, assets: map.size,
+  }, null, 2));
+} finally {
+  await browser.close();
+}

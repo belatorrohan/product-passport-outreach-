@@ -1,0 +1,761 @@
+{
+  "sourceUrl": "https://iroiro.in/products/men-saaya-blazer-ivory",
+  "generatedAt": "2026-09-28T15:30:35.881Z",
+  "brand": "Iro Iro",
+  "title": "Saaya Blazer",
+  "price": "₹57,441",
+  "hero": "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260192.jpg?v=1788787978&width=832",
+  "passport": {
+    "product": {
+      "name": "Saaya Blazer",
+      "brand": "Iro Iro",
+      "price": "₹57,441",
+      "url": "https://iroiro.in/products/men-saaya-blazer-ivory",
+      "hero": "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260192.jpg?v=1788787978&width=832",
+      "sku": {
+        "value": "IRMJA2601IVXS",
+        "evidence": "product-page",
+        "source": "https://iroiro.in/products/men-saaya-blazer-ivory"
+      },
+      "garmentId": {
+        "value": null,
+        "evidence": "not-linked"
+      }
+    },
+    "material": {
+      "name": {
+        "value": "Cotton",
+        "evidence": "product-page",
+        "source": "https://iroiro.in/products/men-saaya-blazer-ivory"
+      },
+      "weave": {
+        "value": "Flatweave",
+        "evidence": "product-page",
+        "source": "https://iroiro.in/products/men-saaya-blazer-ivory"
+      },
+      "composition": {
+        "value": "100% Cotton",
+        "evidence": "product-page",
+        "source": "https://iroiro.in/products/men-saaya-blazer-ivory"
+      },
+      "fabricLot": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "quantity": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "statement": {
+        "value": "Men's single-breasted, three-button blazer cut without padding, so the shoulder follows yours and the body falls straight. Three patch pockets, one at the chest and two at the front panels, and a two-button cuff. Inside, a half lining sits against the body and leaves the back of the cloth open to be seen. Flatweave cra",
+        "evidence": "product-page",
+        "source": "https://iroiro.in/products/men-saaya-blazer-ivory"
+      }
+    },
+    "craft": {
+      "key": "weaving",
+      "label": "Weaving",
+      "role": "Weaver",
+      "claim": {
+        "value": "These materials are transformed through handloom weaving and small-scale production into textiles, garments, and objects designed for longevity.",
+        "evidence": "brand-archive",
+        "source": "https://iroiro.in/pages/sustainability"
+      },
+      "person": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "location": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "period": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "workshop": {
+        "value": null,
+        "evidence": "not-linked"
+      }
+    },
+    "maker": {
+      "name": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "role": {
+        "value": null,
+        "evidence": "not-linked"
+      },
+      "statement": {
+        "value": "Iro Iro collaborates with handloom weavers, dyers, and textile artisans across Rajasthan whose knowledge has been developed over generations.",
+        "evidence": "brand-archive",
+        "source": "https://iroiro.in/pages/sustainability"
+      },
+      "linkedToProduct": false
+    },
+    "stages": [
+      {
+        "key": "fibre",
+        "label": "Yarn",
+        "process": {
+          "value": "Described in brand archive",
+          "evidence": "brand-archive",
+          "source": "https://iroiro.in/pages/sustainability"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      },
+      {
+        "key": "weaving",
+        "label": "Weaving",
+        "process": {
+          "value": "Stated on product page",
+          "evidence": "product-page",
+          "source": "https://iroiro.in/products/men-saaya-blazer-ivory"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      },
+      {
+        "key": "cutting",
+        "label": "Cutting",
+        "process": {
+          "value": "Described in brand archive",
+          "evidence": "brand-archive",
+          "source": "https://iroiro.in/pages/about"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      },
+      {
+        "key": "stitching",
+        "label": "Stitching",
+        "process": {
+          "value": "Described in brand archive",
+          "evidence": "brand-archive",
+          "source": "https://iroiro.in/pages/sustainability"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      },
+      {
+        "key": "finishing",
+        "label": "Finishing",
+        "process": {
+          "value": "Described in brand archive",
+          "evidence": "brand-archive",
+          "source": "https://iroiro.in/pages/sustainability"
+        },
+        "date": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "location": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "person": {
+          "value": null,
+          "evidence": "not-linked"
+        },
+        "lot": {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      }
+    ],
+    "garmentRecord": [
+      [
+        "Product",
+        {
+          "value": "Saaya Blazer",
+          "evidence": "product-page",
+          "source": "https://iroiro.in/products/men-saaya-blazer-ivory"
+        }
+      ],
+      [
+        "SKU",
+        {
+          "value": "IRMJA2601IVXS",
+          "evidence": "product-page",
+          "source": "https://iroiro.in/products/men-saaya-blazer-ivory"
+        }
+      ],
+      [
+        "Garment ID",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Material",
+        {
+          "value": "Cotton",
+          "evidence": "product-page",
+          "source": "https://iroiro.in/products/men-saaya-blazer-ivory"
+        }
+      ],
+      [
+        "Fabric lot",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Fabric quantity",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Loom",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Weaver",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Location",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Garment unit",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ],
+      [
+        "Production date",
+        {
+          "value": null,
+          "evidence": "not-linked"
+        }
+      ]
+    ],
+    "traceability": {
+      "status": "Partially documented",
+      "publicRecords": 8,
+      "recordLinks": 0,
+      "missing": 8
+    },
+    "images": {
+      "fabric": {
+        "src": "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260192.jpg?v=1788787978&width=832",
+        "alt": "Detail of Saaya Blazer",
+        "source": "https://iroiro.in/products/men-saaya-blazer-ivory",
+        "kind": "hero-detail"
+      },
+      "craft": {
+        "src": "https://iroiro.in/cdn/shop/files/iro-2026-13.jpg?v=1788883440&width=600",
+        "alt": "",
+        "source": "https://iroiro.in/pages/sustainability",
+        "kind": "archive"
+      },
+      "maker": {
+        "src": "https://stock.passport.local/weaver.jpg",
+        "alt": "A handloom weaver at a loom in Maheshwar, Madhya Pradesh",
+        "source": "https://commons.wikimedia.org/wiki/File:Handloom_weaver_in_Maheshwar_fort,_Khargone_district,_Madhya_Pradesh.jpg",
+        "credit": "Eskay001 / Wikimedia Commons · CC BY-SA 4.0",
+        "kind": "stock"
+      }
+    },
+    "sources": [
+      {
+        "url": "https://iroiro.in/pages/sustainability",
+        "title": "Sustainability is the foundation of our practice"
+      },
+      {
+        "url": "https://iroiro.in/pages/about",
+        "title": "About – Iro Iro"
+      },
+      {
+        "url": "https://iroiro.in/pages/journal",
+        "title": "Journal – Iro Iro"
+      }
+    ]
+  },
+  "archiveImagesConsidered": [
+    {
+      "src": "https://iroiro.in/cdn/shop/files/iro-2026-13.jpg?v=1788883440&width=600",
+      "cls": "loom",
+      "strong": true,
+      "alt": "",
+      "source": "https://iroiro.in/pages/sustainability"
+    },
+    {
+      "src": "https://iroiro.in/cdn/shop/files/iro-2026-22_726a6c99-c42d-4ee4-86dd-19bcb468c493.jpg?v=1788883464&width=1500",
+      "cls": "loom",
+      "strong": true,
+      "alt": "",
+      "source": "https://iroiro.in/pages/sustainability"
+    },
+    {
+      "src": "https://iroiro.in/cdn/shop/files/iro-2026-28.jpg?v=1788883422&width=600",
+      "cls": "loom",
+      "strong": true,
+      "alt": "",
+      "source": "https://iroiro.in/pages/sustainability"
+    }
+  ],
+  "assets": [
+    [
+      "https://cdn.shopify.com/extensions/a9a32278-85fd-435d-a2e4-15afbc801656/nova-multi-currency-converter-1/assets/nova-cur.css",
+      "assets/bc801656-nova-multi-currency-converter-1-assets-nova-cur-css-a1d74503bb.css"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/t/4/assets/base.css?v=104654941225442573901789802709",
+      "assets/iroiro-in-cdn-shop-t-4-assets-base-css-b91653feda.css"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/t/4/assets/overflow-list.css?v=16727044177065489451779807950",
+      "assets/iroiro-in-cdn-shop-t-4-assets-overflow-list-css-361d530ef1.css"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/New_Collection_c7badebc-0198-4f0c-b5b9-7cfc4e6d44cc.jpg?v=1789021654&width=1500",
+      "assets/iles-New-Collection-c7badebc-0198-4f0c-b5b9-7cfc4e6d44cc-jpg-1f38261ced.jpg"
+    ],
+    [
+      "https://cdn.shopify.com/s/files/1/0785/4270/0580/files/FormaDJRText-Regular-Testing.woff2?v=1784909223",
+      "assets/es-1-0785-4270-0580-files-FormaDJRText-Regular-Testing-woff2-db4102ebf3.woff2"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/t/4/compiled_assets/styles.css?v=41534526768917747241789803773",
+      "assets/iroiro-in-cdn-shop-t-4-compiled-assets-styles-css-8c13a5be1e.css"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/collections/DSC_7252_copy.jpg?v=1789032773&width=832",
+      "assets/iroiro-in-cdn-shop-collections-DSC-7252-copy-jpg-708b5e08d4.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/collections/IROIRO_CAMPAIGN_2026_DAY_21400_copy.jpg?v=1789032703&width=832",
+      "assets/cdn-shop-collections-IROIRO-CAMPAIGN-2026-DAY-21400-copy-jpg-0d66032baf.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/collections/IROIRO_LOOKBOOK_20260785.jpg?v=1789020871&width=832",
+      "assets/iroiro-in-cdn-shop-collections-IROIRO-LOOKBOOK-20260785-jpg-715c88aced.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/collections/iro-homepage-thumb-5.jpg?v=1789021193&width=832",
+      "assets/iroiro-in-cdn-shop-collections-iro-homepage-thumb-5-jpg-79ac874768.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/t/4/assets/template-journal.css?v=9668289067124951721788698723",
+      "assets/iroiro-in-cdn-shop-t-4-assets-template-journal-css-eea4a2f581.css"
+    ],
+    [
+      "https://iroiro.in/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2",
+      "assets/nter-inter-n4-b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9-woff2-f12593546a.woff2"
+    ],
+    [
+      "https://iroiro.in/cdn/fonts/dm_sans/dmsans_n4.ec80bd4dd7e1a334c969c265873491ae56018d72.woff2",
+      "assets/ans-dmsans-n4-ec80bd4dd7e1a334c969c265873491ae56018d72-woff2-4729c6033f.woff2"
+    ],
+    [
+      "https://iroiro.in/cdn/fonts/dm_sans/dmsans_n3.d218434bb518134511e5205d90c23cfb8a1b261b.woff2",
+      "assets/ans-dmsans-n3-d218434bb518134511e5205d90c23cfb8a1b261b-woff2-ee0b75a89f.woff2"
+    ],
+    [
+      "https://iroiro.in/cdn/fonts/red_hat_text/redhattext_n4.f45549d853e5e3e2907f21be9aecf95e1eaa7516.woff2",
+      "assets/redhattext-n4-f45549d853e5e3e2907f21be9aecf95e1eaa7516-woff2-c85284c8d0.woff2"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/ABCDiatype-Regular.woff2?v=17640807590918679922",
+      "assets/iroiro-in-cdn-shop-files-ABCDiatype-Regular-woff2-9032537937.woff2"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IroIro_Logo_white.svg?height=25&v=1788430006",
+      "assets/iroiro-in-cdn-shop-files-IroIro-Logo-white-svg-95550188b7.svg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IroIro_Logo.svg?height=25&v=1788429456",
+      "assets/iroiro-in-cdn-shop-files-IroIro-Logo-svg-8b6e6eef1e.svg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260089.jpg?v=1788788092&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260089-jpg-efdc7d3b35.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260859.jpg?v=1788788083&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260859-jpg-e9d9f3cce6.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/collections/IROIRO_LOOKBOOK_20260153.jpg?v=1789020939&width=832",
+      "assets/iroiro-in-cdn-shop-collections-IROIRO-LOOKBOOK-20260153-jpg-459930707b.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260111.jpg?v=1788787948&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260111-jpg-749e17250e.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260222.jpg?v=1788787939&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260222-jpg-fa4507e48c.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260159.jpg?v=1788788008&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260159-jpg-a1171b09ed.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260489.jpg?v=1788787977&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260489-jpg-7179cc5630.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260694.jpg?v=1788788024&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260694-jpg-fae3e7b62a.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260462.jpg?v=1788787762&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260462-jpg-d8e7a8bd79.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/Women_79b60be6-ef05-429c-b283-da24b28e1607.jpg?v=1789021747&width=1500",
+      "assets/dn-shop-files-Women-79b60be6-ef05-429c-b283-da24b28e1607-jpg-aa0a68d301.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/Men_d0d441a9-8295-4ed0-b3e6-690ea2f70ec4.jpg?v=1789021823&width=1500",
+      "assets/-cdn-shop-files-Men-d0d441a9-8295-4ed0-b3e6-690ea2f70ec4-jpg-8bba17fbe0.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/Accessories_411dd478-a7f9-4601-ba34-b5ae67624662.jpg?v=1789021900&width=1500",
+      "assets/p-files-Accessories-411dd478-a7f9-4601-ba34-b5ae67624662-jpg-6a382a7ef3.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260072_3ef8c80a-0fdc-4072-b79b-64382020b8a7.jpg?v=1788851293&width=832",
+      "assets/O-LOOKBOOK-20260072-3ef8c80a-0fdc-4072-b79b-64382020b8a7-jpg-9fbb88a4dd.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260099.jpg?v=1788787904&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260099-jpg-db403ce762.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260225.jpg?v=1788787944&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260225-jpg-2a4fd86172.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260143.jpg?v=1788787943&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260143-jpg-a3a57bd6e0.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/FormaDJRMicro-Regular-Testing.woff2?v=1785343208",
+      "assets/iroiro-in-cdn-shop-files-FormaDJRMicro-Regular-Testing-woff2-0fdc22e8ab.woff2"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/FormaDJRDisplay-Regular-Testing.woff2?v=1785343208",
+      "assets/oiro-in-cdn-shop-files-FormaDJRDisplay-Regular-Testing-woff2-731a40cf61.woff2"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260508.jpg?v=1788787930&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260508-jpg-f860ce7ac5.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260679.jpg?v=1788787936&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260679-jpg-c912ab3965.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260846.jpg?v=1788788086&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260846-jpg-b5ca2f1238.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260443.jpg?v=1788787946&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260443-jpg-6aed7752f9.jpg"
+    ],
+    [
+      "https://cdn.shopify.com/s/files/1/0194/1736/6592/t/1/assets/ba-flags.png?=14261939516959647149",
+      "assets/shopify-com-s-files-1-0194-1736-6592-t-1-assets-ba-flags-png-bc298bb642.png"
+    ],
+    [
+      "https://c.clarity.ms/c.gif?ctsa=mr&CtsSyncId=040CC3B7227C46F3B03B0EDBAD2F0B5C&MUID=0B95DFFF11C16A8B0419C81D10126B25",
+      "assets/c-clarity-ms-c-gif-dfc5b0b860.gif"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260173.jpg?v=1788787954&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260173-jpg-9faa1f231c.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260192.jpg?v=1788787978&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260192-jpg-34b111700e.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260167.jpg?v=1788787946&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260167-jpg-1111c853a0.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260184.jpg?v=1788787917&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260184-jpg-97b6506734.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260196.jpg?v=1788788008&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260196-jpg-a0ef1d10aa.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/handwoven-2.jpg?v=1788956313&width=720",
+      "assets/iroiro-in-cdn-shop-files-handwoven-2-jpg-811ef4039d.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/flatweave-1.jpg?v=1788956116&width=720",
+      "assets/iroiro-in-cdn-shop-files-flatweave-1-jpg-9fc809a9bf.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/madetoorder.jpg?v=1788956284&width=720",
+      "assets/iroiro-in-cdn-shop-files-madetoorder-jpg-e2530fd477.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/softtailoring-2.jpg?v=1788956256&width=720",
+      "assets/iroiro-in-cdn-shop-files-softtailoring-2-jpg-2a5b1053db.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260336_ca0b63e2-cb94-435c-8b90-12836be3afdf.jpg?v=1788851100&width=832",
+      "assets/O-LOOKBOOK-20260336-ca0b63e2-cb94-435c-8b90-12836be3afdf-jpg-200012d00f.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260336.jpg?v=1788787907&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260336-jpg-60091a455f.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260072.jpg?v=1788788071&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260072-jpg-6ecb6d25d3.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260116.jpg?v=1788787902&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260116-jpg-86fd9f367d.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260347.jpg?v=1788787911&width=352",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260347-jpg-b10f383127.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260353.jpg?v=1788788054&width=352",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260353-jpg-3ecbde492d.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260352.jpg?v=1788787936&width=352",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260352-jpg-e186ab6044.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260327_ce0213d1-02a6-4c37-bfee-2e6586f9f688.jpg?v=1788851101&width=352",
+      "assets/O-LOOKBOOK-20260327-ce0213d1-02a6-4c37-bfee-2e6586f9f688-jpg-f165f01284.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260347.jpg?v=1788787911&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260347-jpg-1df40be820.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260309_8effe766-3e2b-4515-aaf7-b0c314f6a596.jpg?v=1788851101&width=352",
+      "assets/O-LOOKBOOK-20260309-8effe766-3e2b-4515-aaf7-b0c314f6a596-jpg-f91e513333.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260327.jpg?v=1788788082&width=352",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260327-jpg-588121c2d0.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260075.jpg?v=1788788081&width=352",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260075-jpg-3fd812a78e.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260080.jpg?v=1788788061&width=352",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260080-jpg-60117a4365.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260333_787751a7-7ef7-489c-bed1-abf36b858612.jpg?v=1788851101&width=352",
+      "assets/O-LOOKBOOK-20260333-787751a7-7ef7-489c-bed1-abf36b858612-jpg-7271da898d.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260352.jpg?v=1788787936&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260352-jpg-627a940fcb.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260119.jpg?v=1788787893&width=352",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260119-jpg-17d12a3a07.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260075.jpg?v=1788788081&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260075-jpg-68320b5b1d.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260075.jpg?v=1788788081&width=1600",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260075-jpg-519ba13d5c.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260119.jpg?v=1788787893&width=1600",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260119-jpg-f5ec8235d6.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260119.jpg?v=1788787893&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260119-jpg-eda547bffd.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260352.jpg?v=1788787936&width=1600",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260352-jpg-81bdc59036.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260091.jpg?v=1788787892&width=352",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260091-jpg-987d9247e1.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260347.jpg?v=1788787911&width=1600",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260347-jpg-17708d7f77.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260600.jpg?v=1788787901&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260600-jpg-74f33761c2.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIROLOOKBOOK20260333.jpg?v=1788851648&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIROLOOKBOOK20260333-jpg-98ffcb8400.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260396.jpg?v=1788788085&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260396-jpg-23e05e9149.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260542.jpg?v=1788787946&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260542-jpg-ba03ea75c5.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260584.jpg?v=1788787913&width=352",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260584-jpg-ac05e9d6a1.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260608.jpg?v=1788787913&width=352",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260608-jpg-c95055ab84.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260405.jpg?v=1788788095&width=352",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260405-jpg-2c2caaebcc.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260604.jpg?v=1788787945&width=352",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260604-jpg-b30f3a0f5f.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260589.jpg?v=1788787910&width=352",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260589-jpg-023433c65a.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260405.jpg?v=1788788095&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260405-jpg-64fc841aaa.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260584.jpg?v=1788787913&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260584-jpg-994def3d4f.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260390.jpg?v=1788788056&width=352",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260390-jpg-3cd809d6ce.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260540.jpg?v=1788787915&width=352",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260540-jpg-10dc97f7f8.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260540.jpg?v=1788787915&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260540-jpg-7204faa894.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260405.jpg?v=1788788095&width=1600",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260405-jpg-c2602ca9e8.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIROLOOKBOOK20260309.jpg?v=1788851648&width=832",
+      "assets/iroiro-in-cdn-shop-files-IROIROLOOKBOOK20260309-jpg-6a7e9cdcd9.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIROLOOKBOOK20260309.jpg?v=1788851648&width=352",
+      "assets/iroiro-in-cdn-shop-files-IROIROLOOKBOOK20260309-jpg-2410196d27.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIROLOOKBOOK20260309.jpg?v=1788851648&width=1600",
+      "assets/iroiro-in-cdn-shop-files-IROIROLOOKBOOK20260309-jpg-61423c0d52.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260540.jpg?v=1788787915&width=1600",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260540-jpg-1381aa9241.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIRO_LOOKBOOK_20260584.jpg?v=1788787913&width=1600",
+      "assets/iroiro-in-cdn-shop-files-IROIRO-LOOKBOOK-20260584-jpg-32cfa479a3.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/IROIROLOOKBOOK20260327.jpg?v=1788851647&width=352",
+      "assets/iroiro-in-cdn-shop-files-IROIROLOOKBOOK20260327-jpg-af52a5e92b.jpg"
+    ],
+    [
+      "https://stock.passport.local/weaver.jpg",
+      "assets/stock-passport-local-weaver-jpg-dd87ee04f1.jpg"
+    ],
+    [
+      "https://iroiro.in/cdn/shop/files/iro-2026-13.jpg?v=1788883440&width=600",
+      "assets/iroiro-in-cdn-shop-files-iro-2026-13-jpg-826680b7dd.jpg"
+    ]
+  ]
+}
